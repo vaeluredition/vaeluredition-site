@@ -1,10 +1,10 @@
 :root {
-    --salon-bg: #050505;
-    --salon-panel: #0d0d0d;
-    --salon-text: #eae6df;
-    --salon-muted: #7a7670;
-    --salon-gold: #d4af37;
-    --salon-border: #1a1a1a;
+    --salon-bg: #1c1a18;            /* Deep tactile slate-umber (no flat black) */
+    --salon-panel: #24211e;         /* Warm dark mineral stone */
+    --salon-text: #eae6df;          /* Soft warm parchment */
+    --salon-muted: #948e83;         /* Muted warm taupe */
+    --salon-accent: #c29b68;        /* Muted antique bronze-amber */
+    --salon-border: #35302b;        /* Subtle textured border */
     --max-width: 1300px;
 }
 
@@ -58,7 +58,7 @@ body {
     font-size: 10px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--salon-gold);
+    color: var(--salon-accent);
 }
 
 .salon-nav {
@@ -92,7 +92,7 @@ body {
 .threshold-canvas-frame {
     width: 100%;
     height: 600px;
-    background: #000;
+    background: #121110;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -122,7 +122,7 @@ body {
 .serif-italics {
     font-family: Georgia, serif;
     font-style: italic;
-    color: var(--salon-gold);
+    color: var(--salon-accent);
     font-weight: 400;
 }
 
@@ -133,7 +133,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* THE GALLERY CORRIDOR (NO CARDS, NO GRIDS) */
+/* THE GALLERY CORRIDOR */
 .gallery-corridor {
     display: flex;
     flex-direction: column;
@@ -144,7 +144,7 @@ body {
     font-size: 11px;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    color: var(--salon-gold);
+    color: var(--salon-accent);
     margin-bottom: 60px;
     text-align: center;
 }
@@ -171,7 +171,7 @@ body {
 .exhibit-visual {
     width: 100%;
     height: 520px;
-    background: #000;
+    background: #121110;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -201,7 +201,7 @@ body {
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--salon-gold);
+    color: var(--salon-accent);
 }
 
 .exhibit-artist {
@@ -231,7 +231,7 @@ body {
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--salon-gold);
+    color: var(--salon-accent);
     border-top: 1px dashed var(--salon-border);
     padding-top: 16px;
 }
@@ -323,7 +323,7 @@ body {
 .input-field-group input:focus,
 .input-field-group select:focus,
 .input-field-group textarea:focus {
-    border-color: var(--salon-gold);
+    border-color: var(--salon-accent);
 }
 
 .transmit-btn {
@@ -341,14 +341,14 @@ body {
 }
 
 .transmit-btn:hover {
-    background: var(--salon-gold);
+    background: var(--salon-accent);
 }
 
 .transmission-success {
     padding: 30px;
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid var(--salon-gold);
-    color: var(--salon-gold);
+    background: rgba(194, 155, 104, 0.1);
+    border: 1px solid var(--salon-accent);
+    color: var(--salon-accent);
     text-align: center;
     font-size: 14px;
     letter-spacing: 0.05em;
@@ -362,7 +362,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(5, 5, 5, 0.96);
+    background: rgba(28, 26, 24, 0.96);
     z-index: 9999;
     justify-content: center;
     align-items: center;
@@ -383,14 +383,14 @@ body {
     width: 100%;
     max-height: 72vh;
     object-fit: contain;
-    background: #000;
+    background: #121110;
 }
 
 .lightbox-exit {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(18, 17, 16, 0.9);
     color: #fff;
     border: 1px solid var(--salon-border);
     width: 44px;
