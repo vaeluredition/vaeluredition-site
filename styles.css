@@ -1,11 +1,11 @@
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-card: #141414;
-    --text-primary: #f3f3f0;
-    --text-muted: #888884;
-    --accent-gold: #c5a059;
-    --border-subtle: #262622;
-    --max-content-width: 1200px;
+    --salon-bg: #050505;
+    --salon-panel: #0d0d0d;
+    --salon-text: #eae6df;
+    --salon-muted: #7a7670;
+    --salon-gold: #d4af37;
+    --salon-border: #1a1a1a;
+    --max-width: 1300px;
 }
 
 * {
@@ -15,565 +15,432 @@
 }
 
 body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    background-color: var(--salon-bg);
+    color: var(--salon-text);
+    font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    padding: 0;
-    margin: 0;
 }
 
-.site-wrapper {
-    max-width: var(--max-content-width);
+.salon-wrapper {
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 40px 40px 80px 40px;
+    padding: 60px 40px 120px 40px;
 }
 
-/* HEADER */
-.site-header {
+/* FLOATING EDITORIAL HEADER */
+.salon-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--border-subtle);
-    margin-bottom: 60px;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--salon-border);
+    margin-bottom: 100px;
 }
 
-.brand-cluster {
+.salon-brand-group {
     display: flex;
     flex-direction: column;
+    gap: 6px;
 }
 
-.brand-link {
-    font-size: 14px;
-    font-weight: 600;
+.salon-logo {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--salon-text);
+    text-decoration: none;
+}
+
+.salon-mandate-badge {
+    font-size: 10px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
+    color: var(--salon-gold);
 }
 
-.brand-link:hover {
-    opacity: 0.7;
-}
-
-.location-tag {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 4px;
-}
-
-.header-nav {
+.salon-nav {
     display: flex;
+    gap: 40px;
+}
+
+.salon-nav-link {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--salon-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.salon-nav-link:hover {
+    color: var(--salon-text);
+}
+
+/* THRESHOLD HERO */
+.salon-threshold {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
     align-items: center;
-    gap: 30px;
+    margin-bottom: 140px;
 }
 
-.nav-trigger {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s ease;
-    cursor: pointer;
-}
-
-.nav-trigger:hover {
-    color: var(--text-primary);
-}
-
-.nav-cta {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--bg-primary);
-    background-color: var(--text-primary);
-    padding: 10px 18px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    cursor: pointer;
-}
-
-.nav-cta:hover {
-    background-color: var(--accent-gold);
-}
-
-/* HERO SECTION / CINEMATIC THRESHOLD */
-.hero-section {
-    margin-bottom: 80px;
-}
-
-.hero-banner-wrap {
+.threshold-canvas-frame {
     width: 100%;
-    height: 500px;
+    height: 600px;
     background: #000;
-    border: 1px solid var(--border-subtle);
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    border: 1px solid var(--salon-border);
 }
 
-.hero-canvas-img {
+.threshold-canvas-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: contrast(1.1) brightness(0.85);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: contrast(1.12) brightness(0.9);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-banner-wrap:hover .hero-canvas-img {
-    transform: scale(1.02);
+.threshold-canvas-frame:hover img {
+    transform: scale(1.03);
 }
 
-.hero-canvas-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 25px;
-    background: linear-gradient(to top, rgba(10,10,10,0.9), transparent);
-    display: flex;
-    justify-content: flex-end;
-}
-
-.hero-title {
-    font-size: clamp(38px, 5vw, 64px);
+.threshold-prose h1 {
+    font-size: clamp(40px, 4.5vw, 68px);
     font-weight: 300;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
 }
 
-.italic-serif {
-    font-family: "Instrument Serif", Georgia, serif;
+.serif-italics {
+    font-family: Georgia, serif;
     font-style: italic;
+    color: var(--salon-gold);
     font-weight: 400;
-    color: var(--accent-gold);
-    font-size: 1.15em;
 }
 
-.hero-subtitle {
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--text-muted);
-    max-width: 750px;
+.threshold-prose p {
+    font-size: 17px;
+    color: var(--salon-muted);
+    line-height: 1.8;
+    margin-bottom: 30px;
 }
 
-/* CORPUS REGISTRY SECTION */
-.corpus-registry-section {
-    margin-bottom: 80px;
-}
-
-.section-explanatory-note {
-    font-size: 14px;
-    color: var(--text-muted);
-    max-width: 750px;
-    margin-top: 10px;
-    line-height: 1.6;
-}
-
-.corpus-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 30px;
-    margin-top: 35px;
-}
-
-.corpus-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    overflow: hidden;
+/* THE GALLERY CORRIDOR (NO CARDS, NO GRIDS) */
+.gallery-corridor {
     display: flex;
     flex-direction: column;
-    transition: border-color 0.3s ease;
+    gap: 160px;
 }
 
-.corpus-card:hover {
-    border-color: var(--accent-gold);
+.corridor-section-title {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--salon-gold);
+    margin-bottom: 60px;
+    text-align: center;
 }
 
-.corpus-img-wrap {
+.salon-exhibit-row {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.salon-exhibit-row.reverse {
+    grid-template-columns: 1fr 1.3fr;
+}
+
+.salon-exhibit-row.reverse .exhibit-visual {
+    order: 2;
+}
+
+.salon-exhibit-row.reverse .exhibit-tombstone {
+    order: 1;
+}
+
+.exhibit-visual {
     width: 100%;
-    height: 320px;
-    overflow: hidden;
-    position: relative;
+    height: 520px;
     background: #000;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
+    border: 1px solid var(--salon-border);
 }
 
-.corpus-img-wrap img {
+.exhibit-visual img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: contrast(1.1) brightness(0.9);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.corpus-card:hover .corpus-img-wrap img {
+.exhibit-visual:hover img {
     transform: scale(1.03);
 }
 
-.zoom-indicator {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background: rgba(10, 10, 10, 0.85);
-    border: 1px solid var(--border-subtle);
-    color: var(--accent-gold);
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 6px 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.corpus-card:hover .zoom-indicator {
-    opacity: 1;
-}
-
-.corpus-tombstone {
-    padding: 24px;
+.exhibit-tombstone {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    border-top: 1px solid var(--border-subtle);
-    background: var(--bg-card);
+    gap: 12px;
+    padding: 20px 0;
 }
 
-.tombstone-artist {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-primary);
-}
-
-.tombstone-title {
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--text-primary);
-    line-height: 1.35;
-}
-
-.tombstone-date {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
-.tombstone-medium {
-    font-size: 11px;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-top: 2px;
-}
-
-.tombstone-credit {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dashed var(--border-subtle);
-}
-
-/* MANDATE GRID & PHILOSOPHY */
-.mandate-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    padding: 60px 0;
-    border-top: 1px solid var(--border-subtle);
-    border-bottom: 1px solid var(--border-subtle);
-    margin-bottom: 70px;
-    align-items: start;
-}
-
-.section-kicker {
+.exhibit-num {
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--accent-gold);
-    display: block;
-    margin-bottom: 12px;
-    font-weight: 600;
+    color: var(--salon-gold);
 }
 
-.mandate-col h3 {
+.exhibit-artist {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--salon-text);
+}
+
+.exhibit-title {
     font-size: 28px;
+    font-weight: 300;
+    line-height: 1.3;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.exhibit-details {
+    font-size: 14px;
+    color: var(--salon-muted);
+}
+
+.exhibit-edition-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--salon-gold);
+    border-top: 1px dashed var(--salon-border);
+    padding-top: 16px;
+}
+
+/* PHILOSOPHY SANCTUARY */
+.salon-sanctuary {
+    margin-top: 180px;
+    padding: 100px 0;
+    border-top: 1px solid var(--salon-border);
+    border-bottom: 1px solid var(--salon-border);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+}
+
+.sanctuary-heading h2 {
+    font-size: 36px;
     font-weight: 300;
     line-height: 1.3;
 }
 
-.mandate-col p {
-    font-size: 16px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 24px;
+.sanctuary-body p {
+    font-size: 17px;
+    color: var(--salon-muted);
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
 
-.roster-statement-box {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    padding: 25px;
-    margin-top: 30px;
-    border-left: 2px solid var(--accent-gold);
+/* CONFIDENTIAL INQUIRY TERMINAL */
+.salon-terminal {
+    margin-top: 160px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--salon-panel);
+    border: 1px solid var(--salon-border);
+    padding: 60px;
 }
 
-.roster-title {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 10px;
+.terminal-header {
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-.roster-statement-box p {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 0;
-    line-height: 1.6;
+.terminal-header h3 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-top: 10px;
 }
 
-.status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    padding: 10px 16px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
+.terminal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.status-dot {
-    width: 6px;
-    height: 6px;
-    background-color: #22c55e;
-    border-radius: 50%;
-}
-
-/* CONTACT SECTION & FORM */
-.contact-section {
-    margin-bottom: 60px;
-    padding-top: 40px;
-}
-
-.contact-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    padding: 40px;
-    margin-top: 30px;
-}
-
-.contact-intro {
-    font-size: 15px;
-    color: var(--text-muted);
-    margin-bottom: 30px;
-}
-
-.form-row {
+.form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 24px;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.input-field-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.form-group label {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    background: var(--bg-primary);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-primary);
-    padding: 14px;
-    font-family: inherit;
-    font-size: 15px;
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: var(--accent-gold);
-}
-
-.submit-btn {
-    background: var(--text-primary);
-    color: var(--bg-primary);
-    border: none;
-    padding: 14px 28px;
-    font-size: 11px;
+.input-field-group label {
+    font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    font-weight: 600;
+    color: var(--salon-muted);
+}
+
+.input-field-group input,
+.input-field-group select,
+.input-field-group textarea {
+    background: var(--salon-bg);
+    border: 1px solid var(--salon-border);
+    color: var(--salon-text);
+    padding: 16px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field-group input:focus,
+.input-field-group select:focus,
+.input-field-group textarea:focus {
+    border-color: var(--salon-gold);
+}
+
+.transmit-btn {
+    background: var(--salon-text);
+    color: var(--salon-bg);
+    border: none;
+    padding: 18px;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.3s ease;
     margin-top: 10px;
 }
 
-.submit-btn:hover {
-    background: var(--accent-gold);
+.transmit-btn:hover {
+    background: var(--salon-gold);
 }
 
-.form-success-msg {
-    padding: 20px;
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid #22c55e;
-    color: #4ade80;
+.transmission-success {
+    padding: 30px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--salon-gold);
+    color: var(--salon-gold);
+    text-align: center;
     font-size: 14px;
     letter-spacing: 0.05em;
-    text-align: center;
 }
 
-/* LIGHTBOX MODAL STYLING */
-.lightbox-overlay {
+/* LIGHTBOX VIEWER */
+.salon-lightbox {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(5, 5, 5, 0.96);
     z-index: 9999;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 50px;
 }
 
-.lightbox-content {
+.lightbox-inner {
     position: relative;
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
+    background: var(--salon-panel);
+    border: 1px solid var(--salon-border);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
-.lightbox-content img {
+.lightbox-inner img {
     width: 100%;
-    max-height: 70vh;
+    max-height: 72vh;
     object-fit: contain;
     background: #000;
 }
 
-.lightbox-close {
+.lightbox-exit {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(0,0,0,0.7);
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
     color: #fff;
-    border: 1px solid var(--border-subtle);
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
+    border: 1px solid var(--salon-border);
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
     cursor: pointer;
-    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
-.lightbox-caption {
-    padding: 25px;
+.lightbox-info {
+    padding: 30px;
+    border-top: 1px solid var(--salon-border);
     display: flex;
     flex-direction: column;
     gap: 6px;
-    border-top: 1px solid var(--border-subtle);
-}
-
-.lb-artist {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-primary);
-}
-
-.lb-title {
-    font-size: 16px;
-    color: var(--text-primary);
-}
-
-.lb-credit {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-top: 8px;
 }
 
 /* FOOTER */
-footer {
-    margin-top: 100px;
-    padding-top: 30px;
-    border-top: 1px solid var(--border-subtle);
+.salon-footer {
+    margin-top: 160px;
+    padding-top: 40px;
+    border-top: 1px solid var(--salon-border);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     font-size: 11px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--salon-muted);
 }
 
-footer a {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-    cursor: pointer;
-}
-
-footer a:hover {
-    opacity: 0.7;
-}
-
-/* RESPONSIVE MEDIA QUERIES */
-@media (max-width: 768px) {
-    .site-wrapper {
-        padding: 20px 20px 60px 20px;
-    }
-    .mandate-grid,
-    .form-row {
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .salon-threshold,
+    .salon-exhibit-row,
+    .salon-exhibit-row.reverse,
+    .salon-sanctuary,
+    .form-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 40px;
     }
-    .corpus-grid {
-        grid-template-columns: 1fr;
+    .salon-exhibit-row.reverse .exhibit-visual {
+        order: 1;
     }
-    .site-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .salon-exhibit-row.reverse .exhibit-tombstone {
+        order: 2;
     }
-    .hero-banner-wrap {
-        height: 350px;
+    .salon-wrapper {
+        padding: 30px 20px 80px 20px;
     }
 }
