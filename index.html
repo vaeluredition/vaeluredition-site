@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaeluredition — Private Salon & Edition of Two Masterworks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="site-wrapper" id="app">
+        
+        <!-- GLOBAL SALON HEADER -->
+        <header class="site-header">
+            <div class="brand-cluster">
+                <a href="#" onclick="showHome()" class="brand-link">Vaeluredition</a>
+                <span class="location-tag">Private Salon / Edition of 2</span>
+            </div>
+            <nav class="header-nav">
+                <a href="#vault" onclick="showHome(); scrollToSection('vault');" class="nav-trigger">The Vault</a>
+                <a href="#philosophy" onclick="showHome(); scrollToSection('philosophy');" class="nav-trigger">Philosophy</a>
+                <a href="#inquiry" onclick="showHome(); scrollToSection('inquiry');" class="nav-cta">Inquire Desk</a>
+            </nav>
+        </header>
+
+        <!-- HOME VIEW: HERO & VAULT REGISTRY -->
+        <div class="home-view">
+            
+            <!-- CINEMATIC LANDING HERO -->
+            <section class="hero-section">
+                <div class="hero-banner-wrap" onclick="openLightbox('hero-canvas.jpg', 'Hendrick ter Brugghen (1588–1629)', '<em>Roman Charity</em>, 1622', 'Wraysman Fund, 2020 / The Metropolitan Museum of Art — Open Access (CC0)')">
+                    <img src="hero-canvas.jpg" alt="Hendrick ter Brugghen — Roman Charity" class="hero-canvas-img">
+                    <div class="hero-canvas-overlay">
+                        <span class="zoom-indicator">Inspect Threshold Canvas ↗</span>
+                    </div>
+                </div>
+                <div class="hero-text-block" style="margin-top: 40px;">
+                    <span class="section-kicker">Absolute Scarcity Protocol</span>
+                    <h1 class="hero-title">An Elite Private Salon. <span class="italic-serif">Edition of Two.</span></h1>
+                    <p class="hero-subtitle">Operating entirely outside public auction theater and commercial retail noise. Fifteen curated masterworks, each permanently restricted to an uncompromising global edition of two.</p>
+                </div>
+            </section>
+
+            <!-- THE VAULT: 15 CURATED MASTERWORKS REGISTRY -->
+            <section class="corpus-registry-section" id="vault">
+                <div class="section-header-row">
+                    <span class="section-kicker">The Permanent Vault</span>
+                    <h2>Curated Masterworks & Archival Benchmarks</h2>
+                    <p class="section-explanatory-note">Each corpus is represented under rigorous structural equity and protected by strict Edition of 2 scarcity mandates.</p>
+                </div>
+
+                <div class="corpus-grid">
+                    
+                    <!-- 1. Goya -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('goya.jpg', 'Francisco de Goya (1746–1828)', 'Little Bulls\' Folly & Devout Profession', 'Open Access / Public Domain (CC0)')">
+                            <img src="goya.jpg" alt="Francisco de Goya Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Francisco de Goya (1746–1828)</span>
+                            <span class="tombstone-title"><em>Little Bulls' Folly & Devout Profession</em></span>
+                            <span class="tombstone-date">ca. 1799–1819</span>
+                            <span class="tombstone-medium">Etching, aquatint, drypoint suites</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Turner -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('turner.jpg', 'Joseph Mallord William Turner (1775–1851)', 'Saltash & Venice Studies', 'Open Access / Public Domain (CC0)')">
+                            <img src="turner.jpg" alt="J.M.W. Turner Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Joseph Mallord William Turner (1775–1851)</span>
+                            <span class="tombstone-title"><em>Saltash & Venice Lagoon Studies</em></span>
+                            <span class="tombstone-date">1811–1835</span>
+                            <span class="tombstone-medium">Oil on canvas</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Degas -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('degas.jpg', 'Edgar Degas (1834–1917)', 'Woman Having Her Hair Combed & The Dance Class', 'Open Access / Public Domain (CC0)')">
+                            <img src="degas.jpg" alt="Edgar Degas Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Edgar Degas (1834–1917)</span>
+                            <span class="tombstone-title"><em>Woman Combed & The Dance Class</em></span>
+                            <span class="tombstone-date">1874–1888</span>
+                            <span class="tombstone-medium">Pastel on paper & Oil on canvas</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Redon -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('redon.jpg', 'Odilon Redon (1840–1916)', 'Eyes Closed & Pegasus and Bellerophon', 'Open Access / Public Domain (CC0)')">
+                            <img src="redon.jpg" alt="Odilon Redon Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Odilon Redon (1840–1916)</span>
+                            <span class="tombstone-title"><em>Eyes Closed & Pegasus Corpus</em></span>
+                            <span class="tombstone-date">ca. 1888–1890</span>
+                            <span class="tombstone-medium">Lithograph & Charcoal/Wash on paper</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Blake -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('blake.jpg', 'William Blake (1757–1827)', 'The Angel Appearing to Zacharias & Pity', 'Open Access / Public Domain (CC0)')">
+                            <img src="blake.jpg" alt="William Blake Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">William Blake (1757–1827)</span>
+                            <span class="tombstone-title"><em>Zacharias & Pity (Shakespearean Suite)</em></span>
+                            <span class="tombstone-date">ca. 1795–1800</span>
+                            <span class="tombstone-medium">Tempera, ink, and color relief etching</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Rembrandt -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('rembrandt.jpg', 'Rembrandt van Rijn (1606–1669)', 'Woman Making Water & Woman by a Stove', 'Open Access / Public Domain (CC0)')">
+                            <img src="rembrandt.jpg" alt="Rembrandt van Rijn Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Rembrandt van Rijn (1606–1669)</span>
+                            <span class="tombstone-title"><em>Domestic Studies & Drypoint Masterworks</em></span>
+                            <span class="tombstone-date">1658–Late 18th C.</span>
+                            <span class="tombstone-medium">Etching and drypoint impressions</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Dürer -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('durer.jpg', 'Albrecht Dürer (1471–1528)', 'Virgin and Child with Saint Anne & Salvator Mundi', 'Open Access / Public Domain (CC0)')">
+                            <img src="durer.jpg" alt="Albrecht Dürer Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Albrecht Dürer (1471–1528)</span>
+                            <span class="tombstone-title"><em>Saint Anne & Salvator Mundi Panels</em></span>
+                            <span class="tombstone-date">ca. 1505–1519</span>
+                            <span class="tombstone-medium">Oil on linden panel</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 8. Doré -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('dore.jpg', 'Gustave Doré (1832–1883)', 'Don Quixote Entertainment & Baden-Baden Study', 'Open Access / Public Domain (CC0)')">
+                            <img src="dore.jpg" alt="Gustave Doré Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Gustave Doré (1832–1883)</span>
+                            <span class="tombstone-title"><em>Don Quixote & Baden-Baden Studies</em></span>
+                            <span class="tombstone-date">1862–1863</span>
+                            <span class="tombstone-medium">Oil on canvas & Mixed media on paper</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 9. Piranesi -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('piranesi.jpg', 'Giovanni Battista Piranesi (1720–1778)', 'Blackfriars Bridge & Diverse Maniere', 'Open Access / Public Domain (CC0)')">
+                            <img src="piranesi.jpg" alt="Giovanni Battista Piranesi Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Giovanni Battista Piranesi (1720–1778)</span>
+                            <span class="tombstone-title"><em>Architectural Views & Decorative Plates</em></span>
+                            <span class="tombstone-date">ca. 1764–1769</span>
+                            <span class="tombstone-medium">Etching plates and folio albums</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 10. Géricault -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('gericault.jpg', 'Théodore Géricault (1791–1824)', 'Landscape with Aqueduct & Horsewoman', 'Open Access / Public Domain (CC0)')">
+                            <img src="gericault.jpg" alt="Théodore Géricault Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Théodore Géricault (1791–1824)</span>
+                            <span class="tombstone-title"><em>Aqueduct Landscape & Horsewoman</em></span>
+                            <span class="tombstone-date">1818–1820</span>
+                            <span class="tombstone-medium">Oil on canvas</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 11. Daumier -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('daumier.jpg', 'Honoré Daumier (1808–1879)', 'The Laundress & The Drinkers', 'Open Access / Public Domain (CC0)')">
+                            <img src="daumier.jpg" alt="Honoré Daumier Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Honoré Daumier (1808–1879)</span>
+                            <span class="tombstone-title"><em>The Laundress & The Drinkers</em></span>
+                            <span class="tombstone-date">by 1861–1863</span>
+                            <span class="tombstone-medium">Oil on wood panel</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 12. Millet -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('millet.jpg', 'Jean-François Millet (1814–1875)', 'Retreat from the Storm & Haystacks: Autumn', 'Open Access / Public Domain (CC0)')">
+                            <img src="millet.jpg" alt="Jean-François Millet Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Jean-François Millet (1814–1875)</span>
+                            <span class="tombstone-title"><em>Retreat from Storm & Autumn Haystacks</em></span>
+                            <span class="tombstone-date">ca. 1846–1874</span>
+                            <span class="tombstone-medium">Oil on canvas</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 13. Whistler -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('whistler.jpg', 'James McNeill Whistler (1834–1903)', 'Dieppe Market Place & Bibi Valentin', 'Open Access / Public Domain (CC0)')">
+                            <img src="whistler.jpg" alt="James McNeill Whistler Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">James McNeill Whistler (1834–1903)</span>
+                            <span class="tombstone-title"><em>Dieppe Watercolor & Bibi Valentin Etching</em></span>
+                            <span class="tombstone-date">1859–1885</span>
+                            <span class="tombstone-medium">Watercolor/Gouache & Drypoint</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 14. Chassériau -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('chasseriau.jpg', 'Théodore Chassériau (1819–1856)', 'Desdemona & Comtesse de La Tour-Maubourg', 'Open Access / Public Domain (CC0)')">
+                            <img src="chasseriau.jpg" alt="Théodore Chassériau Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Théodore Chassériau (1819–1856)</span>
+                            <span class="tombstone-title"><em>Desdemona & Comtesse Portrait</em></span>
+                            <span class="tombstone-date">1841–1849</span>
+                            <span class="tombstone-medium">Oil on wood & Oil on canvas</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 15. Holbein -->
+                    <div class="corpus-card">
+                        <div class="corpus-img-wrap" onclick="openLightbox('holbein.jpg', 'Hans Holbein the Younger (1497/98–1543)', 'Benedikt von Hertenstein & Derick Berck', 'Open Access / Public Domain (CC0)')">
+                            <img src="holbein.jpg" alt="Hans Holbein Works">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Hans Holbein the Younger (1497/98–1543)</span>
+                            <span class="tombstone-title"><em>Hertenstein & Berck Civic Portrayals</em></span>
+                            <span class="tombstone-date">1517–1536</span>
+                            <span class="tombstone-medium">Oil and gold on paper / panel</span>
+                            <span class="tombstone-credit">Edition of 2 // Secured Registry</span>
+                        </div>
+                    </div>
+
+                    <!-- 16. Hesham Malik (Foundational Anchor) -->
+                    <div class="corpus-card" style="border-color: var(--accent-gold);">
+                        <div class="corpus-img-wrap" onclick="openLightbox('hesham.jpg', 'Hesham Malik (born 20th century)', 'CAT & Elizabeth of Russia', 'Private Collection / Documented Acquisition')">
+                            <img src="hesham.jpg" alt="Hesham Malik Masterworks">
+                            <span class="zoom-indicator">Inspect Masterwork ↗</span>
+                        </div>
+                        <div class="corpus-tombstone">
+                            <span class="tombstone-artist">Hesham Malik (born 20th century)</span>
+                            <span class="tombstone-title"><em>CAT & Elizabeth of Russia</em></span>
+                            <span class="tombstone-date">1999</span>
+                            <span class="tombstone-medium">Oil on canvas</span>
+                            <span class="tombstone-credit">Edition of 2 // Foundational Anchor</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- PHILOSOPHY / ABOUT SECTION -->
+            <section class="mandate-grid" id="philosophy">
+                <div class="mandate-col">
+                    <span class="section-kicker">Absolute Scarcity</span>
+                    <h3>The Philosophy of the Vault</h3>
+                </div>
+                <div class="mandate-col">
+                    <p><em>Vaeluredition</em> exists outside the theater of public auction houses and transient commercial galleries. We operate on a singular, unyielding principle: true cultural weight cannot be mass-produced, discounted, or circulated through retail pipelines.</p>
+                    <p>Every masterwork curated within this private salon is restricted to an uncompromising <strong>Edition of 2</strong>. This strict scarcity model ensures that each acquisition functions not as portable inventory, but as a sovereign store of value and historical permanence.</p>
+                    
+                    <div class="roster-statement-box">
+                        <span class="roster-title">Private Principal Protocol</span>
+                        <p>Due to absolute privacy mandates and strict non-disclosure frameworks, principal transactions and registry allocations remain strictly confidential.</p>
+                    </div>
+
+                    <div class="status-pill" style="margin-top: 20px;">
+                        <span class="status-dot"></span>
+                        Allocation inquiries evaluated by confidential appointment.
+                    </div>
+                </div>
+            </section>
+
+            <!-- DIRECT INQUIRY DESK -->
+            <section class="contact-section" id="inquiry">
+                <div class="section-header-row">
+                    <span class="section-kicker">Confidential Channel</span>
+                    <h2>Direct Inquiry Desk</h2>
+                </div>
+                <div class="contact-card">
+                    <p class="contact-intro">Submit a secure allocation inquiry regarding the remaining availability within the strict Edition of 2 limit.</p>
+                    <form class="inquiry-form" onsubmit="handleInquiry(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="principal-name">Principal / Representative Name</label>
+                                <input type="text" id="principal-name" required placeholder="Full Name or Entity">
+                            </div>
+                            <div class="form-group">
+                                <label for="principal-email">Secure Email Address</label>
+                                <input type="email" id="principal-email" required placeholder="name@domain.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mandate-type">Corpus Allocation Request</label>
+                            <select id="mandate-type">
+                                <option value="edition-allocation">Edition of 2 Allocation Inquiry</option>
+                                <option value="archival-advisory">Archival & Sovereign Portfolio Consultation</option>
+                                <option value="private-appointment">Confidential Salon Viewing Appointment</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mandate-message">Inquiry Parameters</label>
+                            <textarea id="mandate-message" rows="4" required placeholder="Outline the parameters of your inquiry..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Transmit Secure Inquiry →</button>
+                    </form>
+                    <div id="form-success" class="form-success-msg" style="display:none;">
+                        Transmission received. Your inquiry has been securely routed to the private desk.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- GLOBAL SALON FOOTER -->
+        <footer>
+            <div class="footer-left">
+                <span>&copy; 2026 Vaeluredition. All rights reserved. Edition of 2.</span>
+            </div>
+            <div class="footer-right">
+                <a href="#inquiry" onclick="showHome(); scrollToSection('inquiry');">Direct Desk</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- LIGHTBOX MODAL CONTAINER -->
+    <div id="corpusLightbox" class="lightbox-overlay" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <img id="lightboxImg" src="" alt="Enlarged Masterwork">
+            <div class="lightbox-caption">
+                <span id="lightboxArtist" class="lb-artist"></span>
+                <span id="lightboxTitle" class="lb-title"></span>
+                <span id="lightboxCredit" class="lb-credit"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTION & ROUTING SCRIPT -->
+    <script>
+        function showHome() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            location.hash = '';
+        }
+
+        function scrollToSection(sectionId) {
+            const el = document.getElementById(sectionId);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function openLightbox(imgSrc, artistText, titleText, creditText) {
+            const lightbox = document.getElementById('corpusLightbox');
+            document.getElementById('lightboxImg').src = imgSrc;
+            document.getElementById('lightboxArtist').innerText = artistText;
+            document.getElementById('lightboxTitle').innerHTML = titleText;
+            document.getElementById('lightboxCredit').innerText = creditText;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('corpusLightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleInquiry(event) {
+            event.preventDefault();
+            document.querySelector('.inquiry-form').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
