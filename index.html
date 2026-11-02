@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAELUR EDITION — Sovereign Acquisition Desk</title>
+    <title>VAELURE EDITION — Fine Art Print Bureau</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #070707;
-            --surface: #111111;
-            --surface-hover: #181818;
-            --border: #222222;
-            --border-active: #444444;
-            --text-main: #f0f0f0;
-            --text-muted: #777777;
-            --accent: #d4af37; /* Restrained Sovereign Gold */
+            --bg: #0c0b0a;
+            --panel: #161412;
+            --card-bg: #1d1a17;
+            --border: #383028;
+            --border-hover: #c29b68;
+            --text-main: #f5f2eb;
+            --text-muted: #9e9588;
+            /* Radiant Metallic Gold Palette */
+            --gold-light: #f3e5ab;
+            --gold-main: #d4af37;
+            --gold-dark: #aa7c11;
         }
 
         * {
@@ -28,546 +31,518 @@
         body {
             background-color: var(--bg);
             color: var(--text-main);
-            font-family: 'Space Mono', monospace;
-            font-size: 13px;
-            line-height: 1.6;
-            letter-spacing: -0.01em;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
         }
 
-        .vault-container {
+        .atelier-shell {
             max-width: 1400px;
             margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 40px;
+            padding: 60px 50px 140px 50px;
         }
 
-        /* HEADER */
+        /* MAJESTIC GOLD BRAND HEADER */
         header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 24px;
-            margin-bottom: 60px;
+            padding-bottom: 35px;
+            margin-bottom: 80px;
         }
 
-        .sys-id {
-            color: var(--text-muted);
-            font-size: 11px;
-            letter-spacing: 0.15em;
-        }
-
-        .sys-title {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-        }
-
-        /* MAIN SPLIT LAYOUT */
-        .workspace {
-            display: grid;
-            grid-template-columns: 380px 1fr;
-            gap: 60px;
-            align-items: start;
-            flex-grow: 1;
-        }
-
-        /* LEFT PANEL: INDEX & DISPATCH */
-        .control-panel {
+        .brand-block {
             display: flex;
             flex-direction: column;
+            gap: 6px;
+        }
+
+        .brand-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            /* Radiant Gold Gradient */
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.2));
+        }
+
+        .brand-subtitle {
+            font-size: 10px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .header-nav {
+            display: flex;
             gap: 40px;
         }
 
-        .manifesto-block p {
+        .nav-link {
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
             color: var(--text-muted);
-            font-size: 12px;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
-        .manifesto-block p em {
-            font-family: 'Instrument Serif', serif;
-            font-style: italic;
-            font-size: 16px;
-            color: var(--text-main);
-        }
-
-        .index-list {
-            display: flex;
-            flex-direction: column;
-            border-top: 1px solid var(--border);
-        }
-
-        .index-item {
-            padding: 14px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-decoration: none;
+            transition: color 0.3s ease;
             cursor: pointer;
-            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-main);
+        }
+
+        /* HERO SALON INTRODUCTION */
+        .salon-hero {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 140px;
+        }
+
+        .hero-copy h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(42px, 4.5vw, 64px);
+            font-weight: 300;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .hero-copy h1 em {
+            font-style: italic;
+            color: var(--gold-main);
+        }
+
+        .hero-copy p {
+            font-size: 17px;
             color: var(--text-muted);
-            background: transparent;
-            border-left: none;
-            width: 100%;
-            text-align: left;
-            font-family: inherit;
-            font-size: 12px;
+            line-height: 1.8;
         }
 
-        .index-item:hover, .index-item.active {
-            color: var(--text-main);
-        }
-
-        .index-item.active {
-            border-left: 2px solid var(--accent);
-            padding-left: 12px;
-        }
-
-        /* RIGHT PANEL: VAULT STAGE */
-        .vault-stage {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            position: sticky;
-            top: 40px;
-        }
-
-        .stage-viewport {
+        .hero-featured-frame {
             width: 100%;
             height: 500px;
-            background: #000;
+            background: var(--panel);
             border: 1px solid var(--border);
             position: relative;
             overflow: hidden;
-            cursor: zoom-in;
+            cursor: pointer;
         }
 
-        .stage-viewport img {
+        .hero-featured-frame img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            filter: contrast(1.1) brightness(0.95);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .stage-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
+        .hero-featured-frame:hover img {
+            transform: scale(1.03);
         }
 
-        .artifact-data h2 {
-            font-family: 'Instrument Serif', serif;
-            font-size: 28px;
-            font-weight: 400;
-            letter-spacing: 0.02em;
-            margin-bottom: 6px;
-            color: var(--text-main);
+        /* ALPHABETICAL PRINT REGISTRY GRID */
+        .registry-section {
+            margin-bottom: 160px;
         }
 
-        .artifact-data p {
-            font-size: 11px;
+        .registry-header {
+            margin-bottom: 50px;
+            border-left: 2px solid var(--gold-main);
+            padding-left: 20px;
+        }
+
+        .registry-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        .registry-header p {
+            font-size: 14px;
             color: var(--text-muted);
-            letter-spacing: 0.05em;
         }
 
-        .action-trigger {
-            background: transparent;
-            border: 1px solid var(--border-active);
+        .prints-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .print-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.4s ease, transform 0.4s ease;
+        }
+
+        .print-card:hover {
+            border-color: var(--gold-main);
+            transform: translateY(-4px);
+        }
+
+        .print-visual {
+            width: 100%;
+            height: 360px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .print-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.1) brightness(0.95);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .print-visual:hover img {
+            transform: scale(1.03);
+        }
+
+        .inspect-badge {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(12, 11, 10, 0.85);
+            border: 1px solid var(--border);
             color: var(--text-main);
-            padding: 12px 20px;
-            font-family: inherit;
+            padding: 6px 14px;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .print-details {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-grow: 1;
+        }
+
+        .artist-name {
             font-size: 11px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.2s ease;
+            color: var(--text-muted);
         }
 
-        .action-trigger:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+        .print-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-style: italic;
+            line-height: 1.25;
+            color: var(--text-main);
         }
 
-        /* SECURE ACQUISITION DRAWER (MODAL/FORM) */
-        .drawer-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.85);
-            z-index: 999;
-            justify-content: center;
-            align-items: center;
+        .print-spec {
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        .drawer-box {
-            background: var(--surface);
-            border: 1px solid var(--border-active);
-            width: 600px;
-            padding: 50px;
+        .edition-tag {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold-main);
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px dashed var(--border);
+        }
+
+        /* SECURE ACQUISITION DESK (PRINTS INQUIRY) */
+        .desk-section {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            padding: 70px;
+        }
+
+        .desk-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .desk-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            font-weight: 300;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        .desk-form {
             display: flex;
             flex-direction: column;
             gap: 24px;
-            position: relative;
         }
 
-        .drawer-box h3 {
-            font-size: 14px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
         }
 
-        .form-field {
+        .input-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
-        .form-field label {
+        .input-group label {
             font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
             color: var(--text-muted);
-            letter-spacing: 0.15em;
         }
 
-        .form-field input, .form-field textarea {
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--text-main);
-            padding: 14px;
+            padding: 16px;
             font-family: inherit;
-            font-size: 12px;
+            font-size: 14px;
             outline: none;
+            transition: border-color 0.3s ease;
         }
 
-        .form-field input:focus, .form-field textarea:focus {
-            border-color: var(--accent);
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-color: var(--gold-main);
         }
 
-        .submit-wire {
+        .submit-wire-btn {
             background: var(--text-main);
             color: var(--bg);
             border: none;
-            padding: 16px;
-            font-family: inherit;
-            font-weight: 700;
+            padding: 18px;
             font-size: 11px;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
+            font-weight: 500;
             cursor: pointer;
+            transition: background 0.3s ease;
             margin-top: 10px;
         }
 
-        .submit-wire:hover {
-            background: var(--accent);
+        .submit-wire-btn:hover {
+            background: var(--gold-main);
         }
 
-        .close-drawer {
+        .success-banner {
+            padding: 30px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold-main);
+            color: var(--gold-light);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* LIGHTBOX VIEWER */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(12, 11, 10, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .lightbox-window {
+            position: relative;
+            max-width: 1050px;
+            width: 100%;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lightbox-window img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .lightbox-close {
             position: absolute;
             top: 20px; right: 20px;
-            background: none; border: none;
-            color: var(--text-muted);
-            font-size: 18px; cursor: pointer;
+            background: var(--bg);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            width: 42px; height: 42px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .lightbox-data {
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
         /* FOOTER */
         footer {
-            margin-top: 80px;
+            margin-top: 160px;
+            padding-top: 40px;
             border-top: 1px solid var(--border);
-            padding-top: 24px;
             display: flex;
             justify-content: space-between;
-            color: var(--text-muted);
             font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
         }
 
         /* RESPONSIVE */
-        @media(max-width: 900px) {
-            .workspace { grid-template-columns: 1fr; }
-            .vault-stage { position: relative; top: 0; }
+        @media (max-width: 1024px) {
+            .prints-grid { grid-template-columns: repeat(2, 1fr); }
+            .salon-hero { grid-template-columns: 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            .prints-grid, .form-row { grid-template-columns: 1fr; }
+            .atelier-shell { padding: 30px 20px 80px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="vault-container">
+    <div class="atelier-shell">
         
         <!-- HEADER -->
         <header>
-            <div class="sys-id">REF // V-8849-DX</div>
-            <div class="sys-title">Vaeluredition — Private Acquisition Desk</div>
-            <button class="action-trigger" onclick="toggleDrawer(true)">Initiate Inquiry</button>
+            <div class="brand-block">
+                <a href="#" class="brand-title">Vaelure Edition</a>
+                <span class="brand-subtitle">Fine Art Print Bureau & Curated Registry</span>
+            </div>
+            <nav class="header-nav">
+                <a href="#registry" class="nav-link">The Registry</a>
+                <a href="#desk" class="nav-link">Acquisition Desk</a>
+            </nav>
         </header>
 
-        <!-- WORKSPACE -->
-        <div class="workspace">
-            
-            <!-- LEFT CONTROL PANEL -->
-            <div class="control-panel">
-                <div class="manifesto-block">
-                    <p>Operating entirely outside public auction houses and retail channels. <em>Sovereign custody</em> of primary anchor allocations and comparative reference corpus.</p>
-                </div>
+        <!-- HERO SALON INTRODUCTION -->
+        <section class="salon-hero">
+            <div class="hero-copy">
+                <span class="brand-subtitle" style="display:block; margin-bottom: 12px;">Curatorial Protocol</span>
+                <h1>Exquisite Fine Art Prints. <em>Uncompromising Editions.</em></h1>
+                <p>Offering authorized limited-edition fine art prints of historical masterwork studies and contemporary compositions. Produced to museum-grade archival standards for discerning collectors worldwide.</p>
+            </div>
+            <div class="hero-featured-frame" onclick="openLightbox('hero-canvas.jpg', 'Hendrick ter Brugghen (1588–1629)', 'Roman Charity, 1622', 'Archival Print Edition')">
+                <img src="hero-canvas.jpg" alt="Hendrick ter Brugghen — Roman Charity">
+                <span class="inspect-badge">Inspect Exhibit ↗</span>
+            </div>
+        </section>
 
-                <div class="index-list" id="indexList">
-                    <!-- Dynamic index populated via JS -->
-                </div>
+        <!-- ALPHABETICAL PRINT REGISTRY -->
+        <section class="registry-section" id="registry">
+            <div class="registry-header">
+                <span class="brand-subtitle" style="display:block; margin-bottom: 8px;">Alphabetical Index</span>
+                <h2>Curated Masterwork Print Registry</h2>
+                <p>Featuring authorized fine-art reproductions and limited print editions presented in strict alphabetical sequence.</p>
             </div>
 
-            <!-- RIGHT STAGE VIEWER -->
-            <div class="vault-stage">
-                <div class="stage-viewport" onclick="openLightbox()">
-                    <img id="activeImg" src="" alt="Active Exhibit">
-                </div>
-                <div class="stage-meta">
-                    <div class="artifact-data">
-                        <p id="activeArtist" style="margin-bottom: 4px; color: var(--accent);"></p>
-                        <h2 id="activeTitle"></h2>
-                        <p id="activeSpecs"></p>
+            <div class="prints-grid">
+
+                <!-- 1. After Rembrandt -->
+                <article class="print-card" onclick="openLightbox('rembrandt.jpg', 'After Rembrandt & Baron Dominique Vivant Denon', 'A Woman Making Water', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="rembrandt.jpg" alt="Rembrandt and Denon">
+                        <span class="inspect-badge">Inspect ↗</span>
                     </div>
-                    <button class="action-trigger" onclick="toggleDrawer(true)">Request Allocation</button>
-                </div>
-            </div>
+                    <div class="print-details">
+                        <span class="artist-name">After Rembrandt & Baron Dominique Vivant Denon</span>
+                        <h3 class="print-title">A Woman Making Water</h3>
+                        <p class="print-spec">Etching &bull; Archival Fine Art Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
 
-        </div>
+                <!-- 2. Albrecht Dürer -->
+                <article class="print-card" onclick="openLightbox('durer.jpg', 'Albrecht Dürer (1471–1528)', 'Salvator Mundi', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="durer.jpg" alt="Albrecht Dürer" style="object-position: center 20%;">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Albrecht Dürer</span>
+                        <h3 class="print-title">Salvator Mundi</h3>
+                        <p class="print-spec">Oil on linden study &bull; Archival Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
 
-        <!-- FOOTER -->
-        <footer>
-            <span>&copy; 2026 Vaeluredition. Strict Confidentiality.</span>
-            <span>SECURE PROTOCOL // ENCRYPTED</span>
-        </footer>
+                <!-- 3. Edgar Degas -->
+                <article class="print-card" onclick="openLightbox('degas.jpg', 'Edgar Degas (1834–1917)', 'The Dance Class', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="degas.jpg" alt="Edgar Degas">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Edgar Degas</span>
+                        <h3 class="print-title">The Dance Class</h3>
+                        <p class="print-spec">Oil on canvas &bull; Archival Fine Art Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
 
-    </div>
+                <!-- 4. Francisco de Goya -->
+                <article class="print-card" onclick="openLightbox('goya.jpg', 'Francisco de Goya y Lucientes (1746–1828)', 'Los desastres de la guerra: Plate 9, No quieren', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="goya.jpg" alt="Francisco de Goya">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Francisco de Goya y Lucientes</span>
+                        <h3 class="print-title">Los desastres de la guerra: Plate 9, No quieren</h3>
+                        <p class="print-spec">Etching and drypoint &bull; Archival Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
 
-    <!-- ACQUISITION DRAWER MODAL -->
-    <div class="drawer-overlay" id="inquiryDrawer">
-        <div class="drawer-box">
-            <button class="close-drawer" onclick="toggleDrawer(false)">×</button>
-            <h3>Secure Acquisition Dispatch</h3>
-            <p style="font-size: 11px; color: var(--text-muted);">All transmissions are reviewed under strict legal privilege for authorized principals.</p>
-            <form onsubmit="handleDispatch(event)">
-                <div class="form-field" style="margin-bottom: 16px;">
-                    <label>PRINCIPAL / ENTITY IDENTIFIER</label>
-                    <input type="text" required placeholder="Authorized Name or Institution">
-                </div>
-                <div class="form-field" style="margin-bottom: 16px;">
-                    <label>SECURED COMMS CHANNEL</label>
-                    <input type="email" required placeholder="name@domain.com">
-                </div>
-                <div class="form-field" style="margin-bottom: 20px;">
-                    <label>MANDATE PARAMETERS</label>
-                    <textarea rows="3" required placeholder="State allocation parameters..."></textarea>
-                </div>
-                <button type="submit" class="submit-wire">Transmit Secure Wire ↗</button>
-            </form>
-            <div id="dispatchSuccess" style="display:none; color: var(--accent); font-size: 11px; text-align: center; padding: 20px;">
-                [ TRANSMISSION SECURED ] — Routed to private desk.
-            </div>
-        </div>
-    </div>
+                <!-- 5. Giovanni Battista Piranesi -->
+                <article class="print-card" onclick="openLightbox('piranesi.jpg', 'Giovanni Battista Piranesi (1720–1778)', 'Diverse Ways of Ornamenting Chimneypieces', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="piranesi.jpg" alt="Giovanni Battista Piranesi">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Giovanni Battista Piranesi</span>
+                        <h3 class="print-title">Diverse Ways of Ornamenting Chimneypieces</h3>
+                        <p class="print-spec">Etching &bull; Archival Fine Art Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
 
-    <!-- ENGINE SCRIPT -->
-    <script>
-        const corpus = [
-            {
-                id: "anchor-01",
-                num: "ANCHOR // 01",
-                artist: "Hesham Malik (New York, London, Prague)",
-                title: "Elizabeth of Russia",
-                specs: "Oil on canvas &bull; Circa 1999 &bull; Sole Authorized Primary Issue",
-                src: "hesham.jpg",
-                tag: "PRIMARY ANCHOR CORPUS"
-            },
-            {
-                id: "ref-01",
-                num: "REF // 01",
-                artist: "Francisco de Goya y Lucientes (1746–1828)",
-                title: "Los desastres de la guerra: Plate 9, No quieren",
-                specs: "Etching, lavis, drypoint, and burin &bull; 1810–20",
-                src: "goya.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-02",
-                num: "REF // 02",
-                artist: "Joseph Mallord William Turner (1775–1851)",
-                title: "Saltash with the Water Ferry, Cornwall",
-                specs: "Oil on canvas &bull; 1811",
-                src: "turner.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-03",
-                num: "REF // 03",
-                artist: "Edgar Degas (1834–1917)",
-                title: "The Dance Class",
-                specs: "Oil on canvas &bull; 1874",
-                src: "degas.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-04",
-                num: "REF // 04",
-                artist: "Odilon Redon (1840–1916)",
-                title: "Eyes Closed",
-                specs: "Lithograph &bull; 1890",
-                src: "redon.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-05",
-                num: "REF // 05",
-                artist: "William Blake (1757–1827)",
-                title: "Pity",
-                specs: "Relief etching with watercolor &bull; ca. 1795",
-                src: "blake.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-06",
-                num: "REF // 06",
-                artist: "After Rembrandt & Baron Dominique Vivant Denon",
-                title: "A Woman Making Water",
-                specs: "Etching &bull; late 18th/early 19th c.",
-                src: "rembrandt.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-07",
-                num: "REF // 07",
-                artist: "Albrecht Dürer (1471–1528)",
-                title: "Salvator Mundi",
-                specs: "Oil on linden &bull; ca. 1505",
-                src: "durer.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-08",
-                num: "REF // 08",
-                artist: "Gustave Doré (1832–1883)",
-                title: "Don Quixote and Sancho Panza Entertained",
-                specs: "Oil on canvas &bull; 1863",
-                src: "dore.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-09",
-                num: "REF // 09",
-                artist: "Giovanni Battista Piranesi (1720–1778)",
-                title: "Diverse Ways of Ornamenting Chimneypieces",
-                specs: "Etching &bull; 1769",
-                src: "piranesi.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-10",
-                num: "REF // 10",
-                artist: "Théodore Géricault (1791–1824)",
-                title: "Horsewoman",
-                specs: "Oil on canvas &bull; 1820",
-                src: "gericault.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-11",
-                num: "REF // 11",
-                artist: "Honoré Daumier (1808–1879)",
-                title: "The Drinkers",
-                specs: "Oil on wood &bull; by 1861",
-                src: "daumier.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-12",
-                num: "REF // 12",
-                artist: "Jean-François Millet (1814–1875)",
-                title: "Retreat from the Storm",
-                specs: "Oil on canvas &bull; ca. 1846",
-                src: "millet.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-13",
-                num: "REF // 13",
-                artist: "James McNeill Whistler (1834–1903)",
-                title: "Bibi Valentin",
-                specs: "Etching and drypoint &bull; 1859",
-                src: "whistler.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-14",
-                num: "REF // 14",
-                artist: "Théodore Chassériau (1819–1856)",
-                title: "Comtesse de La Tour-Maubourg",
-                specs: "Oil on canvas &bull; 1841",
-                src: "chasseriau.jpg",
-                tag: "Reference Corpus"
-            },
-            {
-                id: "ref-15",
-                num: "REF // 15",
-                artist: "Hans Holbein the Younger (1497/98–1543)",
-                title: "Benedikt von Hertenstein",
-                specs: "Oil and gold on paper on wood &bull; 1517",
-                src: "holbein.jpg",
-                tag: "Reference Corpus"
-            }
-        ];
-
-        let currentIndex = 0;
-
-        function initIndex() {
-            const list = document.getElementById('indexList');
-            list.innerHTML = '';
-            corpus.forEach((item, index) => {
-                const btn = document.createElement('button');
-                btn.className = `index-item ${index === currentIndex ? 'active' : ''}`;
-                btn.innerHTML = `<span>${item.num} — ${item.title.substring(0, 26)}...</span><span>↗</span>`;
-                btn.onclick = () => selectExhibit(index);
-                list.appendChild(btn);
-            });
-            updateStage();
-        }
-
-        function selectExhibit(index) {
-            currentIndex = index;
-            document.querySelectorAll('.index-item').forEach((el, i) => {
-                el.classList.toggle('active', i === index);
-            });
-            updateStage();
-        }
-
-        function updateStage() {
-            const item = corpus[currentIndex];
-            document.getElementById('activeImg').src = item.src;
-            document.getElementById('activeArtist').innerText = item.artist;
-            document.getElementById('activeTitle').innerText = item.title;
-            document.getElementById('activeSpecs').innerHTML = item.specs;
-        }
-
-        function toggleDivider() {}
-
-        function toggleDrawer(show) {
-            document.getElementById('inquiryDrawer').style.display = show ? 'flex' : 'none';
-        }
-
-        function handleDispatch(e) {
-            e.preventDefault();
-            e.target.style.display = 'none';
-            document.getElementById('dispatchSuccess').style.display = 'block';
-        }
-
-        window.onload = initIndex;
-    </script>
-</body>
-</html>
+                <!-- 6. Gustave Doré -->
+                <article class="print-card" onclick="openLightbox('dore.jpg', 'Gustave Doré (1832–1883)', 'Don Quixote and Sancho Panza Entertained', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="d
