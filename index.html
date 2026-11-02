@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaeluredition — Private Salon & Masterwork Corpus</title>
+    <title>Vaeluredition — Private Acquisition Desk & Archive</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
         <header class="salon-header">
             <div class="salon-brand-group">
                 <a href="#" onclick="returnHome()" class="salon-logo">Vaeluredition</a>
-                <span class="salon-mandate-badge">Private Salon / Curated Corpus</span>
+                <span class="salon-mandate-badge">Private Acquisition Desk / Curated Corpus</span>
             </div>
             <nav class="salon-nav">
                 <a href="#corridor" onclick="scrollToId('corridor')" class="salon-nav-link">The Corridor</a>
@@ -32,9 +32,9 @@
                 <img src="hero-canvas.jpg" alt="Hendrick ter Brugghen — Roman Charity">
             </div>
             <div class="threshold-prose">
-                <span class="salon-mandate-badge">Sovereign Curatorial Protocol</span>
-                <h1>A Private Salon. <span class="serif-italics">Uncompromising Studies.</span></h1>
-                <p>Curating fifteen masterwork corpus studies alongside foundational anchor pieces by Hesham Malik. Operating entirely outside public auction theater and commercial retail noise.</p>
+                <span class="salon-mandate-badge">Curatorial Protocol</span>
+                <h1>Private Acquisition Desk. <span class="serif-italics">Uncompromising Studies.</span></h1>
+                <p>Maintaining a private corpus of historical masterwork studies alongside singular, primary-source anchor acquisitions. Operating entirely outside public auction houses and commercial retail channels.</p>
             </div>
         </section>
 
@@ -126,10 +126,10 @@
                 </div>
             </div>
 
-            <!-- 7. Dürer -->
+            <!-- 7. Dürer (Pushed Down via object-position) -->
             <div class="salon-exhibit-row">
                 <div class="exhibit-visual" onclick="openLightbox('durer.jpg', 'Albrecht Dürer (German, Nuremberg 1471–1528 Nuremberg)', 'Salvator Mundi', 'Reference Corpus')">
-                    <img src="durer.jpg" alt="Albrecht Dürer">
+                    <img src="durer.jpg" alt="Albrecht Dürer" style="object-position: center 85%;">
                 </div>
                 <div class="exhibit-tombstone">
                     <span class="exhibit-num">Exhibit No. 07</span>
@@ -254,18 +254,18 @@
 
             <!-- 16. Hesham Malik (Foundational Anchor) -->
             <div class="salon-exhibit-row reverse">
-                <div class="exhibit-visual" onclick="openLightbox('hesham.jpg', 'Hesham Malik', 'Elizabeth of Russia (Created ca. 1999)', 'First Public Unveiling &bull; Sole Authorized Copy Pursuant to Acquisition Contract')">
+                <div class="exhibit-visual" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Prague)', 'Elizabeth of Russia (Created ca. 1999)', 'Primary Anchor Corpus &bull; Sole Authorized Primary Issue')">
                     <img src="hesham.jpg" alt="Hesham Malik Masterwork">
                 </div>
                 <div class="exhibit-tombstone">
-                    <span class="exhibit-num">Foundational Sovereign Anchor</span>
-                    <span class="exhibit-artist">Hesham Malik</span>
+                    <span class="exhibit-num">Primary Anchor</span>
+                    <span class="exhibit-artist">Hesham Malik (New York, London, Prague)</span>
                     <h3 class="exhibit-title">Elizabeth of Russia</h3>
-                    <p class="exhibit-details">Oil on canvas &bull; Created ca. 1999</p>
+                    <p class="exhibit-details">Oil on canvas &bull; Circa 1999</p>
                     <p style="font-size: 13px; color: var(--salon-muted); margin-top: 8px; line-height: 1.6;">
-                        Unseen publicly for nearly 30 years. Pursuant to the governing legal acquisition contract, exactly one authorized copy of the original masterwork is released through this private salon.
+                        Retained in private custody since creation. Pursuant to governing contractual protocols, exactly one authorized primary edition of this masterwork is released through this archive.
                     </p>
-                    <span class="exhibit-edition-tag">Sole Authorized Allocation &bull; Historic Public Premier</span>
+                    <span class="exhibit-edition-tag">Primary Anchor Corpus</span>
                 </div>
             </div>
 
@@ -275,11 +275,11 @@
         <section class="salon-sanctuary" id="sanctuary">
             <div class="sanctuary-heading">
                 <span class="salon-mandate-badge">Curatorial Integrity</span>
-                <h2>The Philosophy of the Private Salon</h2>
+                <h2>The Architecture of the Private Archive</h2>
             </div>
             <div class="sanctuary-body">
                 <p><em>Vaeluredition</em> presents a curated framework bridging historical reference studies with exclusive foundational anchor works.</p>
-                <p>While historical masterworks draw upon open-access institutional archives, our foundational anchor collection by Hesham Malik represents primary, sovereign physical masterworks strictly limited in edition.</p>
+                <p>While historical masterworks draw upon open-access institutional archives, our foundational anchor collection represents primary, authenticated physical masterworks strictly limited in edition—operating entirely outside public auction theater and commercial retail channels.</p>
             </div>
         </section>
 
@@ -303,9 +303,9 @@
                 <div class="input-field-group">
                     <label for="mandate-type">Corpus Allocation Request</label>
                     <select id="mandate-type">
-                        <option value="edition-allocation">Foundational Anchor Inquiry (Edition of 2)</option>
-                        <option value="archival-advisory">Archival & Sovereign Portfolio Consultation</option>
-                        <option value="private-appointment">Confidential Salon Viewing Appointment</option>
+                        <option value="edition-allocation">Foundational Anchor Inquiry (Primary Edition)</option>
+                        <option value="archival-advisory">Archival & Portfolio Consultation</option>
+                        <option value="private-appointment">Confidential Viewing Appointment</option>
                     </select>
                 </div>
                 <div class="input-field-group">
