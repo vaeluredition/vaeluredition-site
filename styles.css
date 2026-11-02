@@ -543,7 +543,7 @@ body {
     padding: 30px;
     border-top: 1px solid var(--vault-border);
     display: flex;
-    flex-dir: column;
+    flex-direction: column;
     gap: 6px;
 }
 
