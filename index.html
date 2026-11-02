@@ -9,16 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 24-KARAT GOLD TEST THEME */
             --bg: #d9b343;
             --bg-gradient: linear-gradient(135deg, #f7e7b4 0%, #d4af37 50%, #b8860b 100%);
-            --panel: #e6c55c;
-            --card-bg: #edd06b;
-            --border: #8b6508;
-            --border-hover: #161412;
-            --text-main: #0c0b0a;
-            --text-muted: #3d3112;
-            --accent-dark: #161412;
+            /* Obsidian Black Cards & Panels for Balanced Contrast */
+            --panel: #161412;
+            --card-bg: #1d1a17;
+            --border: #4a3b18;
+            --border-hover: #0c0b0a;
+            --text-main: #f5f2eb;
+            --text-muted: #9e9588;
+            --gold-accent: #d4af37;
         }
 
         * {
@@ -29,7 +29,7 @@
 
         body {
             background: var(--bg-gradient);
-            color: var(--text-main);
+            color: #0c0b0a;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 400;
             line-height: 1.8;
@@ -65,7 +65,7 @@
             letter-spacing: 0.25em;
             text-transform: uppercase;
             text-decoration: none;
-            color: var(--text-main);
+            color: #0c0b0a;
             filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.4));
         }
 
@@ -73,7 +73,7 @@
             font-size: 10px;
             letter-spacing: 0.35em;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: #2b2208;
             font-weight: 600;
         }
 
@@ -86,7 +86,7 @@
             font-size: 11px;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: #2b2208;
             font-weight: 600;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -94,7 +94,7 @@
         }
 
         .nav-link:hover {
-            color: var(--text-main);
+            color: #0c0b0a;
         }
 
         .bureau-hero {
@@ -111,17 +111,17 @@
             font-weight: 400;
             line-height: 1.15;
             margin-bottom: 24px;
-            color: var(--text-main);
+            color: #0c0b0a;
         }
 
         .hero-copy h1 em {
             font-style: italic;
-            color: #2b2208;
+            color: #4a3b18;
         }
 
         .hero-copy p {
             font-size: 17px;
-            color: var(--text-muted);
+            color: #2b2208;
             line-height: 1.8;
             font-weight: 500;
         }
@@ -148,6 +148,7 @@
             transform: scale(1.03);
         }
 
+        /* MANIFESTO SECTION (OBSIDIAN BLACK) */
         .manifesto-section {
             background: var(--panel);
             border: 1px solid var(--border);
@@ -156,16 +157,16 @@
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 20px 40px rgba(139, 101, 8, 0.2);
+            box-shadow: 0 20px 40px rgba(12, 11, 10, 0.3);
         }
 
         .manifesto-content h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 38px;
-            font-weight: 400;
+            font-weight: 300;
             font-style: italic;
             margin-bottom: 30px;
-            color: var(--text-main);
+            color: #f3e5ab;
         }
 
         .manifesto-content p {
@@ -173,12 +174,12 @@
             color: var(--text-muted);
             line-height: 1.9;
             margin-bottom: 25px;
-            font-weight: 500;
+            font-weight: 300;
         }
 
         .manifesto-content p strong {
             color: var(--text-main);
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .registry-section {
@@ -187,7 +188,7 @@
 
         .registry-header {
             margin-bottom: 50px;
-            border-left: 2px solid var(--text-main);
+            border-left: 2px solid #0c0b0a;
             padding-left: 20px;
         }
 
@@ -196,12 +197,12 @@
             font-size: 36px;
             font-weight: 400;
             margin-bottom: 8px;
-            color: var(--text-main);
+            color: #0c0b0a;
         }
 
         .registry-header p {
             font-size: 14px;
-            color: var(--text-muted);
+            color: #2b2208;
             font-weight: 500;
         }
 
@@ -211,17 +212,18 @@
             gap: 40px;
         }
 
+        /* PAINTING CARDS (OBSIDIAN BLACK) */
         .print-card {
             background: var(--panel);
             border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             transition: border-color 0.4s ease, transform 0.4s ease;
-            box-shadow: 0 10px 30px rgba(139, 101, 8, 0.15);
+            box-shadow: 0 15px 35px rgba(12, 11, 10, 0.25);
         }
 
         .print-card:hover {
-            border-color: var(--text-main);
+            border-color: var(--gold-accent);
             transform: translateY(-4px);
         }
 
@@ -273,7 +275,7 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--text-muted);
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .print-title {
@@ -287,27 +289,26 @@
         .print-spec {
             font-size: 13px;
             color: var(--text-muted);
-            font-weight: 500;
         }
 
         .edition-tag {
             font-size: 10px;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--text-main);
-            font-weight: 600;
+            color: var(--gold-accent);
             margin-top: auto;
             padding-top: 16px;
             border-top: 1px dashed var(--border);
         }
 
+        /* ACQUISITION DESK (OBSIDIAN BLACK) */
         .desk-section {
             max-width: 800px;
             margin: 0 auto;
             background: var(--panel);
             border: 1px solid var(--border);
             padding: 70px;
-            box-shadow: 0 20px 40px rgba(139, 101, 8, 0.2);
+            box-shadow: 0 20px 40px rgba(12, 11, 10, 0.3);
         }
 
         .desk-header {
@@ -318,7 +319,7 @@
         .desk-header h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 34px;
-            font-weight: 400;
+            font-weight: 300;
             font-style: italic;
             margin-top: 8px;
             color: var(--text-main);
@@ -347,13 +348,12 @@
             letter-spacing: 0.25em;
             text-transform: uppercase;
             color: var(--text-muted);
-            font-weight: 600;
         }
 
         .input-group input,
         .input-group select,
         .input-group textarea {
-            background: var(--bg);
+            background: #0c0b0a;
             border: 1px solid var(--border);
             color: var(--text-main);
             padding: 16px;
@@ -366,36 +366,35 @@
         .input-group input:focus,
         .input-group select:focus,
         .input-group textarea:focus {
-            border-color: var(--text-main);
+            border-color: var(--gold-accent);
         }
 
         .submit-wire-btn {
             background: var(--text-main);
-            color: var(--panel);
+            color: var(--bg);
             border: none;
             padding: 18px;
             font-size: 11px;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             transition: background 0.3s ease;
             margin-top: 10px;
         }
 
         .submit-wire-btn:hover {
-            background: #2b2208;
-            color: #fff;
+            background: var(--gold-accent);
+            color: #0c0b0a;
         }
 
         .success-banner {
             padding: 30px;
-            background: rgba(12, 11, 10, 0.15);
-            border: 1px solid var(--text-main);
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold-accent);
             color: var(--text-main);
             text-align: center;
             font-size: 14px;
-            font-weight: 500;
         }
 
         /* CORNER-TO-CORNER IMMERSIVE LIGHTBOX VIEWER */
@@ -436,8 +435,8 @@
         .lightbox-close {
             position: absolute;
             top: 30px; right: 40px;
-            background: rgba(212, 175, 55, 0.9);
-            color: #0c0b0a;
+            background: rgba(22, 20, 18, 0.85);
+            color: #f5f2eb;
             border: 1px solid var(--border);
             width: 48px; height: 48px;
             font-size: 26px;
@@ -446,11 +445,11 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
-            transition: background 0.3s ease;
+            transition: border-color 0.3s ease;
         }
 
         .lightbox-close:hover {
-            background: #fff;
+            border-color: var(--gold-accent);
         }
 
         .lightbox-data {
@@ -479,7 +478,7 @@
             font-size: 11px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: #2b2208;
             font-weight: 600;
         }
 
@@ -523,10 +522,10 @@
             </div>
         </section>
 
-        <!-- ABOUT THE COLLECTIVE / MANIFESTO -->
+        <!-- ABOUT THE COLLECTIVE / MANIFESTO (OBSIDIAN BLACK) -->
         <section class="manifesto-section" id="manifesto">
             <div class="manifesto-content">
-                <span class="brand-subtitle" style="display:block; margin-bottom: 12px;">About the Collective</span>
+                <span class="brand-subtitle" style="display:block; margin-bottom: 12px; color: var(--gold-accent);">About the Collective</span>
                 <h2>Art is not a commodity; it is an encounter with the irrevocable.</h2>
                 <p>We operate entirely outside the noise of mass-produced reproduction and commercial saturation. This space exists as an independent, private bureau—a tightly curated cabinet where historical echoes undergo meticulous curatorial recalibration, standing alongside unrepeatable modern masterworks.</p>
                 <p>Every work presented within these virtual walls shares a singular distinction: <strong>extreme scarcity</strong>. We do not deal in open editions, endless impressions, or mass accessibility. Whether presenting a re-imagined study from centuries past or a primary-source contemporary masterpiece, our catalog is strictly capped at a <strong>global maximum of two physical copies per piece</strong>.</p>
@@ -540,7 +539,7 @@
             <div class="registry-header">
                 <span class="brand-subtitle" style="display:block; margin-bottom: 8px;">Alphabetical Index</span>
                 <h2>Curated Masterwork Registry</h2>
-                <p>Presented in strict alphabetical sequence. Every catalog entry is strictly capped at a global maximum of 2 copies.</p>
+                <p>Presented in strict alphabetical sequence. Catalog entries are strictly capped at global maximums of 1 or 2 copies.</p>
             </div>
 
             <div class="prints-grid">
@@ -643,8 +642,8 @@
                     </div>
                 </article>
 
-                <!-- 8. Hesham Malik -->
-                <article class="print-card" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Paris)', 'Elizabeth of Russia', 'Global Edition Cap: 2 Copies')">
+                <!-- 8. Hesham Malik (Strictly 1 Global Copy) -->
+                <article class="print-card" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Paris)', 'Elizabeth of Russia', 'Global Edition Cap: 1 Single Copy')">
                     <div class="print-visual">
                         <img src="hesham.jpg" alt="Hesham Malik Masterwork">
                         <span class="inspect-badge">Inspect ↗</span>
@@ -653,7 +652,7 @@
                         <span class="artist-name">Hesham Malik</span>
                         <h3 class="print-title">Elizabeth of Russia</h3>
                         <p class="print-spec">Oil on canvas (Circa 1999) &bull; Museum Canvas</p>
-                        <span class="edition-tag">Global Cap: 2 Copies</span>
+                        <span class="edition-tag" style="color: #f3e5ab;">Global Cap: 1 Single Copy</span>
                     </div>
                 </article>
 
@@ -800,10 +799,10 @@
             </div>
         </section>
 
-        <!-- PRIVATE ACQUISITION DESK -->
+        <!-- PRIVATE ACQUISITION DESK (OBSIDIAN BLACK) -->
         <section class="desk-section" id="desk">
             <div class="desk-header">
-                <span class="brand-subtitle">Confidential Channel</span>
+                <span class="brand-subtitle" style="color: var(--gold-accent);">Confidential Channel</span>
                 <h3>Private Bureau Acquisition Desk</h3>
             </div>
             <form class="desk-form" onclick="event.stopPropagation()" onsubmit="handleInquiry(event)">
@@ -820,7 +819,7 @@
                 <div class="input-group">
                     <label for="print-selection">Registry Allocation Request</label>
                     <select id="print-selection">
-                        <option value="edition-allocation">Curated Masterwork Allocation (Max 2 Global Copies)</option>
+                        <option value="edition-allocation">Curated Masterwork Allocation (Max 1–2 Global Copies)</option>
                         <option value="private-consignment">Private Bureau Consultation</option>
                     </select>
                 </div>
@@ -850,9 +849,9 @@
             <button class="lightbox-close" onclick="closeLightbox()">×</button>
             <img id="lbImg" src="" alt="Enlarged Artwork">
             <div class="lightbox-data">
-                <span id="lbArtist" class="artist-name" style="color: #3d3112; font-weight: 600;"></span>
-                <span id="lbTitle" class="print-title" style="font-size: 24px; color: #0c0b0a;"></span>
-                <span id="lbCredit" class="edition-tag" style="border: none; padding-top: 0; color: #161412;"></span>
+                <span id="lbArtist" class="artist-name" style="color: #9e9588; font-weight: 500;"></span>
+                <span id="lbTitle" class="print-title" style="font-size: 24px; color: #f5f2eb;"></span>
+                <span id="lbCredit" class="edition-tag" style="border: none; padding-top: 0; color: #d4af37;"></span>
             </div>
         </div>
     </div>
