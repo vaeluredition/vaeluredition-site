@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAELURE EDITION — Private Salon & Curated Collective</title>
+    <title>VAELURE EDITION — Private Bureau & Curated Collective</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0c0b0a;
-            --panel: #161412;
-            --card-bg: #1d1a17;
-            --border: #383028;
-            --border-hover: #c29b68;
-            --text-main: #f5f2eb;
-            --text-muted: #9e9588;
-            --gold-light: #f3e5ab;
-            --gold-main: #d4af37;
-            --gold-dark: #aa7c11;
+            /* 24-KARAT GOLD TEST THEME */
+            --bg: #d9b343;
+            --bg-gradient: linear-gradient(135deg, #f7e7b4 0%, #d4af37 50%, #b8860b 100%);
+            --panel: #e6c55c;
+            --card-bg: #edd06b;
+            --border: #8b6508;
+            --border-hover: #161412;
+            --text-main: #0c0b0a;
+            --text-muted: #3d3112;
+            --accent-dark: #161412;
         }
 
         * {
@@ -28,12 +28,13 @@
         }
 
         body {
-            background-color: var(--bg);
+            background: var(--bg-gradient);
             color: var(--text-main);
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.8;
             -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
         }
 
         .atelier-shell {
@@ -64,10 +65,8 @@
             letter-spacing: 0.25em;
             text-transform: uppercase;
             text-decoration: none;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-dark) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.2));
+            color: var(--text-main);
+            filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.4));
         }
 
         .brand-subtitle {
@@ -75,6 +74,7 @@
             letter-spacing: 0.35em;
             text-transform: uppercase;
             color: var(--text-muted);
+            font-weight: 600;
         }
 
         .header-nav {
@@ -87,16 +87,17 @@
             letter-spacing: 0.25em;
             text-transform: uppercase;
             color: var(--text-muted);
+            font-weight: 600;
             text-decoration: none;
             transition: color 0.3s ease;
             cursor: pointer;
         }
 
         .nav-link:hover {
-            color: var(--gold-main);
+            color: var(--text-main);
         }
 
-        .salon-hero {
+        .bureau-hero {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 80px;
@@ -107,26 +108,28 @@
         .hero-copy h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(42px, 4.5vw, 64px);
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.15;
             margin-bottom: 24px;
+            color: var(--text-main);
         }
 
         .hero-copy h1 em {
             font-style: italic;
-            color: var(--gold-main);
+            color: #2b2208;
         }
 
         .hero-copy p {
             font-size: 17px;
             color: var(--text-muted);
             line-height: 1.8;
+            font-weight: 500;
         }
 
         .hero-featured-frame {
             width: 100%;
             height: 500px;
-            background: var(--panel);
+            background: #0c0b0a;
             border: 1px solid var(--border);
             position: relative;
             overflow: hidden;
@@ -153,15 +156,16 @@
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
+            box-shadow: 0 20px 40px rgba(139, 101, 8, 0.2);
         }
 
         .manifesto-content h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 38px;
-            font-weight: 300;
+            font-weight: 400;
             font-style: italic;
             margin-bottom: 30px;
-            color: var(--gold-light);
+            color: var(--text-main);
         }
 
         .manifesto-content p {
@@ -169,11 +173,12 @@
             color: var(--text-muted);
             line-height: 1.9;
             margin-bottom: 25px;
+            font-weight: 500;
         }
 
         .manifesto-content p strong {
             color: var(--text-main);
-            font-weight: 400;
+            font-weight: 600;
         }
 
         .registry-section {
@@ -182,20 +187,22 @@
 
         .registry-header {
             margin-bottom: 50px;
-            border-left: 2px solid var(--gold-main);
+            border-left: 2px solid var(--text-main);
             padding-left: 20px;
         }
 
         .registry-header h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 36px;
-            font-weight: 300;
+            font-weight: 400;
             margin-bottom: 8px;
+            color: var(--text-main);
         }
 
         .registry-header p {
             font-size: 14px;
             color: var(--text-muted);
+            font-weight: 500;
         }
 
         .prints-grid {
@@ -210,10 +217,11 @@
             display: flex;
             flex-direction: column;
             transition: border-color 0.4s ease, transform 0.4s ease;
+            box-shadow: 0 10px 30px rgba(139, 101, 8, 0.15);
         }
 
         .print-card:hover {
-            border-color: var(--gold-main);
+            border-color: var(--text-main);
             transform: translateY(-4px);
         }
 
@@ -245,7 +253,7 @@
             right: 16px;
             background: rgba(12, 11, 10, 0.85);
             border: 1px solid var(--border);
-            color: var(--text-main);
+            color: #f5f2eb;
             padding: 6px 14px;
             font-size: 9px;
             letter-spacing: 0.2em;
@@ -265,6 +273,7 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--text-muted);
+            font-weight: 600;
         }
 
         .print-title {
@@ -278,13 +287,15 @@
         .print-spec {
             font-size: 13px;
             color: var(--text-muted);
+            font-weight: 500;
         }
 
         .edition-tag {
             font-size: 10px;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--gold-main);
+            color: var(--text-main);
+            font-weight: 600;
             margin-top: auto;
             padding-top: 16px;
             border-top: 1px dashed var(--border);
@@ -296,6 +307,7 @@
             background: var(--panel);
             border: 1px solid var(--border);
             padding: 70px;
+            box-shadow: 0 20px 40px rgba(139, 101, 8, 0.2);
         }
 
         .desk-header {
@@ -306,9 +318,10 @@
         .desk-header h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 34px;
-            font-weight: 300;
+            font-weight: 400;
             font-style: italic;
             margin-top: 8px;
+            color: var(--text-main);
         }
 
         .desk-form {
@@ -334,6 +347,7 @@
             letter-spacing: 0.25em;
             text-transform: uppercase;
             color: var(--text-muted);
+            font-weight: 600;
         }
 
         .input-group input,
@@ -352,34 +366,36 @@
         .input-group input:focus,
         .input-group select:focus,
         .input-group textarea:focus {
-            border-color: var(--gold-main);
+            border-color: var(--text-main);
         }
 
         .submit-wire-btn {
             background: var(--text-main);
-            color: var(--bg);
+            color: var(--panel);
             border: none;
             padding: 18px;
             font-size: 11px;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: background 0.3s ease;
             margin-top: 10px;
         }
 
         .submit-wire-btn:hover {
-            background: var(--gold-main);
+            background: #2b2208;
+            color: #fff;
         }
 
         .success-banner {
             padding: 30px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--gold-main);
-            color: var(--gold-light);
+            background: rgba(12, 11, 10, 0.15);
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
             text-align: center;
             font-size: 14px;
+            font-weight: 500;
         }
 
         /* CORNER-TO-CORNER IMMERSIVE LIGHTBOX VIEWER */
@@ -420,8 +436,8 @@
         .lightbox-close {
             position: absolute;
             top: 30px; right: 40px;
-            background: rgba(22, 20, 18, 0.85);
-            color: var(--text-main);
+            background: rgba(212, 175, 55, 0.9);
+            color: #0c0b0a;
             border: 1px solid var(--border);
             width: 48px; height: 48px;
             font-size: 26px;
@@ -430,11 +446,11 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
-            transition: border-color 0.3s ease;
+            transition: background 0.3s ease;
         }
 
         .lightbox-close:hover {
-            border-color: var(--gold-main);
+            background: #fff;
         }
 
         .lightbox-data {
@@ -464,11 +480,12 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--text-muted);
+            font-weight: 600;
         }
 
         @media (max-width: 1024px) {
             .prints-grid { grid-template-columns: repeat(2, 1fr); }
-            .salon-hero { grid-template-columns: 1fr; gap: 40px; }
+            .bureau-hero { grid-template-columns: 1fr; gap: 40px; }
         }
         @media (max-width: 768px) {
             .prints-grid, .form-row { grid-template-columns: 1fr; }
@@ -484,7 +501,7 @@
         <header>
             <div class="brand-block">
                 <a href="#" class="brand-title">Vaelure Edition</a>
-                <span class="brand-subtitle">Private Salon & Curated Collective</span>
+                <span class="brand-subtitle">Private Bureau & Curated Collective</span>
             </div>
             <nav class="header-nav">
                 <a href="#manifesto" class="nav-link">The Collective</a>
@@ -493,10 +510,10 @@
             </nav>
         </header>
 
-        <!-- HERO SALON INTRODUCTION -->
-        <section class="salon-hero">
+        <!-- HERO BUREAU INTRODUCTION -->
+        <section class="bureau-hero">
             <div class="hero-copy">
-                <span class="brand-subtitle" style="display:block; margin-bottom: 12px;">Independent Private Salon</span>
+                <span class="brand-subtitle" style="display:block; margin-bottom: 12px;">Independent Private Bureau</span>
                 <h1>An Encounter With The <em>Irrevocable.</em></h1>
                 <p>Operating outside the noise of mass-produced reproduction and commercial saturation. A tightly curated cabinet of rare historical echoes and unrepeatable modern masterworks.</p>
             </div>
@@ -511,7 +528,7 @@
             <div class="manifesto-content">
                 <span class="brand-subtitle" style="display:block; margin-bottom: 12px;">About the Collective</span>
                 <h2>Art is not a commodity; it is an encounter with the irrevocable.</h2>
-                <p>We operate entirely outside the noise of mass-produced reproduction and commercial saturation. This space exists as an independent, private salon—a tightly curated cabinet where historical echoes undergo meticulous curatorial recalibration, standing alongside unrepeatable modern masterworks.</p>
+                <p>We operate entirely outside the noise of mass-produced reproduction and commercial saturation. This space exists as an independent, private bureau—a tightly curated cabinet where historical echoes undergo meticulous curatorial recalibration, standing alongside unrepeatable modern masterworks.</p>
                 <p>Every work presented within these virtual walls shares a singular distinction: <strong>extreme scarcity</strong>. We do not deal in open editions, endless impressions, or mass accessibility. Whether presenting a re-imagined study from centuries past or a primary-source contemporary masterpiece, our catalog is strictly capped at a <strong>global maximum of two physical copies per piece</strong>.</p>
                 <p>Once claimed, these editions are closed to the world forever.</p>
                 <p>Here, history and the present stand on equal footing, bound by a shared commitment to uncompromising craftsmanship, archival permanence, and absolute rarity.</p>
@@ -627,7 +644,7 @@
                 </article>
 
                 <!-- 8. Hesham Malik -->
-                <article class="print-card" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Prague)', 'Elizabeth of Russia', 'Global Edition Cap: 1 Copy')">
+                <article class="print-card" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Paris)', 'Elizabeth of Russia', 'Global Edition Cap: 2 Copies')">
                     <div class="print-visual">
                         <img src="hesham.jpg" alt="Hesham Malik Masterwork">
                         <span class="inspect-badge">Inspect ↗</span>
@@ -636,7 +653,7 @@
                         <span class="artist-name">Hesham Malik</span>
                         <h3 class="print-title">Elizabeth of Russia</h3>
                         <p class="print-spec">Oil on canvas (Circa 1999) &bull; Museum Canvas</p>
-                        <span class="edition-tag">Global Cap: 1 Copy</span>
+                        <span class="edition-tag">Global Cap: 2 Copies</span>
                     </div>
                 </article>
 
@@ -787,9 +804,9 @@
         <section class="desk-section" id="desk">
             <div class="desk-header">
                 <span class="brand-subtitle">Confidential Channel</span>
-                <h3>Private Salon Acquisition Desk</h3>
+                <h3>Private Bureau Acquisition Desk</h3>
             </div>
-            <form class="desk-form" onsubmit="handleInquiry(event)">
+            <form class="desk-form" onclick="event.stopPropagation()" onsubmit="handleInquiry(event)">
                 <div class="form-row">
                     <div class="input-group">
                         <label for="collector-name">Principal / Representative Name</label>
@@ -804,7 +821,7 @@
                     <label for="print-selection">Registry Allocation Request</label>
                     <select id="print-selection">
                         <option value="edition-allocation">Curated Masterwork Allocation (Max 2 Global Copies)</option>
-                        <option value="private-consignment">Private Salon Consultation</option>
+                        <option value="private-consignment">Private Bureau Consultation</option>
                     </select>
                 </div>
                 <div class="input-group">
@@ -814,14 +831,15 @@
                 <button type="submit" class="submit-wire-btn">Transmit Secure Inquiry ↗</button>
             </form>
             <div id="formSuccess" class="success-banner" style="display:none; margin-top:24px;">
-                [ TRANSMISSION RECEIVED ] — Your inquiry has been securely routed to the private salon desk.
+                [ TRANSMISSION RECEIVED ] — Your inquiry has been securely routed to the private bureau desk.
             </div>
         </section>
 
         <!-- FOOTER -->
         <footer>
             <span>&copy; 2026 Vaelure Edition. All rights reserved.</span>
-            <span>PRIVATE SALON & COLLECTIVE</span>
+            <span>New York &bull; London &bull; Paris</span>
+            <span>PRIVATE BUREAU & COLLECTIVE</span>
         </footer>
 
     </div>
@@ -832,9 +850,9 @@
             <button class="lightbox-close" onclick="closeLightbox()">×</button>
             <img id="lbImg" src="" alt="Enlarged Artwork">
             <div class="lightbox-data">
-                <span id="lbArtist" class="artist-name" style="color: var(--text-muted);"></span>
-                <span id="lbTitle" class="print-title" style="font-size: 24px; color: var(--text-main);"></span>
-                <span id="lbCredit" class="edition-tag" style="border: none; padding-top: 0;"></span>
+                <span id="lbArtist" class="artist-name" style="color: #3d3112; font-weight: 600;"></span>
+                <span id="lbTitle" class="print-title" style="font-size: 24px; color: #0c0b0a;"></span>
+                <span id="lbCredit" class="edition-tag" style="border: none; padding-top: 0; color: #161412;"></span>
             </div>
         </div>
     </div>
