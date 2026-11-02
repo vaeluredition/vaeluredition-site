@@ -16,7 +16,6 @@
             --border-hover: #c29b68;
             --text-main: #f5f2eb;
             --text-muted: #9e9588;
-            /* Radiant Metallic Gold Palette */
             --gold-light: #f3e5ab;
             --gold-main: #d4af37;
             --gold-dark: #aa7c11;
@@ -43,7 +42,6 @@
             padding: 60px 50px 140px 50px;
         }
 
-        /* MAJESTIC GOLD BRAND HEADER */
         header {
             display: flex;
             justify-content: space-between;
@@ -66,7 +64,6 @@
             letter-spacing: 0.25em;
             text-transform: uppercase;
             text-decoration: none;
-            /* Radiant Gold Gradient */
             background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -99,7 +96,6 @@
             color: var(--gold-main);
         }
 
-        /* HERO SALON INTRODUCTION */
         .salon-hero {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -149,7 +145,6 @@
             transform: scale(1.03);
         }
 
-        /* ALPHABETICAL PRINT REGISTRY GRID */
         .registry-section {
             margin-bottom: 160px;
         }
@@ -264,7 +259,6 @@
             border-top: 1px dashed var(--border);
         }
 
-        /* SECURE ACQUISITION DESK (PRINTS INQUIRY) */
         .desk-section {
             max-width: 800px;
             margin: 0 auto;
@@ -357,7 +351,6 @@
             font-size: 14px;
         }
 
-        /* LIGHTBOX VIEWER */
         .lightbox-overlay {
             display: none;
             position: fixed;
@@ -409,7 +402,6 @@
             gap: 6px;
         }
 
-        /* FOOTER */
         footer {
             margin-top: 160px;
             padding-top: 40px;
@@ -422,7 +414,6 @@
             color: var(--text-muted);
         }
 
-        /* RESPONSIVE */
         @media (max-width: 1024px) {
             .prints-grid { grid-template-columns: repeat(2, 1fr); }
             .salon-hero { grid-template-columns: 1fr; gap: 40px; }
@@ -462,7 +453,7 @@
             </div>
         </section>
 
-        <!-- ALPHABETICAL PRINT REGISTRY -->
+        <!-- ALPHABETICAL PRINT REGISTRY (ALL 16 ARTISTS) -->
         <section class="registry-section" id="registry">
             <div class="registry-header">
                 <span class="brand-subtitle" style="display:block; margin-bottom: 8px;">Alphabetical Index</span>
@@ -472,21 +463,7 @@
 
             <div class="prints-grid">
 
-                <!-- 1. After Rembrandt -->
-                <article class="print-card" onclick="openLightbox('rembrandt.jpg', 'After Rembrandt & Baron Dominique Vivant Denon', 'A Woman Making Water', 'Limited Print Edition')">
-                    <div class="print-visual">
-                        <img src="rembrandt.jpg" alt="Rembrandt and Denon">
-                        <span class="inspect-badge">Inspect ↗</span>
-                    </div>
-                    <div class="print-details">
-                        <span class="artist-name">After Rembrandt & Baron Dominique Vivant Denon</span>
-                        <h3 class="print-title">A Woman Making Water</h3>
-                        <p class="print-spec">Etching &bull; Archival Fine Art Print</p>
-                        <span class="edition-tag">Limited Edition Print</span>
-                    </div>
-                </article>
-
-                <!-- 2. Albrecht Dürer -->
+                <!-- 1. Albrecht Dürer -->
                 <article class="print-card" onclick="openLightbox('durer.jpg', 'Albrecht Dürer (1471–1528)', 'Salvator Mundi', 'Limited Print Edition')">
                     <div class="print-visual">
                         <img src="durer.jpg" alt="Albrecht Dürer" style="object-position: center 20%;">
@@ -500,7 +477,7 @@
                     </div>
                 </article>
 
-                <!-- 3. Edgar Degas -->
+                <!-- 2. Edgar Degas -->
                 <article class="print-card" onclick="openLightbox('degas.jpg', 'Edgar Degas (1834–1917)', 'The Dance Class', 'Limited Print Edition')">
                     <div class="print-visual">
                         <img src="degas.jpg" alt="Edgar Degas">
@@ -514,7 +491,7 @@
                     </div>
                 </article>
 
-                <!-- 4. Francisco de Goya -->
+                <!-- 3. Francisco de Goya -->
                 <article class="print-card" onclick="openLightbox('goya.jpg', 'Francisco de Goya y Lucientes (1746–1828)', 'Los desastres de la guerra: Plate 9, No quieren', 'Limited Print Edition')">
                     <div class="print-visual">
                         <img src="goya.jpg" alt="Francisco de Goya">
@@ -528,7 +505,7 @@
                     </div>
                 </article>
 
-                <!-- 5. Giovanni Battista Piranesi -->
+                <!-- 4. Giovanni Battista Piranesi -->
                 <article class="print-card" onclick="openLightbox('piranesi.jpg', 'Giovanni Battista Piranesi (1720–1778)', 'Diverse Ways of Ornamenting Chimneypieces', 'Limited Print Edition')">
                     <div class="print-visual">
                         <img src="piranesi.jpg" alt="Giovanni Battista Piranesi">
@@ -542,7 +519,255 @@
                     </div>
                 </article>
 
-                <!-- 6. Gustave Doré -->
+                <!-- 5. Gustave Doré -->
                 <article class="print-card" onclick="openLightbox('dore.jpg', 'Gustave Doré (1832–1883)', 'Don Quixote and Sancho Panza Entertained', 'Limited Print Edition')">
                     <div class="print-visual">
-                        <img src="d
+                        <img src="dore.jpg" alt="Gustave Doré">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Gustave Doré</span>
+                        <h3 class="print-title">Don Quixote and Sancho Panza Entertained</h3>
+                        <p class="print-spec">Oil on canvas &bull; Archival Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 6. Hans Holbein the Younger -->
+                <article class="print-card" onclick="openLightbox('holbein.jpg', 'Hans Holbein the Younger (1497/98–1543)', 'Benedikt von Hertenstein', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="holbein.jpg" alt="Hans Holbein the Younger">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Hans Holbein the Younger</span>
+                        <h3 class="print-title">Benedikt von Hertenstein</h3>
+                        <p class="print-spec">Oil and gold on wood &bull; Archival Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 7. Hesham Malik -->
+                <article class="print-card" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Prague)', 'Elizabeth of Russia', 'Authorized Fine Art Print Edition')">
+                    <div class="print-visual">
+                        <img src="hesham.jpg" alt="Hesham Malik Masterwork">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Hesham Malik</span>
+                        <h3 class="print-title">Elizabeth of Russia</h3>
+                        <p class="print-spec">Oil on canvas (Circa 1999) &bull; Archival Print</p>
+                        <span class="edition-tag">Authorized Print Edition</span>
+                    </div>
+                </article>
+
+                <!-- 8. Honoré Daumier -->
+                <article class="print-card" onclick="openLightbox('daumier.jpg', 'Honoré Daumier (1808–1879)', 'The Drinkers', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="daumier.jpg" alt="Honoré Daumier">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Honoré Daumier</span>
+                        <h3 class="print-title">The Drinkers</h3>
+                        <p class="print-spec">Oil on wood &bull; Archival Fine Art Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 9. James McNeill Whistler -->
+                <article class="print-card" onclick="openLightbox('whistler.jpg', 'James McNeill Whistler (1834–1903)', 'Bibi Valentin', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="whistler.jpg" alt="James McNeill Whistler">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">James McNeill Whistler</span>
+                        <h3 class="print-title">Bibi Valentin</h3>
+                        <p class="print-spec">Etching and drypoint &bull; Archival Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 10. Jean-François Millet -->
+                <article class="print-card" onclick="openLightbox('millet.jpg', 'Jean-François Millet (1814–1875)', 'Retreat from the Storm', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="millet.jpg" alt="Jean-François Millet">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Jean-François Millet</span>
+                        <h3 class="print-title">Retreat from the Storm</h3>
+                        <p class="print-spec">Oil on canvas &bull; Archival Fine Art Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 11. Joseph Mallord William Turner -->
+                <article class="print-card" onclick="openLightbox('turner.jpg', 'Joseph Mallord William Turner (1775–1851)', 'Saltash with the Water Ferry, Cornwall', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="turner.jpg" alt="J.M.W. Turner">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Joseph Mallord William Turner</span>
+                        <h3 class="print-title">Saltash with the Water Ferry, Cornwall</h3>
+                        <p class="print-spec">Oil on canvas &bull; Archival Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 12. Odilon Redon -->
+                <article class="print-card" onclick="openLightbox('redon.jpg', 'Odilon Redon (1840–1916)', 'Eyes Closed', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="redon.jpg" alt="Odilon Redon">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Odilon Redon</span>
+                        <h3 class="print-title">Eyes Closed</h3>
+                        <p class="print-spec">Lithograph &bull; Archival Fine Art Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 13. Rembrandt & Denon -->
+                <article class="print-card" onclick="openLightbox('rembrandt.jpg', 'After Rembrandt & Baron Dominique Vivant Denon', 'A Woman Making Water', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="rembrandt.jpg" alt="Rembrandt and Denon">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">After Rembrandt & Baron Dominique Vivant Denon</span>
+                        <h3 class="print-title">A Woman Making Water</h3>
+                        <p class="print-spec">Etching &bull; Archival Fine Art Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 14. Théodore Chassériau -->
+                <article class="print-card" onclick="openLightbox('chasseriau.jpg', 'Théodore Chassériau (1819–1856)', 'Comtesse de La Tour-Maubourg', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="chasseriau.jpg" alt="Théodore Chassériau">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Théodore Chassériau</span>
+                        <h3 class="print-title">Comtesse de La Tour-Maubourg</h3>
+                        <p class="print-spec">Oil on canvas &bull; Archival Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 15. Théodore Géricault -->
+                <article class="print-card" onclick="openLightbox('gericault.jpg', 'Théodore Géricault (1791–1824)', 'Horsewoman', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="gericault.jpg" alt="Théodore Géricault">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">Théodore Géricault</span>
+                        <h3 class="print-title">Horsewoman</h3>
+                        <p class="print-spec">Oil on canvas &bull; Archival Fine Art Print</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+                <!-- 16. William Blake -->
+                <article class="print-card" onclick="openLightbox('blake.jpg', 'William Blake (1757–1827)', 'Pity', 'Limited Print Edition')">
+                    <div class="print-visual">
+                        <img src="blake.jpg" alt="William Blake">
+                        <span class="inspect-badge">Inspect ↗</span>
+                    </div>
+                    <div class="print-details">
+                        <span class="artist-name">William Blake</span>
+                        <h3 class="print-title">Pity</h3>
+                        <p class="print-spec">Relief etching &bull; Archival Print Edition</p>
+                        <span class="edition-tag">Limited Edition Print</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECURE ACQUISITION DESK (PRINTS INQUIRY) -->
+        <section class="desk-section" id="desk">
+            <div class="desk-header">
+                <span class="brand-subtitle">Confidential Channel</span>
+                <h3>Print Edition Acquisition Desk</h3>
+            </div>
+            <form class="desk-form" onsubmit="handleInquiry(event)">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="collector-name">Collector / Representative Name</label>
+                        <input type="text" id="collector-name" required placeholder="Full Name or Entity">
+                    </div>
+                    <div class="input-group">
+                        <label for="collector-email">Secure Email Address</label>
+                        <input type="email" id="collector-email" required placeholder="name@domain.com">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="print-selection">Edition Selection</label>
+                    <select id="print-selection">
+                        <option value="hesheam-malik-print">Hesham Malik — Elizabeth of Russia (Print Edition)</option>
+                        <option value="masterwork-print">Historical Masterwork Study (Selected Print Edition)</option>
+                        <option value="private-consignment">Private Bureau Consultation</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="inquiry-notes">Acquisition Parameters</label>
+                    <textarea id="inquiry-notes" rows="4" required placeholder="Specify print sizing, framing preferences, or edition inquiry..."></textarea>
+                </div>
+                <button type="submit" class="submit-wire-btn">Submit Print Inquiry ↗</button>
+            </form>
+            <div id="formSuccess" class="success-banner" style="display:none; margin-top:24px;">
+                [ TRANSMISSION RECEIVED ] — Your print inquiry has been securely routed to the bureau desk.
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <span>&copy; 2026 Vaelure Edition. All rights reserved.</span>
+            <span>FINE ART PRINT BUREAU</span>
+        </footer>
+
+    </div>
+
+    <!-- LIGHTBOX VIEWER -->
+    <div id="atelierLightbox" class="lightbox-overlay" onclick="closeLightbox()">
+        <div class="lightbox-window" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <img id="lbImg" src="" alt="Enlarged Artwork">
+            <div class="lightbox-data">
+                <span id="lbArtist" class="artist-name"></span>
+                <span id="lbTitle" class="print-title" style="font-size: 22px;"></span>
+                <span id="lbCredit" class="edition-tag"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        function openLightbox(src, artist, title, credit) {
+            document.getElementById('lbImg').src = src;
+            document.getElementById('lbArtist').innerText = artist;
+            document.getElementById('lbTitle').innerText = title;
+            document.getElementById('lbCredit').innerText = credit;
+            document.getElementById('atelierLightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('atelierLightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleInquiry(e) {
+            e.preventDefault();
+            document.querySelector('.desk-form').style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
