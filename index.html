@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaeluredition — Restricted Acquisition Codex</title>
+    <title>Vaeluredition — Private Acquisition Desk & Archive</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,343 +11,383 @@
 </head>
 <body>
 
-    <div class="codex-container">
+    <div class="vault-shell">
         
         <!-- HEADER -->
-        <header class="codex-header">
-            <a href="#" class="codex-logo">Vaeluredition</a>
-            <span class="codex-classification">Restricted Codex &bull; Private Acquisition Desk</span>
+        <header class="vault-header">
+            <div class="brand-block">
+                <a href="#" onclick="returnHome()" class="brand-title">Vaeluredition</a>
+                <span class="brand-subtitle">Private Acquisition Desk / Curated Corpus</span>
+            </div>
+            <nav class="vault-nav">
+                <a href="#corridor" onclick="scrollToId('corridor')" class="nav-anchor">The Registry</a>
+                <a href="#sanctuary" onclick="scrollToId('sanctuary')" class="nav-anchor">Mandate</a>
+                <a href="#inquiry" onclick="scrollToId('inquiry')" class="nav-anchor">Acquisition Desk</a>
+            </nav>
         </header>
 
-        <!-- PROLOGUE -->
-        <section class="codex-prologue">
-            <span class="codex-tag">Curatorial Protocol</span>
-            <h1>The Architecture of the <span style="font-style: italic; color: var(--codex-accent);">Private Codex.</span></h1>
-            <p>Maintaining a closed registry of historical masterwork studies alongside singular, primary-source anchor acquisitions. Operating entirely outside public auction houses and commercial retail channels.</p>
+        <!-- THRESHOLD HERO -->
+        <section class="vault-threshold">
+            <div class="threshold-visual" onclick="openLightbox('hero-canvas.jpg', 'Hendrick ter Brugghen (1588–1629)', 'Roman Charity, 1622', 'Archival Study / The Metropolitan Museum of Art')">
+                <img src="hero-canvas.jpg" alt="Hendrick ter Brugghen — Roman Charity">
+                <span class="inspect-badge">Inspect Exhibit ↗</span>
+            </div>
+            <div class="threshold-prose">
+                <span class="brand-subtitle">Curatorial Protocol</span>
+                <h1>Private Acquisition Desk. <span class="serif-italics">Uncompromising Studies.</span></h1>
+                <p>Maintaining a private corpus of historical masterwork studies alongside singular, primary-source anchor acquisitions. Operating entirely outside public auction houses and commercial retail channels.</p>
+            </div>
         </section>
 
-        <!-- CHAPTER I: REFERENCE CORPUS -->
-        <div class="codex-chapter-heading">Section I // Historical Reference Plates</div>
+        <!-- EXHIBITION STACK (MONUMENTAL REGISTRY) -->
+        <div class="exhibition-stack" id="corridor">
+            <div class="stack-section-title">Curated Historical Corpus & Foundational Anchors</div>
 
-        <!-- Plate 1: Goya -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('goya.jpg', 'Francisco de Goya y Lucientes (Spanish, 1746–1828)', 'Los desastres de la guerra: Plate 9, No quieren', 'Etching, lavis, drypoint &bull; 1810–20 (Reference Corpus)')">
-                <img src="goya.jpg" alt="Goya">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 01</span>
-                <span class="plate-artist">Francisco de Goya y Lucientes</span>
-                <h3 class="plate-title">Los desastres de la guerra: Plate 9, They do not want to</h3>
-                <p class="plate-details">Etching, lavis, drypoint, and burin &bull; 1810–20 (printed 1892)</p>
-                <p class="plate-provenance-note">Studied as a material benchmark for unsparing linear tension and dark tonal hierarchy within the reference archive.</p>
-            </div>
-        </div>
-
-        <!-- Plate 2: Turner -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('turner.jpg', 'Joseph Mallord William Turner (British, 1775–1851)', 'Saltash with the Water Ferry, Cornwall', 'Oil on canvas &bull; 1811 (Reference Corpus)')">
-                <img src="turner.jpg" alt="Turner">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 02</span>
-                <span class="plate-artist">Joseph Mallord William Turner</span>
-                <h3 class="plate-title">Saltash with the Water Ferry, Cornwall</h3>
-                <p class="plate-details">Oil on canvas &bull; 1811</p>
-                <p class="plate-provenance-note">Examined for atmospheric dissolution and the structural weight of light across liquid boundaries.</p>
-            </div>
-        </div>
-
-        <!-- Plate 3: Degas -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('degas.jpg', 'Edgar Degas (French, 1834–1917)', 'The Dance Class', 'Oil on canvas &bull; 1874 (Reference Corpus)')">
-                <img src="degas.jpg" alt="Degas">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 03</span>
-                <span class="plate-artist">Edgar Degas</span>
-                <h3 class="plate-title">The Dance Class</h3>
-                <p class="plate-details">Oil on canvas &bull; 1874</p>
-                <p class="plate-provenance-note">Referenced for asymmetrical spatial framing and rigorous observational geometry.</p>
-            </div>
-        </div>
-
-        <!-- Plate 4: Redon -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('redon.jpg', 'Odilon Redon (French, 1840–1916)', 'Eyes Closed', 'Lithograph &bull; 1890 (Reference Corpus)')">
-                <img src="redon.jpg" alt="Redon">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 04</span>
-                <span class="plate-artist">Odilon Redon</span>
-                <h3 class="plate-title">Eyes Closed</h3>
-                <p class="plate-details">Lithograph &bull; 1890</p>
-                <p class="plate-provenance-note">Included for symbolic density and monochrome subterranean resonance.</p>
-            </div>
-        </div>
-
-        <!-- Plate 5: Blake -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('blake.jpg', 'William Blake (British, 1757–1827)', 'Pity', 'Relief etching, watercolor &bull; ca. 1795 (Reference Corpus)')">
-                <img src="blake.jpg" alt="Blake">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 05</span>
-                <span class="plate-artist">William Blake</span>
-                <h3 class="plate-title">Pity</h3>
-                <p class="plate-details">Relief etching, printed in color and finished with pen and ink &bull; ca. 1795</p>
-                <p class="plate-provenance-note">Studied as an archetype of visionary substrate integration and mythological weight.</p>
-            </div>
-        </div>
-
-        <!-- Plate 6: Rembrandt / Denon -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('rembrandt.jpg', 'After Rembrandt & Baron Dominique Vivant Denon', 'A Woman Making Water', 'Etching &bull; Late 18th/Early 19th c. (Reference Corpus)')">
-                <img src="rembrandt.jpg" alt="Rembrandt">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 06</span>
-                <span class="plate-artist">After Rembrandt & Baron Dominique Vivant Denon</span>
-                <h3 class="plate-title">A Woman Making Water</h3>
-                <p class="plate-details">Etching &bull; Late 18th/Early 19th century</p>
-                <p class="plate-provenance-note">Retained for precision mark-making and classical chiaroscuro discipline.</p>
-            </div>
-        </div>
-
-        <!-- Plate 7: Dürer -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('durer.jpg', 'Albrecht Dürer (German, 1471–1528)', 'Salvator Mundi', 'Oil on linden &bull; ca. 1505 (Reference Corpus)')">
-                <img src="durer.jpg" alt="Dürer" style="object-position: center 20%;">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 07</span>
-                <span class="plate-artist">Albrecht Dürer</span>
-                <h3 class="plate-title">Salvator Mundi</h3>
-                <p class="plate-details">Oil on linden &bull; ca. 1505</p>
-                <p class="plate-provenance-note">Analyzed for northern Renaissance material integrity and surface luminosity.</p>
-            </div>
-        </div>
-
-        <!-- Plate 8: Doré -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('dore.jpg', 'Gustave Doré (French, 1832–1883)', 'Don Quixote and Sancho Panza', 'Oil on canvas &bull; 1863 (Reference Corpus)')">
-                <img src="dore.jpg" alt="Doré">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 08</span>
-                <span class="plate-artist">Gustave Doré</span>
-                <h3 class="plate-title">Don Quixote and Sancho Panza Entertained by Basil and Quiteria</h3>
-                <p class="plate-details">Oil on canvas &bull; 1863</p>
-                <p class="plate-provenance-note">Examined for theatrical scale and narrative density across expansive compositions.</p>
-            </div>
-        </div>
-
-        <!-- Plate 9: Piranesi -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('piranesi.jpg', 'Giovanni Battista Piranesi (Italian, 1720–1778)', 'Diverse Ways of Ornamenting Chimneypieces', 'Etching &bull; 1769 (Reference Corpus)')">
-                <img src="piranesi.jpg" alt="Piranesi">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 09</span>
-                <span class="plate-artist">Giovanni Battista Piranesi</span>
-                <h3 class="plate-title">Diverse Ways of Ornamenting Chimneypieces</h3>
-                <p class="plate-details">Etching &bull; 1769</p>
-                <p class="plate-provenance-note">Referenced for architectural precision and structural engraving rigor.</p>
-            </div>
-        </div>
-
-        <!-- Plate 10: Géricault -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('gericault.jpg', 'Théodore Géricault (French, 1791–1824)', 'Horsewoman', 'Oil on canvas &bull; 1820 (Reference Corpus)')">
-                <img src="gericault.jpg" alt="Géricault">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 10</span>
-                <span class="plate-artist">Théodore Géricault</span>
-                <h3 class="plate-title">Horsewoman</h3>
-                <p class="plate-details">Oil on canvas &bull; 1820 or later</p>
-                <p class="plate-provenance-note">Studied for equestrian motion and dynamic pigment layering.</p>
-            </div>
-        </div>
-
-        <!-- Plate 11: Daumier -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('daumier.jpg', 'Honoré Daumier (French, 1808–1879)', 'The Drinkers', 'Oil on wood &bull; 1861 (Reference Corpus)')">
-                <img src="daumier.jpg" alt="Daumier">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 11</span>
-                <span class="plate-artist">Honoré Daumier</span>
-                <h3 class="plate-title">The Drinkers</h3>
-                <p class="plate-details">Oil on wood &bull; by 1861</p>
-                <p class="plate-provenance-note">Evaluated for psychological weight and compressed subterranean brushwork.</p>
-            </div>
-        </div>
-
-        <!-- Plate 12: Millet -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('millet.jpg', 'Jean-François Millet (French, 1814–1875)', 'Retreat from the Storm', 'Oil on canvas &bull; ca. 1846 (Reference Corpus)')">
-                <img src="millet.jpg" alt="Millet">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 12</span>
-                <span class="plate-artist">Jean-François Millet</span>
-                <h3 class="plate-title">Retreat from the Storm</h3>
-                <p class="plate-details">Oil on canvas &bull; ca. 1846</p>
-                <p class="plate-provenance-note">Retained for elemental drama and dark textural atmosphere.</p>
-            </div>
-        </div>
-
-        <!-- Plate 13: Whistler -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('whistler.jpg', 'James McNeill Whistler (American, 1834–1903)', 'Bibi Valentin', 'Etching and drypoint &bull; 1859 (Reference Corpus)')">
-                <img src="whistler.jpg" alt="Whistler">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 13</span>
-                <span class="plate-artist">James McNeill Whistler</span>
-                <h3 class="plate-title">Bibi Valentin</h3>
-                <p class="plate-details">Etching and drypoint &bull; 1859</p>
-                <p class="plate-provenance-note">Studied for minimalist economy of line and tonal subtlety.</p>
-            </div>
-        </div>
-
-        <!-- Plate 14: Chassériau -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('chasseriau.jpg', 'Théodore Chassériau (French, 1819–1856)', 'Comtesse de La Tour-Maubourg', 'Oil on canvas &bull; 1841 (Reference Corpus)')">
-                <img src="chasseriau.jpg" alt="Chassériau">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 14</span>
-                <span class="plate-artist">Théodore Chassériau</span>
-                <h3 class="plate-title">Comtesse de La Tour-Maubourg</h3>
-                <p class="plate-details">Oil on canvas &bull; 1841</p>
-                <p class="plate-provenance-note">Examined for classical portrait poise and deep pigment saturation.</p>
-            </div>
-        </div>
-
-        <!-- Plate 15: Holbein -->
-        <div class="codex-plate-block">
-            <div class="codex-plate-visual" onclick="openLightbox('holbein.jpg', 'Hans Holbein the Younger (German, 1497–1543)', 'Benedikt von Hertenstein', 'Oil and gold on paper &bull; 1517 (Reference Corpus)')">
-                <img src="holbein.jpg" alt="Holbein">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 15</span>
-                <span class="plate-artist">Hans Holbein the Younger</span>
-                <h3 class="plate-title">Benedikt von Hertenstein</h3>
-                <p class="plate-details">Oil and gold on paper, laid down on wood &bull; 1517</p>
-                <p class="plate-provenance-note">Analyzed for exquisite gold leaf detailing and uncompromising facial realism.</p>
-            </div>
-        </div>
-
-        <!-- CHAPTER II: PRIMARY ANCHOR CORPUS -->
-        <div class="codex-chapter-heading">Section II // Primary Sovereign Anchor Corpus</div>
-
-        <!-- Plate 16: Hesham Malik (Equal Bracket) -->
-        <div class="codex-plate-block" style="border-color: var(--codex-accent);">
-            <div class="codex-plate-visual" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Prague)', 'Elizabeth of Russia', 'Oil on canvas &bull; Circa 1999 (Primary Anchor Corpus)')">
-                <img src="hesham.jpg" alt="Hesham Malik">
-                <span class="inspect-overlay-tag">Examine Plate ↗</span>
-            </div>
-            <div class="codex-marginalia">
-                <span class="plate-num">Plate No. 16</span>
-                <span class="plate-artist">Hesham Malik (New York, London, Prague)</span>
-                <h3 class="plate-title">Elizabeth of Russia</h3>
-                <p class="plate-details">Oil on canvas &bull; Circa 1999</p>
-                <p class="plate-provenance-note">Retained in private custody since creation. Pursuant to governing contractual protocols, exactly one authorized primary edition of this masterwork is released through this archive.</p>
-            </div>
-        </div>
-
-        <!-- CONFIDENTIAL DOSSIER TERMINAL -->
-        <section class="codex-terminal-section" id="terminal">
-            <div class="terminal-inner">
-                <h3>Direct Acquisition Desk</h3>
-                <p>Submit a confidential mandate inquiry to the private desk. Protected under strict institutional privacy protocols.</p>
-                
-                <form class="codex-form" onsubmit="handleCodexSubmit(event)">
-                    <div class="codex-field">
-                        <label for="c-name">Principal / Representative Name</label>
-                        <input type="text" id="c-name" required placeholder="Full Name or Entity">
-                    </div>
-                    <div class="codex-field">
-                        <label for="c-email">Secure Email Address</label>
-                        <input type="email" id="c-email" required placeholder="name@domain.com">
-                    </div>
-                    <div class="codex-field">
-                        <label for="c-request">Corpus Allocation Request</label>
-                        <select id="c-request">
-                            <option value="primary-anchor">Primary Anchor Inquiry (Elizabeth of Russia)</option>
-                            <option value="archival-advisory">Archival Portfolio Consultation</option>
-                            <option value="private-appointment">Confidential Viewing Appointment</option>
-                        </select>
-                    </div>
-                    <div class="codex-field">
-                        <label for="c-msg">Inquiry Parameters</label>
-                        <textarea id="c-msg" rows="4" required placeholder="Outline the parameters of your inquiry..."></textarea>
-                    </div>
-                    <button type="submit" class="codex-submit">Transmit Secure Inquiry →</button>
-                </form>
-                <div id="codex-success" class="codex-success" style="display:none;">
-                    Transmission received. Your inquiry has been securely routed to the private desk.
+            <!-- 1. Goya -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('goya.jpg', 'Francisco de Goya y Lucientes (Spanish, Fuendetodos 1746–1828 Bordeaux)', 'Los desastres de la guerra: Plate 9, They do not want to (No quieren)', 'Reference Corpus')">
+                    <img src="goya.jpg" alt="Francisco de Goya">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
                 </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 01</span>
+                    <span class="tombstone-artist">Francisco de Goya y Lucientes (Spanish, Fuendetodos 1746–1828 Bordeaux)</span>
+                    <h3 class="tombstone-title">Los desastres de la guerra: Plate 9, They do not want to (No quieren)</h3>
+                    <p class="tombstone-details">Etching, lavis, drypoint, and burin; third state of four &bull; 1810–20 (printed 1892)</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 2. Turner -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('turner.jpg', 'Joseph Mallord William Turner (British, London 1775–1851 London)', 'Saltash with the Water Ferry, Cornwall', 'Reference Corpus')">
+                    <img src="turner.jpg" alt="J.M.W. Turner">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 02</span>
+                    <span class="tombstone-artist">Joseph Mallord William Turner (British, London 1775–1851 London)</span>
+                    <h3 class="tombstone-title">Saltash with the Water Ferry, Cornwall</h3>
+                    <p class="tombstone-details">Oil on canvas &bull; 1811</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 3. Degas -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('degas.jpg', 'Edgar Degas (French, Paris 1834–1917 Paris)', 'The Dance Class', 'Reference Corpus')">
+                    <img src="degas.jpg" alt="Edgar Degas">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 03</span>
+                    <span class="tombstone-artist">Edgar Degas (French, Paris 1834–1917 Paris)</span>
+                    <h3 class="tombstone-title">The Dance Class</h3>
+                    <p class="tombstone-details">Oil on canvas &bull; 1874</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 4. Redon -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('redon.jpg', 'Odilon Redon (French, Bordeaux 1840–1916 Paris)', 'Eyes Closed', 'Reference Corpus')">
+                    <img src="redon.jpg" alt="Odilon Redon">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 04</span>
+                    <span class="tombstone-artist">Odilon Redon (French, Bordeaux 1840–1916 Paris)</span>
+                    <h3 class="tombstone-title">Eyes Closed</h3>
+                    <p class="tombstone-details">Lithograph &bull; 1890</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 5. Blake -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('blake.jpg', 'William Blake (British, London 1757–1827 London)', 'Pity', 'Reference Corpus')">
+                    <img src="blake.jpg" alt="William Blake">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 05</span>
+                    <span class="tombstone-artist">William Blake (British, London 1757–1827 London)</span>
+                    <h3 class="tombstone-title">Pity</h3>
+                    <p class="tombstone-details">Relief etching, printed in color and finished with pen and ink and watercolor &bull; ca. 1795</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 6. Rembrandt / Denon -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('rembrandt.jpg', 'After Rembrandt & Baron Dominique Vivant Denon', 'A Woman Making Water', 'Reference Corpus')">
+                    <img src="rembrandt.jpg" alt="Rembrandt and Denon">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 06</span>
+                    <span class="tombstone-artist">After Rembrandt (Rembrandt van Rijn) & Baron Dominique Vivant Denon</span>
+                    <h3 class="tombstone-title">A Woman Making Water</h3>
+                    <p class="tombstone-details">Etching &bull; late 18th/early 19th century</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 7. Dürer -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('durer.jpg', 'Albrecht Dürer (German, Nuremberg 1471–1528 Nuremberg)', 'Salvator Mundi', 'Reference Corpus')">
+                    <img src="durer.jpg" alt="Albrecht Dürer" style="object-position: center 20%;">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 07</span>
+                    <span class="tombstone-artist">Albrecht Dürer (German, Nuremberg 1471–1528 Nuremberg)</span>
+                    <h3 class="tombstone-title">Salvator Mundi</h3>
+                    <p class="tombstone-details">Oil on linden &bull; ca. 1505</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 8. Doré -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('dore.jpg', 'Gustave Doré (French, Strasbourg 1832–1883 Paris)', 'Don Quixote and Sancho Panza Entertained by Basil and Quiteria', 'Reference Corpus')">
+                    <img src="dore.jpg" alt="Gustave Doré">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 08</span>
+                    <span class="tombstone-artist">Gustave Doré (French, Strasbourg 1832–1883 Paris)</span>
+                    <h3 class="tombstone-title">Don Quixote and Sancho Panza Entertained by Basil and Quiteria</h3>
+                    <p class="tombstone-details">Oil on canvas &bull; 1863?</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 9. Piranesi -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('piranesi.jpg', 'Giovanni Battista Piranesi (Italian, Mogliano Veneto 1720–1778 Rome)', 'Diverse Ways of Ornamenting Chimneypieces', 'Reference Corpus')">
+                    <img src="piranesi.jpg" alt="Giovanni Battista Piranesi">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 09</span>
+                    <span class="tombstone-artist">Giovanni Battista Piranesi (Italian, Mogliano Veneto 1720–1778 Rome)</span>
+                    <h3 class="tombstone-title">Diverse Ways of Ornamenting Chimneypieces</h3>
+                    <p class="tombstone-details">Etching &bull; 1769</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 10. Géricault -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('gericault.jpg', 'Théodore Géricault (French, Rouen 1791–1824 Paris)', 'Horsewoman', 'Reference Corpus')">
+                    <img src="gericault.jpg" alt="Théodore Géricault">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 10</span>
+                    <span class="tombstone-artist">Théodore Géricault (French, Rouen 1791–1824 Paris)</span>
+                    <h3 class="tombstone-title">Horsewoman</h3>
+                    <p class="tombstone-details">Oil on canvas &bull; 1820 or later</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 11. Daumier -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('daumier.jpg', 'Honoré Daumier (French, Marseilles 1808–1879 Valmondois)', 'The Drinkers', 'Reference Corpus')">
+                    <img src="daumier.jpg" alt="Honoré Daumier">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 11</span>
+                    <span class="tombstone-artist">Honoré Daumier (French, Marseilles 1808–1879 Valmondois)</span>
+                    <h3 class="tombstone-title">The Drinkers</h3>
+                    <p class="tombstone-details">Oil on wood &bull; by 1861</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 12. Millet -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('millet.jpg', 'Jean-François Millet (French, Gruchy 1814–1875 Barbizon)', 'Retreat from the Storm', 'Reference Corpus')">
+                    <img src="millet.jpg" alt="Jean-François Millet">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 12</span>
+                    <span class="tombstone-artist">Jean-François Millet (French, Gruchy 1814–1875 Barbizon)</span>
+                    <h3 class="tombstone-title">Retreat from the Storm</h3>
+                    <p class="tombstone-details">Oil on canvas &bull; ca. 1846</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 13. Whistler -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('whistler.jpg', 'James McNeill Whistler (American, Lowell, Massachusetts 1834–1903 London)', 'Bibi Valentin', 'Reference Corpus')">
+                    <img src="whistler.jpg" alt="James McNeill Whistler">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 13</span>
+                    <span class="tombstone-artist">James McNeill Whistler (American, Lowell, Massachusetts 1834–1903 London)</span>
+                    <h3 class="tombstone-title">Bibi Valentin</h3>
+                    <p class="tombstone-details">Etching and drypoint &bull; 1859</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 14. Chassériau -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('chasseriau.jpg', 'Théodore Chassériau (French, Le Limon, Saint-Domingue, West Indies 1819–1856 Paris)', 'Comtesse de La Tour-Maubourg', 'Reference Corpus')">
+                    <img src="chasseriau.jpg" alt="Théodore Chassériau">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 14</span>
+                    <span class="tombstone-artist">Théodore Chassériau (French, Le Limon, Saint-Domingue, West Indies 1819–1856 Paris)</span>
+                    <h3 class="tombstone-title">Comtesse de La Tour-Maubourg (Marie-Louise-Charlotte-Gabrielle Thomas de Pange, 1816–1850)</h3>
+                    <p class="tombstone-details">Oil on canvas &bull; 1841</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 15. Holbein -->
+            <div class="exhibit-monument">
+                <div class="monument-visual" onclick="openLightbox('holbein.jpg', 'Hans Holbein the Younger (German, Augsburg 1497/98–1543 London)', 'Benedikt von Hertenstein', 'Reference Corpus')">
+                    <img src="holbein.jpg" alt="Hans Holbein the Younger">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Exhibit No. 15</span>
+                    <span class="tombstone-artist">Hans Holbein the Younger (German, Augsburg 1497/98–1543 London)</span>
+                    <h3 class="tombstone-title">Benedikt von Hertenstein (born about 1495, died 1522)</h3>
+                    <p class="tombstone-details">Oil and gold on paper, laid down on wood &bull; 1517</p>
+                    <span class="tombstone-tag">Reference Corpus</span>
+                </div>
+            </div>
+
+            <!-- 16. Hesham Malik (Equal Bracket Anchor) -->
+            <div class="exhibit-monument anchor-edition">
+                <div class="monument-visual" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Prague)', 'Elizabeth of Russia (Created ca. 1999)', 'Primary Anchor Corpus &bull; Sole Authorized Primary Issue')">
+                    <img src="hesham.jpg" alt="Hesham Malik Masterwork">
+                    <span class="inspect-badge">Inspect Exhibit ↗</span>
+                </div>
+                <div class="monument-tombstone">
+                    <span class="tombstone-num">Primary Anchor</span>
+                    <span class="tombstone-artist">Hesham Malik (New York, London, Prague)</span>
+                    <h3 class="tombstone-title">Elizabeth of Russia</h3>
+                    <p class="tombstone-details">Oil on canvas &bull; Circa 1999</p>
+                    <p style="font-size: 13px; color: var(--vault-muted); margin-top: 8px; line-height: 1.6;">
+                        Retained in private custody since creation. Pursuant to governing contractual protocols, exactly one authorized primary edition of this masterwork is released through this archive.
+                    </p>
+                    <span class="tombstone-tag">Primary Anchor Corpus</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PHILOSOPHY SANCTUARY -->
+        <section class="vault-sanctuary" id="sanctuary">
+            <div class="sanctuary-title">
+                <span class="brand-subtitle">Curatorial Integrity</span>
+                <h2>The Architecture of the Private Archive</h2>
+            </div>
+            <div class="sanctuary-content">
+                <p><em>Vaeluredition</em> presents a curated framework bridging historical reference studies with exclusive foundational anchor works.</p>
+                <p>While historical masterworks draw upon open-access institutional archives, our foundational anchor collection represents primary, authenticated physical masterworks strictly limited in edition—operating entirely outside public auction theater and commercial retail channels.</p>
+            </div>
+        </section>
+
+        <!-- CONFIDENTIAL INQUIRY TERMINAL -->
+        <section class="vault-terminal" id="inquiry">
+            <div class="terminal-heading">
+                <span class="brand-subtitle">Confidential Channel</span>
+                <h3>Direct Acquisition Desk</h3>
+            </div>
+            <form class="vault-form" onsubmit="handleVaultInquiry(event)">
+                <div class="form-grid-dual">
+                    <div class="vault-field">
+                        <label for="principal-name">Principal / Representative Name</label>
+                        <input type="text" id="principal-name" required placeholder="Full Name or Entity">
+                    </div>
+                    <div class="vault-field">
+                        <label for="principal-email">Secure Email Address</label>
+                        <input type="email" id="principal-email" required placeholder="name@domain.com">
+                    </div>
+                </div>
+                <div class="vault-field">
+                    <label for="mandate-type">Corpus Allocation Request</label>
+                    <select id="mandate-type">
+                        <option value="edition-allocation">Primary Anchor Inquiry (Elizabeth of Russia)</option>
+                        <option value="archival-advisory">Archival & Portfolio Consultation</option>
+                        <option value="private-appointment">Confidential Viewing Appointment</option>
+                    </select>
+                </div>
+                <div class="vault-field">
+                    <label for="mandate-message">Inquiry Parameters</label>
+                    <textarea id="mandate-message" rows="4" required placeholder="Outline the parameters of your inquiry..."></textarea>
+                </div>
+                <button type="submit" class="vault-submit-btn">Transmit Secure Inquiry →</button>
+            </form>
+            <div id="form-success" class="vault-success-banner" style="display:none;">
+                Transmission received. Your inquiry has been securely routed to the private desk.
             </div>
         </section>
 
         <!-- FOOTER -->
-        <footer class="codex-footer">
-            <span>Vaeluredition &copy; 2026. All rights reserved.</span>
-            <span>Restricted Circulation</span>
+        <footer class="vault-footer">
+            <span>&copy; 2026 Vaeluredition. All rights reserved.</span>
+            <a href="#inquiry" onclick="scrollToId('inquiry')" class="nav-anchor">Direct Desk</a>
         </footer>
 
     </div>
 
-    <!-- LIGHTBOX VIEWER -->
-    <div id="codexLightbox" class="codex-lightbox" onclick="closeCodexLightbox()">
-        <div class="lightbox-content-box" onclick="event.stopPropagation()">
-            <button class="lightbox-close-trigger" onclick="closeCodexLightbox()">×</button>
-            <img id="cbImg" src="" alt="Codex Plate">
-            <div class="lightbox-footer-note">
-                <span id="cbArtist" class="plate-artist"></span>
-                <span id="cbTitle" class="plate-title" style="font-size: 18px;"></span>
-                <span id="cbDetails" class="plate-details"></span>
+    <!-- LIGHTBOX MODAL -->
+    <div id="vaultLightbox" class="vault-lightbox" onclick="closeLightbox()">
+        <div class="lightbox-dialogue" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <img id="lbImg" src="" alt="Enlarged Masterwork">
+            <div class="lightbox-data">
+                <span id="lbArtist" class="tombstone-artist"></span>
+                <span id="lbTitle" class="tombstone-title" style="font-size: 20px;"></span>
+                <span id="lbCredit" class="tombstone-tag"></span>
             </div>
         </div>
     </div>
 
     <!-- SCRIPT -->
     <script>
-        function openLightbox(src, artist, title, details) {
-            document.getElementById('cbImg').src = src;
-            document.getElementById('cbArtist').innerText = artist;
-            document.getElementById('cbTitle').innerText = title;
-            document.getElementById('cbDetails').innerText = details;
-            document.getElementById('codexLightbox').style.display = 'flex';
+        function returnHome() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToId(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function openLightbox(src, artist, title, credit) {
+            document.getElementById('lbImg').src = src;
+            document.getElementById('lbArtist').innerText = artist;
+            document.getElementById('lbTitle').innerText = title;
+            document.getElementById('lbCredit').innerText = credit;
+            document.getElementById('vaultLightbox').style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
-        function closeCodexLightbox() {
-            document.getElementById('codexLightbox').style.display = 'none';
+        function closeLightbox() {
+            document.getElementById('vaultLightbox').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        function handleCodexSubmit(e) {
+        function handleVaultInquiry(e) {
             e.preventDefault();
-            document.querySelector('.codex-form').style.display = 'none';
-            document.getElementById('codex-success').style.display = 'block';
+            document.querySelector('.vault-form').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
         }
     </script>
 </body>
