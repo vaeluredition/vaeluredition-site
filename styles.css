@@ -133,7 +133,7 @@ body {
     line-height: 1.8;
 }
 
-/* MONUMENTAL EXHIBITION STACK (Distinct from A&R rows) */
+/* MONUMENTAL EXHIBITION STACK */
 .exhibition-stack {
     display: flex;
     flex-direction: column;
