@@ -3,391 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaeluredition — Private Acquisition Desk & Archive</title>
+    <title>VAELUR EDITION — Sovereign Acquisition Desk & Archive</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="vault-body">
 
-    <div class="vault-shell">
+    <div class="secure-wrapper">
         
-        <!-- HEADER -->
+        <!-- SYSTEM STATUS HEADER -->
         <header class="vault-header">
-            <div class="brand-block">
-                <a href="#" onclick="returnHome()" class="brand-title">Vaeluredition</a>
-                <span class="brand-subtitle">Private Acquisition Desk / Curated Corpus</span>
+            <div class="header-node">
+                <span class="status-indicator"></span>
+                <span class="node-id">SECURE DESK // REF-99</span>
             </div>
             <nav class="vault-nav">
-                <a href="#corridor" onclick="scrollToId('corridor')" class="nav-anchor">The Registry</a>
-                <a href="#sanctuary" onclick="scrollToId('sanctuary')" class="nav-anchor">Mandate</a>
-                <a href="#inquiry" onclick="scrollToId('inquiry')" class="nav-anchor">Acquisition Desk</a>
+                <a href="#registry" class="nav-link">[ 01. REGISTRY ]</a>
+                <a href="#mandate" class="nav-link">[ 02. PROTOCOL ]</a>
+                <a href="#terminal" class="nav-link">[ 03. SECURE DISPATCH ]</a>
             </nav>
         </header>
 
-        <!-- THRESHOLD HERO -->
-        <section class="vault-threshold">
-            <div class="threshold-visual" onclick="openLightbox('hero-canvas.jpg', 'Hendrick ter Brugghen (1588–1629)', 'Roman Charity, 1622', 'Archival Study / The Metropolitan Museum of Art')">
+        <!-- SOVEREIGN HERO THRESHOLD -->
+        <section class="threshold-zone">
+            <div class="threshold-meta">
+                <span class="meta-tag">RESTRICTED ACCESS ARCHIVE</span>
+                <h1 class="hero-title">Private Acquisition Desk. <span class="italic-serif">Uncompromising Corpus.</span></h1>
+                <p class="hero-prose">Maintaining an unlisted private registry of historical masterwork studies alongside singular primary anchor acquisitions. Operating entirely outside public auction houses, institutional registries, and commercial retail channels.</p>
+            </div>
+            <div class="threshold-canvas" onclick="openVaultModal('hero-canvas.jpg', 'Hendrick ter Brugghen (1588–1629)', 'Roman Charity, 1622', 'Archival Study / Private Collection Protocol')">
                 <img src="hero-canvas.jpg" alt="Hendrick ter Brugghen — Roman Charity">
-                <span class="inspect-badge">Inspect Exhibit ↗</span>
-            </div>
-            <div class="threshold-prose">
-                <span class="brand-subtitle">Curatorial Protocol</span>
-                <h1>Private Acquisition Desk. <span class="serif-italics">Uncompromising Studies.</span></h1>
-                <p>Maintaining a private corpus of historical masterwork studies alongside singular, primary-source anchor acquisitions. Operating entirely outside public auction houses and commercial retail channels.</p>
+                <div class="canvas-overlay">
+                    <span class="canvas-num">REF // 00</span>
+                    <span class="canvas-action">INSPECT DOSSIER ↗</span>
+                </div>
             </div>
         </section>
 
-        <!-- EXHIBITION STACK (MONUMENTAL REGISTRY) -->
-        <div class="exhibition-stack" id="corridor">
-            <div class="stack-section-title">Curated Historical Corpus & Foundational Anchors</div>
+        <div class="divider-line"></div>
 
-            <!-- 1. Goya -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('goya.jpg', 'Francisco de Goya y Lucientes (Spanish, Fuendetodos 1746–1828 Bordeaux)', 'Los desastres de la guerra: Plate 9, They do not want to (No quieren)', 'Reference Corpus')">
-                    <img src="goya.jpg" alt="Francisco de Goya">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 01</span>
-                    <span class="tombstone-artist">Francisco de Goya y Lucientes (Spanish, Fuendetodos 1746–1828 Bordeaux)</span>
-                    <h3 class="tombstone-title">Los desastres de la guerra: Plate 9, They do not want to (No quieren)</h3>
-                    <p class="tombstone-details">Etching, lavis, drypoint, and burin; third state of four &bull; 1810–20 (printed 1892)</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
+        <!-- REGISTRY CORPUS -->
+        <section class="registry-section" id="registry">
+            <div class="registry-header">
+                <span class="section-index">01</span>
+                <h2>Curated Reference Corpus & Foundational Anchors</h2>
             </div>
 
-            <!-- 2. Turner -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('turner.jpg', 'Joseph Mallord William Turner (British, London 1775–1851 London)', 'Saltash with the Water Ferry, Cornwall', 'Reference Corpus')">
-                    <img src="turner.jpg" alt="J.M.W. Turner">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 02</span>
-                    <span class="tombstone-artist">Joseph Mallord William Turner (British, London 1775–1851 London)</span>
-                    <h3 class="tombstone-title">Saltash with the Water Ferry, Cornwall</h3>
-                    <p class="tombstone-details">Oil on canvas &bull; 1811</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+            <div class="registry-grid">
 
-            <!-- 3. Degas -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('degas.jpg', 'Edgar Degas (French, Paris 1834–1917 Paris)', 'The Dance Class', 'Reference Corpus')">
-                    <img src="degas.jpg" alt="Edgar Degas">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 03</span>
-                    <span class="tombstone-artist">Edgar Degas (French, Paris 1834–1917 Paris)</span>
-                    <h3 class="tombstone-title">The Dance Class</h3>
-                    <p class="tombstone-details">Oil on canvas &bull; 1874</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 1. Goya -->
+                <article class="dossier-card" onclick="openVaultModal('goya.jpg', 'Francisco de Goya y Lucientes (1746–1828)', 'Los desastres de la guerra: Plate 9, No quieren', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="goya.jpg" alt="Francisco de Goya">
+                        <span class="dossier-tag">REF-01</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Francisco de Goya y Lucientes</span>
+                        <h3>Los desastres de la guerra: Plate 9, They do not want to</h3>
+                        <p class="spec-text">Etching, lavis, drypoint, and burin &bull; 1810–20</p>
+                    </div>
+                </article>
 
-            <!-- 4. Redon -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('redon.jpg', 'Odilon Redon (French, Bordeaux 1840–1916 Paris)', 'Eyes Closed', 'Reference Corpus')">
-                    <img src="redon.jpg" alt="Odilon Redon">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 04</span>
-                    <span class="tombstone-artist">Odilon Redon (French, Bordeaux 1840–1916 Paris)</span>
-                    <h3 class="tombstone-title">Eyes Closed</h3>
-                    <p class="tombstone-details">Lithograph &bull; 1890</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 2. Turner -->
+                <article class="dossier-card" onclick="openVaultModal('turner.jpg', 'Joseph Mallord William Turner (1775–1851)', 'Saltash with the Water Ferry, Cornwall', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="turner.jpg" alt="J.M.W. Turner">
+                        <span class="dossier-tag">REF-02</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Joseph Mallord William Turner</span>
+                        <h3>Saltash with the Water Ferry, Cornwall</h3>
+                        <p class="spec-text">Oil on canvas &bull; 1811</p>
+                    </div>
+                </article>
 
-            <!-- 5. Blake -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('blake.jpg', 'William Blake (British, London 1757–1827 London)', 'Pity', 'Reference Corpus')">
-                    <img src="blake.jpg" alt="William Blake">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 05</span>
-                    <span class="tombstone-artist">William Blake (British, London 1757–1827 London)</span>
-                    <h3 class="tombstone-title">Pity</h3>
-                    <p class="tombstone-details">Relief etching, printed in color and finished with pen and ink and watercolor &bull; ca. 1795</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 3. Degas -->
+                <article class="dossier-card" onclick="openVaultModal('degas.jpg', 'Edgar Degas (1834–1917)', 'The Dance Class', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="degas.jpg" alt="Edgar Degas">
+                        <span class="dossier-tag">REF-03</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Edgar Degas</span>
+                        <h3>The Dance Class</h3>
+                        <p class="spec-text">Oil on canvas &bull; 1874</p>
+                    </div>
+                </article>
 
-            <!-- 6. Rembrandt / Denon -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('rembrandt.jpg', 'After Rembrandt & Baron Dominique Vivant Denon', 'A Woman Making Water', 'Reference Corpus')">
-                    <img src="rembrandt.jpg" alt="Rembrandt and Denon">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 06</span>
-                    <span class="tombstone-artist">After Rembrandt (Rembrandt van Rijn) & Baron Dominique Vivant Denon</span>
-                    <h3 class="tombstone-title">A Woman Making Water</h3>
-                    <p class="tombstone-details">Etching &bull; late 18th/early 19th century</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 4. Redon -->
+                <article class="dossier-card" onclick="openVaultModal('redon.jpg', 'Odilon Redon (1840–1916)', 'Eyes Closed', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="redon.jpg" alt="Odilon Redon">
+                        <span class="dossier-tag">REF-04</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Odilon Redon</span>
+                        <h3>Eyes Closed</h3>
+                        <p class="spec-text">Lithograph &bull; 1890</p>
+                    </div>
+                </article>
 
-            <!-- 7. Dürer -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('durer.jpg', 'Albrecht Dürer (German, Nuremberg 1471–1528 Nuremberg)', 'Salvator Mundi', 'Reference Corpus')">
-                    <img src="durer.jpg" alt="Albrecht Dürer" style="object-position: center 20%;">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 07</span>
-                    <span class="tombstone-artist">Albrecht Dürer (German, Nuremberg 1471–1528 Nuremberg)</span>
-                    <h3 class="tombstone-title">Salvator Mundi</h3>
-                    <p class="tombstone-details">Oil on linden &bull; ca. 1505</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 5. Blake -->
+                <article class="dossier-card" onclick="openVaultModal('blake.jpg', 'William Blake (1757–1827)', 'Pity', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="blake.jpg" alt="William Blake">
+                        <span class="dossier-tag">REF-05</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">William Blake</span>
+                        <h3>Pity</h3>
+                        <p class="spec-text">Relief etching with watercolor &bull; ca. 1795</p>
+                    </div>
+                </article>
 
-            <!-- 8. Doré -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('dore.jpg', 'Gustave Doré (French, Strasbourg 1832–1883 Paris)', 'Don Quixote and Sancho Panza Entertained by Basil and Quiteria', 'Reference Corpus')">
-                    <img src="dore.jpg" alt="Gustave Doré">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 08</span>
-                    <span class="tombstone-artist">Gustave Doré (French, Strasbourg 1832–1883 Paris)</span>
-                    <h3 class="tombstone-title">Don Quixote and Sancho Panza Entertained by Basil and Quiteria</h3>
-                    <p class="tombstone-details">Oil on canvas &bull; 1863?</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 6. Rembrandt / Denon -->
+                <article class="dossier-card" onclick="openVaultModal('rembrandt.jpg', 'After Rembrandt & Baron Dominique Vivant Denon', 'A Woman Making Water', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="rembrandt.jpg" alt="Rembrandt and Denon">
+                        <span class="dossier-tag">REF-06</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">After Rembrandt & Baron Dominique Vivant Denon</span>
+                        <h3>A Woman Making Water</h3>
+                        <p class="spec-text">Etching &bull; late 18th/early 19th c.</p>
+                    </div>
+                </article>
 
-            <!-- 9. Piranesi -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('piranesi.jpg', 'Giovanni Battista Piranesi (Italian, Mogliano Veneto 1720–1778 Rome)', 'Diverse Ways of Ornamenting Chimneypieces', 'Reference Corpus')">
-                    <img src="piranesi.jpg" alt="Giovanni Battista Piranesi">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 09</span>
-                    <span class="tombstone-artist">Giovanni Battista Piranesi (Italian, Mogliano Veneto 1720–1778 Rome)</span>
-                    <h3 class="tombstone-title">Diverse Ways of Ornamenting Chimneypieces</h3>
-                    <p class="tombstone-details">Etching &bull; 1769</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 7. Dürer -->
+                <article class="dossier-card" onclick="openVaultModal('durer.jpg', 'Albrecht Dürer (1471–1528)', 'Salvator Mundi', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="durer.jpg" alt="Albrecht Dürer">
+                        <span class="dossier-tag">REF-07</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Albrecht Dürer</span>
+                        <h3>Salvator Mundi</h3>
+                        <p class="spec-text">Oil on linden &bull; ca. 1505</p>
+                    </div>
+                </article>
 
-            <!-- 10. Géricault -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('gericault.jpg', 'Théodore Géricault (French, Rouen 1791–1824 Paris)', 'Horsewoman', 'Reference Corpus')">
-                    <img src="gericault.jpg" alt="Théodore Géricault">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 10</span>
-                    <span class="tombstone-artist">Théodore Géricault (French, Rouen 1791–1824 Paris)</span>
-                    <h3 class="tombstone-title">Horsewoman</h3>
-                    <p class="tombstone-details">Oil on canvas &bull; 1820 or later</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 8. Doré -->
+                <article class="dossier-card" onclick="openVaultModal('dore.jpg', 'Gustave Doré (1832–1883)', 'Don Quixote and Sancho Panza Entertained by Basil and Quiteria', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="dore.jpg" alt="Gustave Doré">
+                        <span class="dossier-tag">REF-08</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Gustave Doré</span>
+                        <h3>Don Quixote and Sancho Panza Entertained</h3>
+                        <p class="spec-text">Oil on canvas &bull; 1863</p>
+                    </div>
+                </article>
 
-            <!-- 11. Daumier -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('daumier.jpg', 'Honoré Daumier (French, Marseilles 1808–1879 Valmondois)', 'The Drinkers', 'Reference Corpus')">
-                    <img src="daumier.jpg" alt="Honoré Daumier">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 11</span>
-                    <span class="tombstone-artist">Honoré Daumier (French, Marseilles 1808–1879 Valmondois)</span>
-                    <h3 class="tombstone-title">The Drinkers</h3>
-                    <p class="tombstone-details">Oil on wood &bull; by 1861</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 9. Piranesi -->
+                <article class="dossier-card" onclick="openVaultModal('piranesi.jpg', 'Giovanni Battista Piranesi (1720–1778)', 'Diverse Ways of Ornamenting Chimneypieces', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="piranesi.jpg" alt="Giovanni Battista Piranesi">
+                        <span class="dossier-tag">REF-09</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Giovanni Battista Piranesi</span>
+                        <h3>Diverse Ways of Ornamenting Chimneypieces</h3>
+                        <p class="spec-text">Etching &bull; 1769</p>
+                    </div>
+                </article>
 
-            <!-- 12. Millet -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('millet.jpg', 'Jean-François Millet (French, Gruchy 1814–1875 Barbizon)', 'Retreat from the Storm', 'Reference Corpus')">
-                    <img src="millet.jpg" alt="Jean-François Millet">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 12</span>
-                    <span class="tombstone-artist">Jean-François Millet (French, Gruchy 1814–1875 Barbizon)</span>
-                    <h3 class="tombstone-title">Retreat from the Storm</h3>
-                    <p class="tombstone-details">Oil on canvas &bull; ca. 1846</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 10. Géricault -->
+                <article class="dossier-card" onclick="openVaultModal('gericault.jpg', 'Théodore Géricault (1791–1824)', 'Horsewoman', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="gericault.jpg" alt="Théodore Géricault">
+                        <span class="dossier-tag">REF-10</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Théodore Géricault</span>
+                        <h3>Horsewoman</h3>
+                        <p class="spec-text">Oil on canvas &bull; 1820</p>
+                    </div>
+                </article>
 
-            <!-- 13. Whistler -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('whistler.jpg', 'James McNeill Whistler (American, Lowell, Massachusetts 1834–1903 London)', 'Bibi Valentin', 'Reference Corpus')">
-                    <img src="whistler.jpg" alt="James McNeill Whistler">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 13</span>
-                    <span class="tombstone-artist">James McNeill Whistler (American, Lowell, Massachusetts 1834–1903 London)</span>
-                    <h3 class="tombstone-title">Bibi Valentin</h3>
-                    <p class="tombstone-details">Etching and drypoint &bull; 1859</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 11. Daumier -->
+                <article class="dossier-card" onclick="openVaultModal('daumier.jpg', 'Honoré Daumier (1808–1879)', 'The Drinkers', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="daumier.jpg" alt="Honoré Daumier">
+                        <span class="dossier-tag">REF-11</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Honoré Daumier</span>
+                        <h3>The Drinkers</h3>
+                        <p class="spec-text">Oil on wood &bull; by 1861</p>
+                    </div>
+                </article>
 
-            <!-- 14. Chassériau -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('chasseriau.jpg', 'Théodore Chassériau (French, Le Limon, Saint-Domingue, West Indies 1819–1856 Paris)', 'Comtesse de La Tour-Maubourg', 'Reference Corpus')">
-                    <img src="chasseriau.jpg" alt="Théodore Chassériau">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 14</span>
-                    <span class="tombstone-artist">Théodore Chassériau (French, Le Limon, Saint-Domingue, West Indies 1819–1856 Paris)</span>
-                    <h3 class="tombstone-title">Comtesse de La Tour-Maubourg (Marie-Louise-Charlotte-Gabrielle Thomas de Pange, 1816–1850)</h3>
-                    <p class="tombstone-details">Oil on canvas &bull; 1841</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 12. Millet -->
+                <article class="dossier-card" onclick="openVaultModal('millet.jpg', 'Jean-François Millet (1814–1875)', 'Retreat from the Storm', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="millet.jpg" alt="Jean-François Millet">
+                        <span class="dossier-tag">REF-12</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Jean-François Millet</span>
+                        <h3>Retreat from the Storm</h3>
+                        <p class="spec-text">Oil on canvas &bull; ca. 1846</p>
+                    </div>
+                </article>
 
-            <!-- 15. Holbein -->
-            <div class="exhibit-monument">
-                <div class="monument-visual" onclick="openLightbox('holbein.jpg', 'Hans Holbein the Younger (German, Augsburg 1497/98–1543 London)', 'Benedikt von Hertenstein', 'Reference Corpus')">
-                    <img src="holbein.jpg" alt="Hans Holbein the Younger">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Exhibit No. 15</span>
-                    <span class="tombstone-artist">Hans Holbein the Younger (German, Augsburg 1497/98–1543 London)</span>
-                    <h3 class="tombstone-title">Benedikt von Hertenstein (born about 1495, died 1522)</h3>
-                    <p class="tombstone-details">Oil and gold on paper, laid down on wood &bull; 1517</p>
-                    <span class="tombstone-tag">Reference Corpus</span>
-                </div>
-            </div>
+                <!-- 13. Whistler -->
+                <article class="dossier-card" onclick="openVaultModal('whistler.jpg', 'James McNeill Whistler (1834–1903)', 'Bibi Valentin', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="whistler.jpg" alt="James McNeill Whistler">
+                        <span class="dossier-tag">REF-13</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">James McNeill Whistler</span>
+                        <h3>Bibi Valentin</h3>
+                        <p class="spec-text">Etching and drypoint &bull; 1859</p>
+                    </div>
+                </article>
 
-            <!-- 16. Hesham Malik (Equal Bracket Anchor) -->
-            <div class="exhibit-monument anchor-edition">
-                <div class="monument-visual" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Prague)', 'Elizabeth of Russia (Created ca. 1999)', 'Primary Anchor Corpus &bull; Sole Authorized Primary Issue')">
-                    <img src="hesham.jpg" alt="Hesham Malik Masterwork">
-                    <span class="inspect-badge">Inspect Exhibit ↗</span>
-                </div>
-                <div class="monument-tombstone">
-                    <span class="tombstone-num">Primary Anchor</span>
-                    <span class="tombstone-artist">Hesham Malik (New York, London, Prague)</span>
-                    <h3 class="tombstone-title">Elizabeth of Russia</h3>
-                    <p class="tombstone-details">Oil on canvas &bull; Circa 1999</p>
-                    <p style="font-size: 13px; color: var(--vault-muted); margin-top: 8px; line-height: 1.6;">
-                        Retained in private custody since creation. Pursuant to governing contractual protocols, exactly one authorized primary edition of this masterwork is released through this archive.
-                    </p>
-                    <span class="tombstone-tag">Primary Anchor Corpus</span>
-                </div>
-            </div>
+                <!-- 14. Chassériau -->
+                <article class="dossier-card" onclick="openVaultModal('chasseriau.jpg', 'Théodore Chassériau (1819–1856)', 'Comtesse de La Tour-Maubourg', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="chasseriau.jpg" alt="Théodore Chassériau">
+                        <span class="dossier-tag">REF-14</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Théodore Chassériau</span>
+                        <h3>Comtesse de La Tour-Maubourg</h3>
+                        <p class="spec-text">Oil on canvas &bull; 1841</p>
+                    </div>
+                </article>
 
-        </div>
+                <!-- 15. Holbein -->
+                <article class="dossier-card" onclick="openVaultModal('holbein.jpg', 'Hans Holbein the Younger (1497/98–1543)', 'Benedikt von Hertenstein', 'Reference Corpus')">
+                    <div class="dossier-visual">
+                        <img src="holbein.jpg" alt="Hans Holbein the Younger">
+                        <span class="dossier-tag">REF-15</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name">Hans Holbein the Younger</span>
+                        <h3>Benedikt von Hertenstein</h3>
+                        <p class="spec-text">Oil and gold on paper on wood &bull; 1517</p>
+                    </div>
+                </article>
 
-        <!-- PHILOSOPHY SANCTUARY -->
-        <section class="vault-sanctuary" id="sanctuary">
-            <div class="sanctuary-title">
-                <span class="brand-subtitle">Curatorial Integrity</span>
-                <h2>The Architecture of the Private Archive</h2>
-            </div>
-            <div class="sanctuary-content">
-                <p><em>Vaeluredition</em> presents a curated framework bridging historical reference studies with exclusive foundational anchor works.</p>
-                <p>While historical masterworks draw upon open-access institutional archives, our foundational anchor collection represents primary, authenticated physical masterworks strictly limited in edition—operating entirely outside public auction theater and commercial retail channels.</p>
+                <!-- 16. PRIMARY ANCHOR: HESHAM MALIK -->
+                <article class="dossier-card primary-anchor-card" onclick="openVaultModal('hesham.jpg', 'Hesham Malik (New York, London, Prague)', 'Elizabeth of Russia (Circa 1999)', 'Primary Anchor Corpus &bull; Sole Authorized Primary Issue')">
+                    <div class="dossier-visual">
+                        <img src="hesham.jpg" alt="Hesham Malik Masterwork">
+                        <span class="dossier-tag gold-tag">ANCHOR 01</span>
+                    </div>
+                    <div class="dossier-data">
+                        <span class="artist-name gold-text">Hesham Malik</span>
+                        <h3>Elizabeth of Russia</h3>
+                        <p class="spec-text">Oil on canvas &bull; Circa 1999</p>
+                        <p class="anchor-note">Retained in private custody since creation. Exactly one authorized primary issue released through this protocol.</p>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <!-- CONFIDENTIAL INQUIRY TERMINAL -->
-        <section class="vault-terminal" id="inquiry">
-            <div class="terminal-heading">
-                <span class="brand-subtitle">Confidential Channel</span>
-                <h3>Direct Acquisition Desk</h3>
+        <div class="divider-line"></div>
+
+        <!-- PROTOCOL MANDATE -->
+        <section class="mandate-section" id="mandate">
+            <div class="mandate-header">
+                <span class="section-index">02</span>
+                <h2>Institutional Protocols</h2>
             </div>
-            <form class="vault-form" onsubmit="handleVaultInquiry(event)">
-                <div class="form-grid-dual">
-                    <div class="vault-field">
-                        <label for="principal-name">Principal / Representative Name</label>
-                        <input type="text" id="principal-name" required placeholder="Full Name or Entity">
+            <div class="mandate-grid">
+                <div class="mandate-block">
+                    <h4>Sovereign Custody</h4>
+                    <p>Every asset held within Vaeluredition is verified for uncompromised provenance and held under maximum security escrow structures.</p>
+                </div>
+                <div class="mandate-block">
+                    <h4>Direct Negotiation</h4>
+                    <p>All acquisitions bypass secondary market speculation, public registries, and media exposure to protect principal anonymity.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider-line"></div>
+
+        <!-- ENCRYPTED DISPATCH TERMINAL -->
+        <section class="terminal-section" id="terminal">
+            <div class="terminal-header">
+                <span class="section-index">03</span>
+                <h2>Secure Acquisition Dispatch</h2>
+                <p class="terminal-subtitle">Direct line to the private desk. Transmissions are encrypted and reviewed strictly by appointment.</p>
+            </div>
+
+            <form class="secure-form" onsubmit="handleSecureDispatch(event)">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>PRINCIPAL / ENTITY IDENTIFIER</label>
+                        <input type="text" required placeholder="Authorized Name or Entity Code">
                     </div>
-                    <div class="vault-field">
-                        <label for="principal-email">Secure Email Address</label>
-                        <input type="email" id="principal-email" required placeholder="name@domain.com">
+                    <div class="input-group">
+                        <label>SECURED COMMS CHANNEL</label>
+                        <input type="email" required placeholder="direct@domain.com">
                     </div>
                 </div>
-                <div class="vault-field">
-                    <label for="mandate-type">Corpus Allocation Request</label>
-                    <select id="mandate-type">
-                        <option value="edition-allocation">Primary Anchor Inquiry (Elizabeth of Russia)</option>
-                        <option value="archival-advisory">Archival & Portfolio Consultation</option>
-                        <option value="private-appointment">Confidential Viewing Appointment</option>
+                <div class="input-group">
+                    <label>ALLOCATION CLASSIFICATION</label>
+                    <select>
+                        <option>Primary Anchor Inquiry: Elizabeth of Russia (Circa 1999)</option>
+                        <option>Archival Corpus Consultation</option>
+                        <option>Confidential Viewing Protocol</option>
                     </select>
                 </div>
-                <div class="vault-field">
-                    <label for="mandate-message">Inquiry Parameters</label>
-                    <textarea id="mandate-message" rows="4" required placeholder="Outline the parameters of your inquiry..."></textarea>
+                <div class="input-group">
+                    <label>MANDATE PARAMETERS</label>
+                    <textarea rows="4" required placeholder="State parameters of inquiry..."></textarea>
                 </div>
-                <button type="submit" class="vault-submit-btn">Transmit Secure Inquiry →</button>
+                <button type="submit" class="dispatch-btn">INITIALIZE ENCRYPTED TRANSMISSION ↗</button>
             </form>
-            <div id="form-success" class="vault-success-banner" style="display:none;">
-                Transmission received. Your inquiry has been securely routed to the private desk.
+            <div id="dispatch-success" class="dispatch-success" style="display:none;">
+                [ TRANSMISSION ACKNOWLEDGED ] — Routing securely to the private desk.
             </div>
         </section>
 
         <!-- FOOTER -->
         <footer class="vault-footer">
-            <span>&copy; 2026 Vaeluredition. All rights reserved.</span>
-            <a href="#inquiry" onclick="scrollToId('inquiry')" class="nav-anchor">Direct Desk</a>
+            <span>VAELUR EDITION &copy; 2026. ALL RIGHTS RESERVED.</span>
+            <span class="footer-code">SECURE NODE // 884-VX</span>
         </footer>
 
     </div>
 
-    <!-- LIGHTBOX MODAL -->
-    <div id="vaultLightbox" class="vault-lightbox" onclick="closeLightbox()">
-        <div class="lightbox-dialogue" onclick="event.stopPropagation()">
-            <button class="lightbox-close" onclick="closeLightbox()">×</button>
-            <img id="lbImg" src="" alt="Enlarged Masterwork">
-            <div class="lightbox-data">
-                <span id="lbArtist" class="tombstone-artist"></span>
-                <span id="lbTitle" class="tombstone-title" style="font-size: 20px;"></span>
-                <span id="lbCredit" class="tombstone-tag"></span>
+    <!-- VAULT LIGHTBOX MODAL -->
+    <div id="vaultModal" class="vault-modal" onclick="closeVaultModal()">
+        <div class="modal-window" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeVaultModal()">[ CLOSE ]</button>
+            <div class="modal-content-grid">
+                <div class="modal-img-wrap">
+                    <img id="modalImg" src="" alt="Dossier Exhibit">
+                </div>
+                <div class="modal-info-wrap">
+                    <span id="modalTag" class="modal-tag"></span>
+                    <h3 id="modalTitle" class="modal-title"></h3>
+                    <span id="modalArtist" class="modal-artist"></span>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- SCRIPT -->
     <script>
-        function returnHome() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function scrollToId(id) {
-            const el = document.getElementById(id);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function openLightbox(src, artist, title, credit) {
-            document.getElementById('lbImg').src = src;
-            document.getElementById('lbArtist').innerText = artist;
-            document.getElementById('lbTitle').innerText = title;
-            document.getElementById('lbCredit').innerText = credit;
-            document.getElementById('vaultLightbox').style.display = 'flex';
+        function openVaultModal(src, artist, title, tag) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('modalArtist').innerText = artist;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalTag').innerText = tag;
+            document.getElementById('vaultModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
-        function closeLightbox() {
-            document.getElementById('vaultLightbox').style.display = 'none';
+        function closeVaultModal() {
+            document.getElementById('vaultModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        function handleVaultInquiry(e) {
+        function handleSecureDispatch(e) {
             e.preventDefault();
-            document.querySelector('.vault-form').style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
+            document.querySelector('.secure-form').style.display = 'none';
+            document.getElementById('dispatch-success').style.display = 'block';
         }
     </script>
 </body>
