@@ -1,10 +1,12 @@
 :root {
-    --codex-bg: #141210;
-    --codex-panel: #1a1715;
-    --codex-text: #e6e1da;
-    --codex-muted: #8c8378;
-    --codex-accent: #c29b68;
-    --codex-border: #2e2823;
+    --vault-bg: #151312;
+    --vault-panel: #1b1816;
+    --vault-card: #201d1a;
+    --vault-text: #eae6df;
+    --vault-muted: #8c8378;
+    --vault-accent: #c29b68;
+    --vault-border: #322c27;
+    --max-width: 1200px;
 }
 
 * {
@@ -14,128 +16,184 @@
 }
 
 body {
-    background-color: var(--codex-bg);
-    color: var(--codex-text);
+    background-color: var(--vault-bg);
+    color: var(--vault-text);
     font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
     font-weight: 300;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
 }
 
-/* CODEX WRAPPER (CENTERED TREATISE) */
-.codex-container {
-    max-width: 900px;
+.vault-shell {
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 80px 40px 160px 40px;
+    padding: 80px 50px 160px 50px;
 }
 
-/* HEADER */
-.codex-header {
+/* MONUMENTAL HEADER */
+.vault-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--codex-border);
-    padding-bottom: 30px;
-    margin-bottom: 80px;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--vault-border);
+    margin-bottom: 100px;
 }
 
-.codex-logo {
-    font-size: 14px;
+.brand-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.brand-title {
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    color: var(--codex-text);
+    color: var(--vault-text);
     text-decoration: none;
 }
 
-.codex-classification {
-    font-size: 9px;
+.brand-subtitle {
+    font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--codex-accent);
+    color: var(--vault-accent);
 }
 
-/* PROLOGUE / HERO SECTION */
-.codex-prologue {
-    text-align: center;
-    margin-bottom: 120px;
+.vault-nav {
+    display: flex;
+    gap: 40px;
 }
 
-.codex-tag {
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--codex-accent);
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-.codex-prologue h1 {
-    font-size: clamp(38px, 4.5vw, 60px);
-    font-weight: 300;
-    font-family: Georgia, serif;
-    font-style: italic;
-    line-height: 1.2;
-    margin-bottom: 30px;
-}
-
-.codex-prologue p {
-    font-size: 17px;
-    color: var(--codex-muted);
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.9;
-}
-
-/* CODEX PLATE (EMBEDDED ARTWORK IN TEXT) */
-.codex-chapter-heading {
+.nav-anchor {
     font-size: 11px;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--codex-accent);
-    text-align: center;
-    margin: 140px 0 60px 0;
-    border-top: 1px solid var(--codex-border);
-    padding-top: 40px;
+    color: var(--vault-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
 }
 
-.codex-plate-block {
-    margin-bottom: 120px;
-    background: var(--codex-panel);
-    border: 1px solid var(--codex-border);
-    padding: 50px;
+.nav-anchor:hover {
+    color: var(--vault-text);
 }
 
-.codex-plate-visual {
+/* CINEMATIC THRESHOLD HERO */
+.vault-threshold {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 160px;
+}
+
+.threshold-visual {
     width: 100%;
-    height: 540px;
+    height: 640px;
     background: #0c0b0a;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    margin-bottom: 30px;
-    border: 1px solid var(--codex-border);
+    border: 1px solid var(--vault-border);
 }
 
-.codex-plate-visual img {
+.threshold-visual img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: contrast(1.12) brightness(0.9);
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.codex-plate-visual:hover img {
+.threshold-visual:hover img {
     transform: scale(1.03);
 }
 
-.inspect-overlay-tag {
+.threshold-prose h1 {
+    font-size: clamp(42px, 4.5vw, 68px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 30px;
+}
+
+.serif-italics {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: var(--vault-accent);
+    font-weight: 400;
+}
+
+.threshold-prose p {
+    font-size: 18px;
+    color: var(--vault-muted);
+    line-height: 1.8;
+}
+
+/* MONUMENTAL EXHIBITION STACK (Distinct from A&R rows) */
+.exhibition-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+}
+
+.stack-section-title {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--vault-accent);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.exhibit-monument {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+}
+
+.exhibit-monument.anchor-edition {
+    background: var(--vault-card);
+    border-color: var(--vault-accent);
+}
+
+.monument-visual {
+    width: 100%;
+    height: 520px;
+    background: #0c0b0a;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--vault-border);
+}
+
+.monument-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(0.9);
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.monument-visual:hover img {
+    transform: scale(1.03);
+}
+
+.inspect-badge {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background: rgba(20, 18, 16, 0.9);
-    border: 1px solid var(--codex-border);
-    color: var(--codex-text);
+    background: rgba(21, 19, 18, 0.9);
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text);
     padding: 8px 16px;
     font-size: 9px;
     letter-spacing: 0.25em;
@@ -143,96 +201,130 @@ body {
     pointer-events: none;
 }
 
-.codex-marginalia {
+.monument-tombstone {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
-.plate-num {
-    font-size: 9px;
+.tombstone-num {
+    font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--codex-accent);
+    color: var(--vault-accent);
 }
 
-.plate-artist {
-    font-size: 11px;
+.tombstone-artist {
+    font-size: 12px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     font-weight: 500;
-    color: var(--codex-text);
+    color: var(--vault-text);
 }
 
-.plate-title {
-    font-size: 26px;
+.tombstone-title {
+    font-size: 30px;
     font-weight: 300;
     font-family: Georgia, serif;
     font-style: italic;
-    line-height: 1.3;
+    line-height: 1.25;
 }
 
-.plate-details {
+.tombstone-details {
     font-size: 14px;
-    color: var(--codex-muted);
+    color: var(--vault-muted);
 }
 
-.plate-provenance-note {
-    font-size: 13px;
-    color: var(--codex-muted);
-    line-height: 1.7;
-    margin-top: 10px;
-    border-top: 1px dashed var(--codex-border);
+.tombstone-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--vault-accent);
+    border-top: 1px dashed var(--vault-border);
     padding-top: 16px;
 }
 
-/* RESTRICTED DOSSIER TERMINAL */
-.codex-terminal-section {
-    margin-top: 160px;
-    background: var(--codex-panel);
-    border: 1px solid var(--codex-border);
-    padding: 60px;
+/* PHILOSOPHY SANCTUARY */
+.vault-sanctuary {
+    margin-top: 180px;
+    padding: 100px 0;
+    border-top: 1px solid var(--vault-border);
+    border-bottom: 1px solid var(--vault-border);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
 }
 
-.terminal-inner h3 {
-    font-size: 28px;
+.sanctuary-title h2 {
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.sanctuary-content p {
+    font-size: 17px;
+    color: var(--vault-muted);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* ACQUISITION TERMINAL */
+.vault-terminal {
+    margin-top: 160px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
+    padding: 70px;
+}
+
+.terminal-heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.terminal-heading h3 {
+    font-size: 30px;
     font-weight: 300;
     font-family: Georgia, serif;
     font-style: italic;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-.terminal-inner p {
-    font-size: 14px;
-    color: var(--codex-muted);
-    margin-bottom: 40px;
-}
-
-.codex-form {
+.vault-form {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.codex-field {
+.form-grid-dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.vault-field {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.codex-field label {
-    font-size: 9px;
+.vault-field label {
+    font-size: 10px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--codex-muted);
+    color: var(--vault-muted);
 }
 
-.codex-field input,
-.codex-field select,
-.codex-field textarea {
-    background: var(--codex-bg);
-    border: 1px solid var(--codex-border);
-    color: var(--codex-text);
+.vault-field input,
+.vault-field select,
+.vault-field textarea {
+    background: var(--vault-bg);
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text);
     padding: 16px;
     font-family: inherit;
     font-size: 14px;
@@ -240,18 +332,18 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.codex-field input:focus,
-.codex-field select:focus,
-.codex-field textarea:focus {
-    border-color: var(--codex-accent);
+.vault-field input:focus,
+.vault-field select:focus,
+.vault-field textarea:focus {
+    border-color: var(--vault-accent);
 }
 
-.codex-submit {
-    background: var(--codex-text);
-    color: var(--codex-bg);
+.vault-submit-btn {
+    background: var(--vault-text);
+    color: var(--vault-bg);
     border: none;
     padding: 18px;
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     font-weight: 500;
@@ -260,62 +352,62 @@ body {
     margin-top: 10px;
 }
 
-.codex-submit:hover {
-    background: var(--codex-accent);
+.vault-submit-btn:hover {
+    background: var(--vault-accent);
 }
 
-.codex-success {
+.vault-success-banner {
     padding: 30px;
     background: rgba(194, 155, 104, 0.1);
-    border: 1px solid var(--codex-accent);
-    color: var(--codex-accent);
+    border: 1px solid var(--vault-accent);
+    color: var(--vault-accent);
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.05em;
 }
 
 /* LIGHTBOX VIEWER */
-.codex-lightbox {
+.vault-lightbox {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(20, 18, 16, 0.96);
-    z-index: 999;
+    background: rgba(21, 19, 18, 0.97);
+    z-index: 9999;
     justify-content: center;
     align-items: center;
     padding: 50px;
 }
 
-.lightbox-content-box {
+.lightbox-dialogue {
     position: relative;
-    max-width: 1050px;
+    max-width: 1100px;
     width: 100%;
-    background: var(--codex-panel);
-    border: 1px solid var(--codex-border);
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
     display: flex;
     flex-direction: column;
 }
 
-.lightbox-content-box img {
+.lightbox-dialogue img {
     width: 100%;
     max-height: 72vh;
     object-fit: contain;
     background: #0c0b0a;
 }
 
-.lightbox-close-trigger {
+.lightbox-close {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: #141210;
+    background: #151312;
     color: #fff;
-    border: 1px solid var(--codex-border);
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
+    border: 1px solid var(--vault-border);
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -323,39 +415,37 @@ body {
     z-index: 10;
 }
 
-.lightbox-footer-note {
-    padding: 25px 30px;
-    border-top: 1px solid var(--codex-border);
+.lightbox-data {
+    padding: 30px;
+    border-top: 1px solid var(--vault-border);
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
 }
 
 /* FOOTER */
-.codex-footer {
-    margin-top: 140px;
+.vault-footer {
+    margin-top: 160px;
     padding-top: 40px;
-    border-top: 1px solid var(--codex-border);
+    border-top: 1px solid var(--vault-border);
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--codex-muted);
+    color: var(--vault-muted);
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    .codex-container {
-        padding: 40px 20px 100px 20px;
+@media (max-width: 900px) {
+    .vault-threshold,
+    .exhibit-monument,
+    .vault-sanctuary,
+    .form-grid-dual {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
-    .codex-plate-block {
-        padding: 25px;
-    }
-    .codex-plate-visual {
-        height: 360px;
-    }
-    .codex-terminal-section {
-        padding: 30px;
+    .vault-shell {
+        padding: 30px 20px 80px 20px;
     }
 }
