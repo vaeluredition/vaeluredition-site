@@ -3,526 +3,571 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaeluredition — Private Acquisition Desk & Curated Corpus</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>VAELUR EDITION — Sovereign Acquisition Desk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #070707;
+            --surface: #111111;
+            --surface-hover: #181818;
+            --border: #222222;
+            --border-active: #444444;
+            --text-main: #f0f0f0;
+            --text-muted: #777777;
+            --accent: #d4af37; /* Restrained Sovereign Gold */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .vault-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 60px;
+        }
+
+        .sys-id {
+            color: var(--text-muted);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+        }
+
+        .sys-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        /* MAIN SPLIT LAYOUT */
+        .workspace {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 60px;
+            align-items: start;
+            flex-grow: 1;
+        }
+
+        /* LEFT PANEL: INDEX & DISPATCH */
+        .control-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .manifesto-block p {
+            color: var(--text-muted);
+            font-size: 12px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .manifesto-block p em {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        .index-list {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border);
+        }
+
+        .index-item {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            color: var(--text-muted);
+            background: transparent;
+            border-left: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+            font-size: 12px;
+        }
+
+        .index-item:hover, .index-item.active {
+            color: var(--text-main);
+        }
+
+        .index-item.active {
+            border-left: 2px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        /* RIGHT PANEL: VAULT STAGE */
+        .vault-stage {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .stage-viewport {
+            width: 100%;
+            height: 500px;
+            background: #000;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        .stage-viewport img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .stage-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+        }
+
+        .artifact-data h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .artifact-data p {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .action-trigger {
+            background: transparent;
+            border: 1px solid var(--border-active);
+            color: var(--text-main);
+            padding: 12px 20px;
+            font-family: inherit;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .action-trigger:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* SECURE ACQUISITION DRAWER (MODAL/FORM) */
+        .drawer-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.85);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .drawer-box {
+            background: var(--surface);
+            border: 1px solid var(--border-active);
+            width: 600px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+        }
+
+        .drawer-box h3 {
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-field label {
+            font-size: 10px;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+        }
+
+        .form-field input, .form-field textarea {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 14px;
+            font-family: inherit;
+            font-size: 12px;
+            outline: none;
+        }
+
+        .form-field input:focus, .form-field textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .submit-wire {
+            background: var(--text-main);
+            color: var(--bg);
+            border: none;
+            padding: 16px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-wire:hover {
+            background: var(--accent);
+        }
+
+        .close-drawer {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: none; border: none;
+            color: var(--text-muted);
+            font-size: 18px; cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 11px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .workspace { grid-template-columns: 1fr; }
+            .vault-stage { position: relative; top: 0; }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="site-wrapper" id="app">
+    <div class="vault-container">
         
-        <!-- GLOBAL HEADER -->
-        <header class="site-header">
-            <div class="brand-cluster">
-                <a href="#" onclick="showHome()" class="brand-link">Vaeluredition</a>
-                <span class="location-tag">Private Acquisition Desk / Curated Corpus</span>
-            </div>
-            <nav class="header-nav">
-                <a href="#corpus-registry" onclick="showHome(); scrollToSection('corpus-registry');" class="nav-trigger">The Registry</a>
-                <a href="#practice" onclick="showHome(); scrollToSection('practice');" class="nav-trigger">Mandate</a>
-                <a href="#contact-section" onclick="showHome(); scrollToSection('contact-section');" class="nav-cta">Acquisition Desk</a>
-            </nav>
+        <!-- HEADER -->
+        <header>
+            <div class="sys-id">REF // V-8849-DX</div>
+            <div class="sys-title">Vaeluredition — Private Acquisition Desk</div>
+            <button class="action-trigger" onclick="toggleDrawer(true)">Initiate Inquiry</button>
         </header>
 
-        <!-- HOME VIEW: HERO & ARCHITECTURAL GRID -->
-        <div class="home-view">
+        <!-- WORKSPACE -->
+        <div class="workspace">
             
-            <!-- HERO SECTION -->
-            <section class="hero-section">
-                <h1 class="hero-title">Private Acquisition Desk. <span class="italic-serif">Uncompromising Studies.</span></h1>
-                <p class="hero-subtitle">Maintaining a private corpus of historical masterwork studies alongside singular, primary-source anchor acquisitions. Operating entirely outside public auction houses and commercial retail channels.</p>
-            </section>
-
-            <!-- COMPARATIVE CORPUS STUDIES (REGISTRY) -->
-            <section class="corpus-registry-section" id="corpus-registry">
-                <div class="section-header-row">
-                    <span class="section-kicker">Curated Corpus & Precedents</span>
-                    <h2>Historical Reference Registry & Foundational Anchors</h2>
-                    <p class="section-explanatory-note">The following master-tier works serve as historical benchmarks and material precedents studied within our private archive alongside primary-source anchor allocations.</p>
+            <!-- LEFT CONTROL PANEL -->
+            <div class="control-panel">
+                <div class="manifesto-block">
+                    <p>Operating entirely outside public auction houses and retail channels. <em>Sovereign custody</em> of primary anchor allocations and comparative reference corpus.</p>
                 </div>
 
-                <div class="corpus-grid">
-
-                    <!-- 1. Goya -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('goya.jpg', 'Francisco de Goya y Lucientes (1746–1828)', 'Los desastres de la guerra: Plate 9, They do not want to (No quieren)', 'Reference Corpus')">
-                            <img src="goya.jpg" alt="Francisco de Goya">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Francisco de Goya y Lucientes</span>
-                            <span class="tombstone-title"><em>Los desastres de la guerra: Plate 9, They do not want to</em></span>
-                            <span class="tombstone-date">1810–20 (printed 1892)</span>
-                            <span class="tombstone-medium">Etching, lavis, drypoint, and burin</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 2. Turner -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('turner.jpg', 'Joseph Mallord William Turner (1775–1851)', 'Saltash with the Water Ferry, Cornwall', 'Reference Corpus')">
-                            <img src="turner.jpg" alt="J.M.W. Turner">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Joseph Mallord William Turner</span>
-                            <span class="tombstone-title"><em>Saltash with the Water Ferry, Cornwall</em></span>
-                            <span class="tombstone-date">1811</span>
-                            <span class="tombstone-medium">Oil on canvas</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 3. Degas -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('degas.jpg', 'Edgar Degas (1834–1917)', 'The Dance Class', 'Reference Corpus')">
-                            <img src="degas.jpg" alt="Edgar Degas">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Edgar Degas</span>
-                            <span class="tombstone-title"><em>The Dance Class</em></span>
-                            <span class="tombstone-date">1874</span>
-                            <span class="tombstone-medium">Oil on canvas</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 4. Redon -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('redon.jpg', 'Odilon Redon (1840–1916)', 'Eyes Closed', 'Reference Corpus')">
-                            <img src="redon.jpg" alt="Odilon Redon">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Odilon Redon</span>
-                            <span class="tombstone-title"><em>Eyes Closed</em></span>
-                            <span class="tombstone-date">1890</span>
-                            <span class="tombstone-medium">Lithograph</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 5. Blake -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('blake.jpg', 'William Blake (1757–1827)', 'Pity', 'Reference Corpus')">
-                            <img src="blake.jpg" alt="William Blake">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">William Blake</span>
-                            <span class="tombstone-title"><em>Pity</em></span>
-                            <span class="tombstone-date">ca. 1795</span>
-                            <span class="tombstone-medium">Relief etching with watercolor</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 6. Rembrandt / Denon -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('rembrandt.jpg', 'After Rembrandt & Baron Dominique Vivant Denon', 'A Woman Making Water', 'Reference Corpus')">
-                            <img src="rembrandt.jpg" alt="Rembrandt and Denon">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">After Rembrandt & Baron Dominique Vivant Denon</span>
-                            <span class="tombstone-title"><em>A Woman Making Water</em></span>
-                            <span class="tombstone-date">late 18th/early 19th c.</span>
-                            <span class="tombstone-medium">Etching</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 7. Dürer -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('durer.jpg', 'Albrecht Dürer (1471–1528)', 'Salvator Mundi', 'Reference Corpus')">
-                            <img src="durer.jpg" alt="Albrecht Dürer">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Albrecht Dürer</span>
-                            <span class="tombstone-title"><em>Salvator Mundi</em></span>
-                            <span class="tombstone-date">ca. 1505</span>
-                            <span class="tombstone-medium">Oil on linden</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 8. Doré -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('dore.jpg', 'Gustave Doré (1832–1883)', 'Don Quixote and Sancho Panza Entertained by Basil and Quiteria', 'Reference Corpus')">
-                            <img src="dore.jpg" alt="Gustave Doré">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Gustave Doré</span>
-                            <span class="tombstone-title"><em>Don Quixote and Sancho Panza Entertained</em></span>
-                            <span class="tombstone-date">1863</span>
-                            <span class="tombstone-medium">Oil on canvas</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 9. Piranesi -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('piranesi.jpg', 'Giovanni Battista Piranesi (1720–1778)', 'Diverse Ways of Ornamenting Chimneypieces', 'Reference Corpus')">
-                            <img src="piranesi.jpg" alt="Giovanni Battista Piranesi">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Giovanni Battista Piranesi</span>
-                            <span class="tombstone-title"><em>Diverse Ways of Ornamenting Chimneypieces</em></span>
-                            <span class="tombstone-date">1769</span>
-                            <span class="tombstone-medium">Etching</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 10. Géricault -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('gericault.jpg', 'Théodore Géricault (1791–1824)', 'Horsewoman', 'Reference Corpus')">
-                            <img src="gericault.jpg" alt="Théodore Géricault">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Théodore Géricault</span>
-                            <span class="tombstone-title"><em>Horsewoman</em></span>
-                            <span class="tombstone-date">1820 or later</span>
-                            <span class="tombstone-medium">Oil on canvas</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 11. Daumier -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('daumier.jpg', 'Honoré Daumier (1808–1879)', 'The Drinkers', 'Reference Corpus')">
-                            <img src="daumier.jpg" alt="Honoré Daumier">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Honoré Daumier</span>
-                            <span class="tombstone-title"><em>The Drinkers</em></span>
-                            <span class="tombstone-date">by 1861</span>
-                            <span class="tombstone-medium">Oil on wood</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 12. Millet -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('millet.jpg', 'Jean-François Millet (1814–1875)', 'Retreat from the Storm', 'Reference Corpus')">
-                            <img src="millet.jpg" alt="Jean-François Millet">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Jean-François Millet</span>
-                            <span class="tombstone-title"><em>Retreat from the Storm</em></span>
-                            <span class="tombstone-date">ca. 1846</span>
-                            <span class="tombstone-medium">Oil on canvas</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 13. Whistler -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('whistler.jpg', 'James McNeill Whistler (1834–1903)', 'Bibi Valentin', 'Reference Corpus')">
-                            <img src="whistler.jpg" alt="James McNeill Whistler">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">James McNeill Whistler</span>
-                            <span class="tombstone-title"><em>Bibi Valentin</em></span>
-                            <span class="tombstone-date">1859</span>
-                            <span class="tombstone-medium">Etching and drypoint</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 14. Chassériau -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('chasseriau.jpg', 'Théodore Chassériau (1819–1856)', 'Comtesse de La Tour-Maubourg', 'Reference Corpus')">
-                            <img src="chasseriau.jpg" alt="Théodore Chassériau">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Théodore Chassériau</span>
-                            <span class="tombstone-title"><em>Comtesse de La Tour-Maubourg</em></span>
-                            <span class="tombstone-date">1841</span>
-                            <span class="tombstone-medium">Oil on canvas</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 15. Holbein -->
-                    <div class="corpus-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('holbein.jpg', 'Hans Holbein the Younger (1497/98–1543)', 'Benedikt von Hertenstein', 'Reference Corpus')">
-                            <img src="holbein.jpg" alt="Hans Holbein the Younger">
-                            <span class="zoom-indicator">Inspect Canvas ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist">Hans Holbein the Younger</span>
-                            <span class="tombstone-title"><em>Benedikt von Hertenstein</em></span>
-                            <span class="tombstone-date">1517</span>
-                            <span class="tombstone-medium">Oil and gold on paper on wood</span>
-                            <span class="tombstone-credit">Reference Corpus</span>
-                        </div>
-                    </div>
-
-                    <!-- 16. PRIMARY ANCHOR: HESHAM MALIK -->
-                    <div class="corpus-card featured-anchor-card">
-                        <div class="corpus-img-wrap" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Prague)', 'Elizabeth of Russia (Circa 1999)', 'Primary Anchor Corpus &bull; Sole Authorized Primary Issue')">
-                            <img src="hesham.jpg" alt="Hesham Malik Masterwork">
-                            <span class="zoom-indicator gold-indicator">Inspect Primary Anchor ↗</span>
-                        </div>
-                        <div class="corpus-tombstone">
-                            <span class="tombstone-artist gold-text">Hesham Malik</span>
-                            <span class="tombstone-title"><em>Elizabeth of Russia</em></span>
-                            <span class="tombstone-date">Circa 1999</span>
-                            <span class="tombstone-medium">Oil on canvas &bull; Private Custody</span>
-                            <span class="tombstone-credit">Primary Anchor Corpus &bull; Sole Authorized Primary Issue</span>
-                        </div>
-                    </div>
-
+                <div class="index-list" id="indexList">
+                    <!-- Dynamic index populated via JS -->
                 </div>
-            </section>
-
-            <!-- PRACTICE MANDATE & PROTOCOL -->
-            <section class="mandate-grid" id="practice">
-                <div class="mandate-col">
-                    <span class="section-kicker">Curatorial Mandate</span>
-                    <h3>The Architecture of the Private Archive</h3>
-                </div>
-                <div class="mandate-col">
-                    <p><em>Vaeluredition</em> presents a curated framework bridging historical reference studies with exclusive foundational anchor works.</p>
-                    <p>While historical masterworks draw upon open-access institutional archives, our foundational anchor collection represents primary, authenticated physical masterworks strictly limited in edition—operating entirely outside public auction theater and commercial retail channels.</p>
-                </div>
-            </section>
-
-            <!-- RESTRICTED CIRCULATION MONOGRAPH DIRECTORY -->
-            <section class="monograph-section">
-                <div class="section-header-row">
-                    <span class="section-kicker">Restricted Circulation</span>
-                    <h2>Archival Briefs & Protocols</h2>
-                </div>
-
-                <div class="briefs-asymmetrical-grid">
-                    <article class="brief-card" onclick="showArticle('article-1')">
-                        <span class="brief-num">Brief I</span>
-                        <h3>The Architecture of Sovereign Portfolios & Museum-Grade Provenance</h3>
-                        <span class="read-more-link">Read Brief →</span>
-                    </article>
-
-                    <article class="brief-card" onclick="showArticle('article-2')">
-                        <span class="brief-num">Brief II</span>
-                        <h3>The Mechanics of Illusion and the Economics of Direct Execution</h3>
-                        <span class="read-more-link">Read Brief →</span>
-                    </article>
-
-                    <article class="brief-card" onclick="showArticle('article-3')">
-                        <span class="brief-num">Brief III</span>
-                        <h3>The Mechanics of the Ledger: Liquidity, Provenance, and Valuation</h3>
-                        <span class="read-more-link">Read Brief →</span>
-                    </article>
-
-                    <article class="brief-card" onclick="showArticle('article-4')">
-                        <span class="brief-num">Brief IV</span>
-                        <h3>The Extinction of the Gatekeeper: Rejecting Extractive Intermediaries</h3>
-                        <span class="read-more-link">Read Brief →</span>
-                    </article>
-
-                    <article class="brief-card featured-cinematic-card" onclick="showArticle('article-5')">
-                        <div class="featured-card-content">
-                            <span class="brief-num">Brief V // Core Monograph</span>
-                            <h3>The Alchemy of the Surface: Material Density, Encrypted Ledgers, and the Sovereign Canvas</h3>
-                        </div>
-                        <span class="read-more-link">Read Full Monograph →</span>
-                    </article>
-                </div>
-            </section>
-
-            <!-- DIRECT ACQUISITION DESK / INQUIRY SECTION -->
-            <section class="contact-section" id="contact-section">
-                <div class="section-header-row">
-                    <span class="section-kicker">Confidential Channel</span>
-                    <h2>Direct Acquisition Desk</h2>
-                </div>
-                <div class="contact-card">
-                    <p class="contact-intro">Submit a confidential mandate inquiry to our private acquisition desk. All communications are protected under strict discretion.</p>
-                    <form class="inquiry-form" onsubmit="handleInquiry(event)">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="principal-name">Principal / Representative Name</label>
-                                <input type="text" id="principal-name" required placeholder="Full Name or Entity">
-                            </div>
-                            <div class="form-group">
-                                <label for="principal-email">Secure Email Address</label>
-                                <input type="email" id="principal-email" required placeholder="name@domain.com">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="mandate-type">Corpus Allocation Request</label>
-                            <select id="mandate-type">
-                                <option value="edition-allocation">Primary Anchor Inquiry (Elizabeth of Russia)</option>
-                                <option value="archival-advisory">Archival & Portfolio Consultation</option>
-                                <option value="private-appointment">Confidential Viewing Appointment</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="mandate-message">Inquiry Parameters</label>
-                            <textarea id="mandate-message" rows="4" required placeholder="Outline the parameters of your inquiry..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Transmit Secure Inquiry →</button>
-                    </form>
-                    <div id="form-success" class="form-success-msg" style="display:none;">
-                        Transmission received. Your inquiry has been securely routed to the private desk.
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ARTICLE READER VIEWS -->
-        <div id="article-1" class="article-body">
-            <a href="#" class="back-link" onclick="showHome()">← Return to Index</a>
-            <span class="article-meta-num">Brief I // Monograph</span>
-            <h2>The Architecture of Sovereign Portfolios & Museum-Grade Provenance</h2>
-            <div class="article-content-block">
-                <p>In the management of significant fine-art portfolios, market volatility is rarely born of economics; it stems from spatial failure. When major bodies of work are run through standard commercial gallery pipelines, they are treated as retail inventory—flatly hung on neutral walls to court immediate transaction. Sovereign value operates under an entirely different set of laws.</p>
-                <p>Master-tier painting has never functioned as portable decoration. When a portfolio commands heavy spatial gravity, commercial haste dismantles its authority.</p>
-                <p>At Vaeluredition, our mandate is the systematic insulation and institutional placement of major cultural assets. Through strict zero-collision standards and direct private counsel, we ensure that exceptional portfolios maintain their architectural permanence, entirely removed from the noise of the open market.</p>
             </div>
-        </div>
 
-        <div id="article-2" class="article-body">
-            <a href="#" class="back-link" onclick="showHome()">← Return to Index</a>
-            <span class="article-meta-num">Brief II // Monograph</span>
-            <h2>The Mechanics of Illusion and the Economics of Direct Execution</h2>
-            <div class="article-content-block">
-                <p>Mainstream art commentary loves to reduce master-tier creation to romantic myth. When critics evaluate historical figures, they fixate exclusively on dramatic storytelling, attributing output to raw inspiration. That narrative serves a commercial purpose, but it fundamentally misunderstands how high-stakes execution actually operates.</p>
-                <p>True mastery requires no bureaucratic certificates of authenticity or redundant intermediaries to manufacture artificial value. Uncompromising execution speaks directly through the physical substrate.</p>
-                <p>At Vaeluredition, we recognize that exceptional assets are built on structural independence and primary-source integrity. By stripping away commercial noise, we ensure that major cultural portfolios maintain their unyielding clarity.</p>
+            <!-- RIGHT STAGE VIEWER -->
+            <div class="vault-stage">
+                <div class="stage-viewport" onclick="openLightbox()">
+                    <img id="activeImg" src="" alt="Active Exhibit">
+                </div>
+                <div class="stage-meta">
+                    <div class="artifact-data">
+                        <p id="activeArtist" style="margin-bottom: 4px; color: var(--accent);"></p>
+                        <h2 id="activeTitle"></h2>
+                        <p id="activeSpecs"></p>
+                    </div>
+                    <button class="action-trigger" onclick="toggleDrawer(true)">Request Allocation</button>
+                </div>
             </div>
+
         </div>
 
-        <div id="article-3" class="article-body">
-            <a href="#" class="back-link" onclick="showHome()">← Return to Index</a>
-            <span class="article-meta-num">Brief III // Monograph</span>
-            <h2>The Mechanics of the Ledger: Liquidity, Provenance, and the Myth of Open-Market Valuation</h2>
-            <div class="article-content-block">
-                <p>To the uninitiated, the public auction cycle is presented as the ultimate barometer of artistic value. Autumn marquee sales across global capitals are treated as proof of an open, transparent market. This perception is a carefully managed illusion.</p>
-                <p>Beneath the theater of competitive bidding rooms lies a highly engineered system of scarcity, estate positioning, and private wealth management. True asset preservation requires treating fine art not as retail inventory to be auctioned to the highest bidder, but as a sovereign store of capital.</p>
-                <p>At Vaeluredition, our mandate is the structural decoupling of major cultural portfolios from the volatile theater of the open market through rigorous provenance protocols and absolute confidentiality.</p>
-            </div>
-        </div>
-
-        <div id="article-4" class="article-body">
-            <a href="#" class="back-link" onclick="showHome()">← Return to Index</a>
-            <span class="article-meta-num">Brief IV // Monograph</span>
-            <h2>The Extinction of the Gatekeeper: Why Sovereign Portfolios Reject Extractive Intermediaries</h2>
-            <div class="article-content-block">
-                <p>In the upper echelons of global wealth and cultural asset management, an unwritten tax has long been accepted as the cost of doing business: the extractive middleman.</p>
-                <p>For decades, master-tier portfolios and major creative legacies have relied on traditional agency networks and commercial galleries. In exchange for bloated retainers, these entities offer little more than short-term promotional hype. True sovereign portfolios do not need intermediaries; they require architecture.</p>
-                <p>At Vaeluredition, our practice was built as a direct counter-model to this obsolete ecosystem, enforcing strict confidentiality and elite-tier direct counsel.</p>
-            </div>
-        </div>
-
-        <div id="article-5" class="article-body">
-            <a href="#" class="back-link" onclick="showHome()">← Return to Index</a>
-            <span class="article-meta-num">Brief V // Monograph</span>
-            <h2>The Alchemy of the Surface: Material Density, Encrypted Ledgers, and the Sovereign Canvas</h2>
-            <div class="article-content-block">
-                <p>Art history is frequently seduced by the optical—by the illusion of depth created through perspective and glazing. But the most enduring masterworks in Western and modern traditions have always rejected illusion in favor of pure, uncompromising materiality.</p>
-                <p>When masters build their corpuses, they treat the canvas not as a flat surface to be painted upon, but as an archaeological site. In contemporary market structure, this heavy material lineage finds rare continuation in corpuses such as Hesham Malik's primary anchor work <em>Elizabeth of Russia</em> (Circa 1999)—where large-scale abstract canvases operate as physical vaults of density and primary-source integrity.</p>
-                <p>At Vaeluredition, our mandate is the absolute protection and institutional placement of these sovereign, material-heavy corpuses—ensuring that works built on profound structural endurance retain their permanence, entirely removed from the noise of the open market.</p>
-            </div>
-        </div>
-
-        <!-- GLOBAL FOOTER -->
+        <!-- FOOTER -->
         <footer>
-            <div class="footer-left">
-                <span>&copy; 2026 Vaeluredition. All rights reserved.</span>
-            </div>
-            <div class="footer-right">
-                <a href="#contact-section" onclick="showHome(); scrollToSection('contact-section');">Acquisition Desk</a>
-            </div>
+            <span>&copy; 2026 Vaeluredition. Strict Confidentiality.</span>
+            <span>SECURE PROTOCOL // ENCRYPTED</span>
         </footer>
 
     </div>
 
-    <!-- LIGHTBOX MODAL CONTAINER -->
-    <div id="corpusLightbox" class="lightbox-overlay" onclick="closeLightbox()">
-        <div class="lightbox-content" onclick="event.stopPropagation()">
-            <button class="lightbox-close" onclick="closeLightbox()">×</button>
-            <img id="lightboxImg" src="" alt="Enlarged Masterwork">
-            <div class="lightbox-caption">
-                <span id="lightboxArtist" class="lb-artist"></span>
-                <span id="lightboxTitle" class="lb-title"></span>
-                <span id="lightboxCredit" class="lb-credit"></span>
+    <!-- ACQUISITION DRAWER MODAL -->
+    <div class="drawer-overlay" id="inquiryDrawer">
+        <div class="drawer-box">
+            <button class="close-drawer" onclick="toggleDrawer(false)">×</button>
+            <h3>Secure Acquisition Dispatch</h3>
+            <p style="font-size: 11px; color: var(--text-muted);">All transmissions are reviewed under strict legal privilege for authorized principals.</p>
+            <form onsubmit="handleDispatch(event)">
+                <div class="form-field" style="margin-bottom: 16px;">
+                    <label>PRINCIPAL / ENTITY IDENTIFIER</label>
+                    <input type="text" required placeholder="Authorized Name or Institution">
+                </div>
+                <div class="form-field" style="margin-bottom: 16px;">
+                    <label>SECURED COMMS CHANNEL</label>
+                    <input type="email" required placeholder="name@domain.com">
+                </div>
+                <div class="form-field" style="margin-bottom: 20px;">
+                    <label>MANDATE PARAMETERS</label>
+                    <textarea rows="3" required placeholder="State allocation parameters..."></textarea>
+                </div>
+                <button type="submit" class="submit-wire">Transmit Secure Wire ↗</button>
+            </form>
+            <div id="dispatchSuccess" style="display:none; color: var(--accent); font-size: 11px; text-align: center; padding: 20px;">
+                [ TRANSMISSION SECURED ] — Routed to private desk.
             </div>
         </div>
     </div>
 
-    <!-- CLIENT ROUTER & INTERACTION SCRIPT -->
+    <!-- ENGINE SCRIPT -->
     <script>
-        function showArticle(id) {
-            document.body.classList.add('active-view');
-            document.querySelectorAll('.article-body').forEach(el => el.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            location.hash = id;
-        }
-
-        function showHome() {
-            document.body.classList.remove('active-view');
-            document.querySelectorAll('.article-body').forEach(el => el.style.display = 'none');
-            location.hash = '';
-        }
-
-        function scrollToSection(sectionId) {
-            const el = document.getElementById(sectionId);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
+        const corpus = [
+            {
+                id: "anchor-01",
+                num: "ANCHOR // 01",
+                artist: "Hesham Malik (New York, London, Prague)",
+                title: "Elizabeth of Russia",
+                specs: "Oil on canvas &bull; Circa 1999 &bull; Sole Authorized Primary Issue",
+                src: "hesham.jpg",
+                tag: "PRIMARY ANCHOR CORPUS"
+            },
+            {
+                id: "ref-01",
+                num: "REF // 01",
+                artist: "Francisco de Goya y Lucientes (1746–1828)",
+                title: "Los desastres de la guerra: Plate 9, No quieren",
+                specs: "Etching, lavis, drypoint, and burin &bull; 1810–20",
+                src: "goya.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-02",
+                num: "REF // 02",
+                artist: "Joseph Mallord William Turner (1775–1851)",
+                title: "Saltash with the Water Ferry, Cornwall",
+                specs: "Oil on canvas &bull; 1811",
+                src: "turner.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-03",
+                num: "REF // 03",
+                artist: "Edgar Degas (1834–1917)",
+                title: "The Dance Class",
+                specs: "Oil on canvas &bull; 1874",
+                src: "degas.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-04",
+                num: "REF // 04",
+                artist: "Odilon Redon (1840–1916)",
+                title: "Eyes Closed",
+                specs: "Lithograph &bull; 1890",
+                src: "redon.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-05",
+                num: "REF // 05",
+                artist: "William Blake (1757–1827)",
+                title: "Pity",
+                specs: "Relief etching with watercolor &bull; ca. 1795",
+                src: "blake.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-06",
+                num: "REF // 06",
+                artist: "After Rembrandt & Baron Dominique Vivant Denon",
+                title: "A Woman Making Water",
+                specs: "Etching &bull; late 18th/early 19th c.",
+                src: "rembrandt.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-07",
+                num: "REF // 07",
+                artist: "Albrecht Dürer (1471–1528)",
+                title: "Salvator Mundi",
+                specs: "Oil on linden &bull; ca. 1505",
+                src: "durer.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-08",
+                num: "REF // 08",
+                artist: "Gustave Doré (1832–1883)",
+                title: "Don Quixote and Sancho Panza Entertained",
+                specs: "Oil on canvas &bull; 1863",
+                src: "dore.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-09",
+                num: "REF // 09",
+                artist: "Giovanni Battista Piranesi (1720–1778)",
+                title: "Diverse Ways of Ornamenting Chimneypieces",
+                specs: "Etching &bull; 1769",
+                src: "piranesi.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-10",
+                num: "REF // 10",
+                artist: "Théodore Géricault (1791–1824)",
+                title: "Horsewoman",
+                specs: "Oil on canvas &bull; 1820",
+                src: "gericault.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-11",
+                num: "REF // 11",
+                artist: "Honoré Daumier (1808–1879)",
+                title: "The Drinkers",
+                specs: "Oil on wood &bull; by 1861",
+                src: "daumier.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-12",
+                num: "REF // 12",
+                artist: "Jean-François Millet (1814–1875)",
+                title: "Retreat from the Storm",
+                specs: "Oil on canvas &bull; ca. 1846",
+                src: "millet.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-13",
+                num: "REF // 13",
+                artist: "James McNeill Whistler (1834–1903)",
+                title: "Bibi Valentin",
+                specs: "Etching and drypoint &bull; 1859",
+                src: "whistler.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-14",
+                num: "REF // 14",
+                artist: "Théodore Chassériau (1819–1856)",
+                title: "Comtesse de La Tour-Maubourg",
+                specs: "Oil on canvas &bull; 1841",
+                src: "chasseriau.jpg",
+                tag: "Reference Corpus"
+            },
+            {
+                id: "ref-15",
+                num: "REF // 15",
+                artist: "Hans Holbein the Younger (1497/98–1543)",
+                title: "Benedikt von Hertenstein",
+                specs: "Oil and gold on paper on wood &bull; 1517",
+                src: "holbein.jpg",
+                tag: "Reference Corpus"
             }
+        ];
+
+        let currentIndex = 0;
+
+        function initIndex() {
+            const list = document.getElementById('indexList');
+            list.innerHTML = '';
+            corpus.forEach((item, index) => {
+                const btn = document.createElement('button');
+                btn.className = `index-item ${index === currentIndex ? 'active' : ''}`;
+                btn.innerHTML = `<span>${item.num} — ${item.title.substring(0, 26)}...</span><span>↗</span>`;
+                btn.onclick = () => selectExhibit(index);
+                list.appendChild(btn);
+            });
+            updateStage();
         }
 
-        function openLightbox(imgSrc, artistText, titleText, creditText) {
-            const lightbox = document.getElementById('corpusLightbox');
-            document.getElementById('lightboxImg').src = imgSrc;
-            document.getElementById('lightboxArtist').innerText = artistText;
-            document.getElementById('lightboxTitle').innerHTML = titleText;
-            document.getElementById('lightboxCredit').innerText = creditText;
-            lightbox.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+        function selectExhibit(index) {
+            currentIndex = index;
+            document.querySelectorAll('.index-item').forEach((el, i) => {
+                el.classList.toggle('active', i === index);
+            });
+            updateStage();
         }
 
-        function closeLightbox() {
-            const lightbox = document.getElementById('corpusLightbox');
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
+        function updateStage() {
+            const item = corpus[currentIndex];
+            document.getElementById('activeImg').src = item.src;
+            document.getElementById('activeArtist').innerText = item.artist;
+            document.getElementById('activeTitle').innerText = item.title;
+            document.getElementById('activeSpecs').innerHTML = item.specs;
         }
 
-        function handleInquiry(event) {
-            event.preventDefault();
-            document.querySelector('.inquiry-form').style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
+        function toggleDivider() {}
+
+        function toggleDrawer(show) {
+            document.getElementById('inquiryDrawer').style.display = show ? 'flex' : 'none';
         }
 
-        window.addEventListener('hashchange', () => {
-            const hash = location.hash.substring(1);
-            if (hash && document.getElementById(hash) && document.getElementById(hash).classList.contains('article-body')) {
-                showArticle(hash);
-            } else if (!hash) {
-                showHome();
-            }
-        });
+        function handleDispatch(e) {
+            e.preventDefault();
+            e.target.style.display = 'none';
+            document.getElementById('dispatchSuccess').style.display = 'block';
+        }
 
-        window.addEventListener('load', () => {
-            const hash = location.hash.substring(1);
-            if (hash && document.getElementById(hash) && document.getElementById(hash).classList.contains('article-body')) {
-                showArticle(hash);
-            }
-        });
+        window.onload = initIndex;
     </script>
 </body>
 </html>
