@@ -11,7 +11,6 @@
         :root {
             --bg: #d9b343;
             --bg-gradient: linear-gradient(135deg, #f7e7b4 0%, #d4af37 50%, #b8860b 100%);
-            /* Obsidian Black Cards & Panels for Balanced Contrast */
             --panel: #161412;
             --card-bg: #1d1a17;
             --border: #4a3b18;
@@ -247,6 +246,20 @@
 
         .print-visual:hover img {
             transform: scale(1.03);
+        }
+
+        /* ARCHIVED / RESERVED STATE FOR HESHAM MALIK */
+        .print-card.archived {
+            opacity: 0.85;
+        }
+
+        .print-card.archived .print-visual img {
+            filter: grayscale(100%) brightness(0.6);
+        }
+
+        .print-card.archived:hover {
+            border-color: var(--border);
+            transform: none;
         }
 
         .inspect-badge {
@@ -642,17 +655,17 @@
                     </div>
                 </article>
 
-                <!-- 8. Hesham Malik (Strictly 1 Global Copy) -->
-                <article class="print-card" onclick="openLightbox('hesham.jpg', 'Hesham Malik (New York, London, Paris)', 'Elizabeth of Russia', 'Global Edition Cap: 1 Single Copy')">
+                <!-- 8. Hesham Malik (Archived / Pending Final Photographic File) -->
+                <article class="print-card archived" onclick="alert('This single masterwork is currently in private archive status, pending final archival delivery and allocation review.')">
                     <div class="print-visual">
                         <img src="hesham.jpg" alt="Hesham Malik Masterwork">
-                        <span class="inspect-badge">Inspect ↗</span>
+                        <span class="inspect-badge" style="background: #161412; border-color: var(--border);">Private Archive</span>
                     </div>
                     <div class="print-details">
                         <span class="artist-name">Hesham Malik</span>
                         <h3 class="print-title">Elizabeth of Russia</h3>
                         <p class="print-spec">Oil on canvas (Circa 1999) &bull; Museum Canvas</p>
-                        <span class="edition-tag" style="color: #f3e5ab;">Global Cap: 1 Single Copy</span>
+                        <span class="edition-tag" style="color: var(--text-muted);">[ PRIVATE ARCHIVE &bull; PENDING ALLOCATION ]</span>
                     </div>
                 </article>
 
