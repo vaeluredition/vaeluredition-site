@@ -1,10 +1,10 @@
 :root {
-    --salon-bg: #1c1a18;            /* Deep tactile slate-umber (no flat black) */
-    --salon-panel: #24211e;         /* Warm dark mineral stone */
-    --salon-text: #eae6df;          /* Soft warm parchment */
-    --salon-muted: #948e83;         /* Muted warm taupe */
-    --salon-accent: #c29b68;        /* Muted antique bronze-amber */
-    --salon-border: #35302b;        /* Subtle textured border */
+    --vault-bg: #1c1a18;            /* Deep tactile slate-umber */
+    --vault-panel: #24211e;         /* Warm dark mineral stone */
+    --vault-text: #eae6df;          /* Soft warm parchment */
+    --vault-muted: #948e83;         /* Muted warm taupe */
+    --vault-accent: #c29b68;        /* Muted antique bronze-amber */
+    --vault-border: #35302b;        /* Subtle textured border */
     --max-width: 1300px;
 }
 
@@ -15,91 +15,121 @@
 }
 
 body {
-    background-color: var(--salon-bg);
-    color: var(--salon-text);
+    background-color: var(--vault-bg);
+    color: var(--vault-text);
     font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
     font-weight: 300;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
 
-.salon-wrapper {
+.vault-container {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 60px 40px 120px 40px;
 }
 
-/* FLOATING EDITORIAL HEADER */
-.salon-header {
+/* DISTINCT REGISTRY HEADER */
+.vault-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom: 40px;
-    border-bottom: 1px solid var(--salon-border);
-    margin-bottom: 100px;
+    border-bottom: 1px solid var(--vault-border);
+    margin-bottom: 80px;
 }
 
-.salon-brand-group {
+.vault-brand {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.salon-logo {
+.vault-logo {
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: var(--salon-text);
+    color: var(--vault-text);
     text-decoration: none;
 }
 
-.salon-mandate-badge {
+.vault-subtitle {
     font-size: 10px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--salon-accent);
+    color: var(--vault-accent);
 }
 
-.salon-nav {
+.vault-nav {
     display: flex;
     gap: 40px;
 }
 
-.salon-nav-link {
+.vault-link {
     font-size: 11px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--salon-muted);
+    color: var(--vault-muted);
     text-decoration: none;
     transition: color 0.3s ease;
     cursor: pointer;
 }
 
-.salon-nav-link:hover {
-    color: var(--salon-text);
+.vault-link:hover {
+    color: var(--vault-text);
 }
 
-/* THRESHOLD HERO */
-.salon-threshold {
+/* REGISTRY HERO */
+.vault-hero {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr 1.1fr;
     gap: 80px;
     align-items: center;
-    margin-bottom: 140px;
+    margin-bottom: 120px;
 }
 
-.threshold-canvas-frame {
+.vault-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--vault-accent);
+    margin-bottom: 20px;
+}
+
+.vault-hero-text h1 {
+    font-size: clamp(38px, 4.2vw, 62px);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+}
+
+.serif-italics {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: var(--vault-accent);
+    font-weight: 400;
+}
+
+.vault-hero-text p {
+    font-size: 16px;
+    color: var(--vault-muted);
+    line-height: 1.8;
+}
+
+.vault-hero-featured {
     width: 100%;
-    height: 600px;
+    height: 520px;
     background: #121110;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid var(--salon-border);
+    border: 1px solid var(--vault-border);
 }
 
-.threshold-canvas-frame img {
+.vault-hero-featured img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -107,182 +137,198 @@ body {
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.threshold-canvas-frame:hover img {
+.vault-hero-featured:hover img {
     transform: scale(1.03);
 }
 
-.threshold-prose h1 {
-    font-size: clamp(40px, 4.5vw, 68px);
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 30px;
+.inspect-label {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(28, 26, 24, 0.85);
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text);
+    padding: 8px 16px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    pointer-events: none;
 }
 
-.serif-italics {
+/* THE REGISTRY GRID */
+.vault-registry-section {
+    margin-bottom: 160px;
+}
+
+.registry-header-row {
+    margin-bottom: 60px;
+    border-bottom: 1px solid var(--vault-border);
+    padding-bottom: 30px;
+}
+
+.registry-header-row h2 {
+    font-size: 30px;
+    font-weight: 300;
     font-family: Georgia, serif;
     font-style: italic;
-    color: var(--salon-accent);
-    font-weight: 400;
+    margin-bottom: 10px;
 }
 
-.threshold-prose p {
-    font-size: 17px;
-    color: var(--salon-muted);
-    line-height: 1.8;
-    margin-bottom: 30px;
+.registry-header-row p {
+    font-size: 14px;
+    color: var(--vault-muted);
 }
 
-/* THE GALLERY CORRIDOR */
-.gallery-corridor {
+.registry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.registry-card {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
     display: flex;
     flex-direction: column;
-    gap: 160px;
-}
-
-.corridor-section-title {
-    font-size: 11px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--salon-accent);
-    margin-bottom: 60px;
-    text-align: center;
-}
-
-.salon-exhibit-row {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.salon-exhibit-row.reverse {
-    grid-template-columns: 1fr 1.3fr;
-}
-
-.salon-exhibit-row.reverse .exhibit-visual {
-    order: 2;
-}
-
-.salon-exhibit-row.reverse .exhibit-tombstone {
-    order: 1;
-}
-
-.exhibit-visual {
-    width: 100%;
-    height: 520px;
-    background: #121110;
-    position: relative;
-    overflow: hidden;
     cursor: pointer;
-    border: 1px solid var(--salon-border);
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.exhibit-visual img {
+.registry-card:hover {
+    border-color: var(--vault-accent);
+    transform: translateY(-4px);
+}
+
+.registry-card.featured-anchor-card {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: #201d1a;
+    border-color: var(--vault-accent);
+}
+
+.registry-img-box {
+    width: 100%;
+    height: 380px;
+    background: #121110;
+    overflow: hidden;
+    position: relative;
+}
+
+.registry-card.featured-anchor-card .registry-img-box {
+    height: 460px;
+}
+
+.registry-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: contrast(1.1) brightness(0.9);
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.exhibit-visual:hover img {
+.registry-card:hover .registry-img-box img {
     transform: scale(1.03);
 }
 
-.exhibit-tombstone {
+.registry-meta {
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 20px 0;
+    gap: 10px;
+    justify-content: center;
 }
 
-.exhibit-num {
-    font-size: 10px;
+.reg-num {
+    font-size: 9px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--salon-accent);
+    color: var(--vault-accent);
 }
 
-.exhibit-artist {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: var(--salon-text);
-}
-
-.exhibit-title {
-    font-size: 28px;
+.reg-title {
+    font-size: 20px;
     font-weight: 300;
-    line-height: 1.3;
     font-family: Georgia, serif;
     font-style: italic;
-}
-
-.exhibit-details {
-    font-size: 14px;
-    color: var(--salon-muted);
-}
-
-.exhibit-edition-tag {
-    display: inline-block;
-    margin-top: 16px;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--salon-accent);
-    border-top: 1px dashed var(--salon-border);
-    padding-top: 16px;
-}
-
-/* PHILOSOPHY SANCTUARY */
-.salon-sanctuary {
-    margin-top: 180px;
-    padding: 100px 0;
-    border-top: 1px solid var(--salon-border);
-    border-bottom: 1px solid var(--salon-border);
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 80px;
-}
-
-.sanctuary-heading h2 {
-    font-size: 36px;
-    font-weight: 300;
     line-height: 1.3;
 }
 
-.sanctuary-body p {
-    font-size: 17px;
-    color: var(--salon-muted);
-    line-height: 1.8;
-    margin-bottom: 25px;
+.reg-artist {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--vault-muted);
 }
 
-/* CONFIDENTIAL INQUIRY TERMINAL */
-.salon-terminal {
-    margin-top: 160px;
+.reg-desc {
+    font-size: 13px;
+    color: var(--vault-muted);
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.reg-tag {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--vault-accent);
+    border-top: 1px dashed var(--vault-border);
+    padding-top: 14px;
+}
+
+/* MANDATE PROTOCOL */
+.vault-mandate {
+    padding: 80px 0;
+    border-top: 1px solid var(--vault-border);
+    border-bottom: 1px solid var(--vault-border);
+    margin-bottom: 160px;
+}
+
+.mandate-inner {
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    background: var(--salon-panel);
-    border: 1px solid var(--salon-border);
+}
+
+.mandate-inner h2 {
+    font-size: 34px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.mandate-inner p {
+    font-size: 16px;
+    color: var(--vault-muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ACQUISITION DESK INQUIRY */
+.vault-terminal {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terminal-box {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
     padding: 60px;
 }
 
-.terminal-header {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.terminal-header h3 {
+.terminal-box h3 {
     font-size: 28px;
     font-weight: 300;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.terminal-form {
+.terminal-box > p {
+    font-size: 14px;
+    color: var(--vault-muted);
+    margin-bottom: 40px;
+}
+
+.vault-form {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -294,25 +340,25 @@ body {
     gap: 24px;
 }
 
-.input-field-group {
+.input-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.input-field-group label {
+.input-group label {
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--salon-muted);
+    color: var(--vault-muted);
 }
 
-.input-field-group input,
-.input-field-group select,
-.input-field-group textarea {
-    background: var(--salon-bg);
-    border: 1px solid var(--salon-border);
-    color: var(--salon-text);
+.input-group input,
+.input-group select,
+.input-group textarea {
+    background: var(--vault-bg);
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text);
     padding: 16px;
     font-family: inherit;
     font-size: 14px;
@@ -320,15 +366,15 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.input-field-group input:focus,
-.input-field-group select:focus,
-.input-field-group textarea:focus {
-    border-color: var(--salon-accent);
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: var(--vault-accent);
 }
 
-.transmit-btn {
-    background: var(--salon-text);
-    color: var(--salon-bg);
+.vault-submit-btn {
+    background: var(--vault-text);
+    color: var(--vault-bg);
     border: none;
     padding: 18px;
     font-size: 11px;
@@ -340,22 +386,22 @@ body {
     margin-top: 10px;
 }
 
-.transmit-btn:hover {
-    background: var(--salon-accent);
+.vault-submit-btn:hover {
+    background: var(--vault-accent);
 }
 
-.transmission-success {
+.vault-success-msg {
     padding: 30px;
     background: rgba(194, 155, 104, 0.1);
-    border: 1px solid var(--salon-accent);
-    color: var(--salon-accent);
+    border: 1px solid var(--vault-accent);
+    color: var(--vault-accent);
     text-align: center;
     font-size: 14px;
     letter-spacing: 0.05em;
 }
 
 /* LIGHTBOX VIEWER */
-.salon-lightbox {
+.vault-lightbox {
     display: none;
     position: fixed;
     top: 0;
@@ -369,30 +415,30 @@ body {
     padding: 50px;
 }
 
-.lightbox-inner {
+.lightbox-dialog {
     position: relative;
     max-width: 1000px;
     width: 100%;
-    background: var(--salon-panel);
-    border: 1px solid var(--salon-border);
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
     display: flex;
     flex-direction: column;
 }
 
-.lightbox-inner img {
+.lightbox-dialog img {
     width: 100%;
     max-height: 72vh;
     object-fit: contain;
     background: #121110;
 }
 
-.lightbox-exit {
+.lightbox-close-btn {
     position: absolute;
     top: 20px;
     right: 20px;
     background: rgba(18, 17, 16, 0.9);
     color: #fff;
-    border: 1px solid var(--salon-border);
+    border: 1px solid var(--vault-border);
     width: 44px;
     height: 44px;
     font-size: 26px;
@@ -403,44 +449,77 @@ body {
     z-index: 10;
 }
 
-.lightbox-info {
+.lightbox-metadata {
     padding: 30px;
-    border-top: 1px solid var(--salon-border);
+    border-top: 1px solid var(--vault-border);
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
+.lb-artist {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--vault-muted);
+}
+
+.lb-title {
+    font-size: 22px;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.lb-credit {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--vault-accent);
+    margin-top: 10px;
+}
+
 /* FOOTER */
-.salon-footer {
+.vault-footer {
     margin-top: 160px;
     padding-top: 40px;
-    border-top: 1px solid var(--salon-border);
+    border-top: 1px solid var(--vault-border);
     display: flex;
     justify-content: space-between;
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--salon-muted);
+    color: var(--vault-muted);
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .salon-threshold,
-    .salon-exhibit-row,
-    .salon-exhibit-row.reverse,
-    .salon-sanctuary,
+/* RESPONSIVE DESIGN */
+@media (max-width: 1100px) {
+    .registry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .registry-card.featured-anchor-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .registry-grid,
+    .registry-card.featured-anchor-card,
+    .vault-hero,
     .form-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
     }
-    .salon-exhibit-row.reverse .exhibit-visual {
-        order: 1;
+    .registry-card.featured-anchor-card {
+        grid-column: span 1;
     }
-    .salon-exhibit-row.reverse .exhibit-tombstone {
-        order: 2;
-    }
-    .salon-wrapper {
+    .vault-container {
         padding: 30px 20px 80px 20px;
+    }
+    .vault-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .vault-nav {
+        gap: 20px;
     }
 }
