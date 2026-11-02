@@ -382,55 +382,76 @@
             font-size: 14px;
         }
 
+        /* CORNER-TO-CORNER IMMERSIVE LIGHTBOX VIEWER */
         .lightbox-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(12, 11, 10, 0.95);
+            background: rgba(12, 11, 10, 0.98);
             z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        .lightbox-window {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 40px;
         }
 
-        .lightbox-window {
-            position: relative;
-            max-width: 1050px;
-            width: 100%;
-            background: var(--panel);
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-        }
-
         .lightbox-window img {
-            width: 100%;
-            max-height: 70vh;
+            width: auto;
+            max-width: 95vw;
+            height: auto;
+            max-height: 78vh;
             object-fit: contain;
-            background: #000;
+            background: transparent;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85);
         }
 
         .lightbox-close {
             position: absolute;
-            top: 20px; right: 20px;
-            background: var(--bg);
+            top: 30px; right: 40px;
+            background: rgba(22, 20, 18, 0.85);
             color: var(--text-main);
             border: 1px solid var(--border);
-            width: 42px; height: 42px;
-            font-size: 24px;
+            width: 48px; height: 48px;
+            font-size: 26px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10;
+            transition: border-color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            border-color: var(--gold-main);
         }
 
         .lightbox-data {
-            padding: 30px;
-            border-top: 1px solid var(--border);
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            border-top: none;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            align-items: center;
+            text-align: center;
+            gap: 4px;
+            background: transparent;
         }
 
         footer {
@@ -490,8 +511,8 @@
             <div class="manifesto-content">
                 <span class="brand-subtitle" style="display:block; margin-bottom: 12px;">About the Collective</span>
                 <h2>Art is not a commodity; it is an encounter with the irrevocable.</h2>
-                <p>We operate outside the noise of mass-produced reproduction and commercial saturation. This space exists as an independent, private salon—a tightly curated cabinet of rare, historical echoes and unrepeatable modern masterworks.</p>
-                <p>Every work presented within these virtual walls shares a singular distinction: <strong>extreme scarcity</strong>. We do not deal in open editions, endless prints, or mass accessibility. Whether presenting a haunting, lesser-known study from the 19th century or a primary-source modern masterpiece, our catalog is strictly capped at a <strong>global maximum of two copies per piece</strong>.</p>
+                <p>We operate entirely outside the noise of mass-produced reproduction and commercial saturation. This space exists as an independent, private salon—a tightly curated cabinet where historical echoes undergo meticulous curatorial recalibration, standing alongside unrepeatable modern masterworks.</p>
+                <p>Every work presented within these virtual walls shares a singular distinction: <strong>extreme scarcity</strong>. We do not deal in open editions, endless impressions, or mass accessibility. Whether presenting a re-imagined study from centuries past or a primary-source contemporary masterpiece, our catalog is strictly capped at a <strong>global maximum of two physical copies per piece</strong>.</p>
                 <p>Once claimed, these editions are closed to the world forever.</p>
                 <p>Here, history and the present stand on equal footing, bound by a shared commitment to uncompromising craftsmanship, archival permanence, and absolute rarity.</p>
             </div>
@@ -805,15 +826,15 @@
 
     </div>
 
-    <!-- LIGHTBOX VIEWER -->
+    <!-- CORNER-TO-CORNER IMMERSIVE LIGHTBOX VIEWER -->
     <div id="atelierLightbox" class="lightbox-overlay" onclick="closeLightbox()">
         <div class="lightbox-window" onclick="event.stopPropagation()">
             <button class="lightbox-close" onclick="closeLightbox()">×</button>
             <img id="lbImg" src="" alt="Enlarged Artwork">
             <div class="lightbox-data">
-                <span id="lbArtist" class="artist-name"></span>
-                <span id="lbTitle" class="print-title" style="font-size: 22px;"></span>
-                <span id="lbCredit" class="edition-tag"></span>
+                <span id="lbArtist" class="artist-name" style="color: var(--text-muted);"></span>
+                <span id="lbTitle" class="print-title" style="font-size: 24px; color: var(--text-main);"></span>
+                <span id="lbCredit" class="edition-tag" style="border: none; padding-top: 0;"></span>
             </div>
         </div>
     </div>
