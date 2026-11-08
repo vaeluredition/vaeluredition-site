@@ -1,97 +1,97 @@
 /* LIGHTBOX MODAL — CORNER-TO-CORNER IMMERSIVE VIEW */
-.lightbox-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(12, 11, 10, 0.98);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    padding: 0; /* Zero out padding for true corner-to-corner layout */
-}
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(12, 11, 10, 0.98);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 0; /* Zero out padding for true corner-to-corner layout */
+        }
 
-.lightbox-content {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background: transparent;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-}
+        .lightbox-content {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
 
-.lightbox-content img {
-    width: auto;
-    max-width: 95vw;
-    height: auto;
-    max-height: 78vh; /* Maximizes vertical space for edge-to-edge impact */
-    object-fit: contain;
-    background: transparent;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-}
+        .lightbox-content img {
+            width: auto;
+            max-width: 95vw;
+            height: auto;
+            max-height: 78vh; /* Maximizes vertical space for edge-to-edge impact */
+            object-fit: contain;
+            background: transparent;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
 
-.lightbox-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    background: rgba(21, 19, 18, 0.8);
-    color: #fff;
-    border: 1px solid var(--vault-border);
-    width: 48px;
-    height: 48px;
-    font-size: 26px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: border-color 0.3s ease;
-}
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            background: rgba(21, 19, 18, 0.8);
+            color: #fff;
+            border: 1px solid var(--border);
+            width: 48px;
+            height: 48px;
+            font-size: 26px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: border-color 0.3s ease;
+        }
 
-.lightbox-close:hover {
-    border-color: var(--vault-accent);
-}
+        .lightbox-close:hover {
+            border-color: var(--gold-accent);
+        }
 
-.lightbox-caption {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 800px;
-    padding: 0 20px;
-    border-top: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 4px;
-    background: transparent;
-}
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            border-top: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 4px;
+            background: transparent;
+        }
 
-.lb-artist {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--vault-muted);
-}
+        .lb-artist {
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
 
-.lb-title {
-    font-family: "Instrument Serif", Georgia, serif;
-    font-size: 24px;
-    font-style: italic;
-    color: var(--vault-text);
-}
+        .lb-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--text-main);
+        }
 
-.lb-credit {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--vault-accent);
-}
+        .lb-credit {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+        }
