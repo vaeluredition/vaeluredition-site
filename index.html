@@ -567,7 +567,7 @@
             position: absolute;
             top: 30px; right: 40px;
             background: rgba(22, 20, 18, 0.85);
-            color: #f5f2eb;
+            color: var(--text-main);
             border: 1px solid var(--border);
             width: 48px; height: 48px;
             font-size: 26px;
@@ -600,6 +600,27 @@
             background: transparent;
         }
 
+        .lb-artist {
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .lb-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .lb-credit {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+        }
+
         footer {
             margin-top: 160px;
             padding-top: 40px;
@@ -620,6 +641,7 @@
         @media (max-width: 768px) {
             .prints-grid, .form-row { grid-template-columns: 1fr; }
             .atelier-shell { padding: 30px 20px 80px 20px; }
+            .manifesto-section, .desk-section { padding: 40px 24px; }
         }
     </style>
 </head>
@@ -1037,9 +1059,9 @@
             <button class="lightbox-close" onclick="closeLightbox()">×</button>
             <img id="lbImg" src="" alt="Enlarged Artwork">
             <div class="lightbox-data">
-                <span id="lbArtist" class="artist-name" style="color: #9e9588; font-weight: 500;"></span>
-                <span id="lbTitle" class="print-title" style="font-size: 24px; color: #f5f2eb;"></span>
-                <span id="lbCredit" class="edition-tag" style="border: none; padding-top: 0; color: #d4af37;"></span>
+                <span id="lbArtist" class="lb-artist"></span>
+                <span id="lbTitle" class="lb-title"></span>
+                <span id="lbCredit" class="lb-credit"></span>
             </div>
         </div>
     </div>
@@ -1048,7 +1070,7 @@
     <script>
         function openLightbox(src, artist, title, credit) {
             document.getElementById('lbImg').src = src;
-            document.getElementById('lbArtist').innerText = artist;
+            document.getElementById('lbArtistinnerText' in document.getElementById('lbArtist') ? 'lbArtist' : 'lbArtist').innerText = artist;
             document.getElementById('lbTitle').innerText = title;
             document.getElementById('lbCredit').innerText = credit;
             document.getElementById('atelierLightbox').style.display = 'flex';
@@ -1059,6 +1081,13 @@
             document.getElementById('atelierLightbox').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+
+        // Close lightbox on 'Escape' key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
 
         function handleInquiry(e) {
             e.preventDefault();
