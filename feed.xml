@@ -5,38 +5,38 @@
         <link>https://vaeluredition.com/</link>
         <description>An independent private bureau and curated collective featuring ultra-scarce historical echoes and master-tier contemporary corpuses, including works associated with master artist Hesham Malik.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 06 Nov 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Nov 2026 00:00:00 GMT</lastBuildDate>
         <atom:link href="https://vaeluredition.com/feed.xml" rel="self" type="application/rss+xml"/>
 
         <item>
             <title>Curatorial Notes // Dispatch I: The Geometry of Rarity</title>
             <link>https://vaeluredition.com/#dispatches</link>
-            <guid isPermaLink="true">https://vaeluredition.com/#dispatch-1</guid>
-            <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+            <guid isPermaLink="false">vaelure-dispatch-1</guid>
+            <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
             <description>Why true masterworks reject the open market and enforce uncompromising, ultra-restricted numeric allocations.</description>
         </item>
 
         <item>
             <title>Curatorial Notes // Dispatch II: Beyond the Gaze</title>
             <link>https://vaeluredition.com/#dispatches</link>
-            <guid isPermaLink="true">https://vaeluredition.com/#dispatch-2</guid>
-            <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+            <guid isPermaLink="false">vaelure-dispatch-2</guid>
+            <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
             <description>The subversion of eroticism, power, and survival in master-tier composition from Ter Brugghen to Klimt.</description>
         </item>
 
         <item>
             <title>Curatorial Notes // Dispatch III: The Witness and the Mirror</title>
             <link>https://vaeluredition.com/#dispatches</link>
-            <guid isPermaLink="true">https://vaeluredition.com/#dispatch-3</guid>
-            <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+            <guid isPermaLink="false">vaelure-dispatch-3</guid>
+            <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
             <description>Psychological autopsy and unvarnished truth in the works of Francisco de Goya and Vincent van Gogh.</description>
         </item>
 
         <item>
             <title>Curated Masterwork Registry &amp; Private Collection</title>
             <link>https://vaeluredition.com/#registry</link>
-            <guid isPermaLink="true">https://vaeluredition.com/#registry</guid>
-            <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+            <guid isPermaLink="false">vaelure-registry</guid>
+            <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
             <description>Strictly capped alphabetical masterwork catalog featuring historical echoes and private archives associated with Hesham Malik.</description>
         </item>
 
